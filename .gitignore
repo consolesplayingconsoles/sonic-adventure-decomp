@@ -1,0 +1,21 @@
+# Everything game-derived or SDK-derived stays local: setup.sh regenerates it from your own disc.
+1ST_READ.BIN
+IP.BIN
+*.gdi
+*.bin
+*.raw
+*.chd
+asm/
+objects.txt
+text-map/
+build/
+sdk-source/
+*.sigs
+report*.txt
+.env
+disc/
+.idea/
+__pycache__/
+
+# kick-off scratch (SDK archive, executable copies): never commit
+.transfer/

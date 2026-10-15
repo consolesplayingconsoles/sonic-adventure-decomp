@@ -1,0 +1,117 @@
+# Decompiling this game
+
+This repo rebuilds the game's `1ST_READ.BIN` byte for byte. Keep it that way: every change ends
+with `bash build.sh` printing `MATCH`.
+
+Game code counts as decompiled when its C **behaves like the original** (Equivalent: same calls,
+same memory writes, same result on every test case, checked by `tools/equiv.py`). C that also
+rebuilds the original bytes (Matching) is the bonus tier: it goes into the build as a unit.
+
+## Layout
+- `functions.txt`: every function (`F <addr> <size> <name>`). The source of truth for names and
+  boundaries: `asm/` is generated from it (`python3 tools/split_asm.py 1ST_READ.BIN "$(cat BASE)"
+  functions.txt .`).
+- `asm/<addr>_<name>.src`: one file per function, in link order (`objects.txt`). Each starts as data
+  words (`.DATA.W`), which is what makes the first build match.
+- `src/<file>.c`: C for the game's code. Without a header it is checked for behaviour only
+  (`tools/equiv.py`) and stays out of the build. A file whose first line is `/* @unit <start>-<end> [shc options] */`
+  replaces every asm file in that range (`tools/units.py`, `tools/fill.py`). A unit with constant
+  data (tables, strings) adds `@data <dstart>-<dend>`: the range where the original link put that data. Its ends are
+  `D <addr> 0 data_<addr>` lines in `functions.txt` (data boundaries, not counted as functions).
+- `symbols.txt`: `<addr> <name>` for what the C uses that no file defines yet (RAM, data still inside
+  asm); the linker gets them as defines.
+- `sdk.txt`: the bundled Sega SDK's code. `python3 tools/progress.py` reports the state.
+- `tests/<file>/<function>.json`: test cases for a function (a list; each gives registers, bytes to
+  put in memory, return values for the calls it makes, optionally a RAM dump to start from:
+  `tools/sh4sim.py`). `tests/equivalent.txt`: the functions `tools/equiv.py` found equivalent.
+- `python3 tools/shdis.py <start> <end>`: SH-4 disassembly with FPU, pool values and names, to
+  read the original while writing C.
+- `BASE`: the address the executable is linked at. `1ST_READ.BIN`: yours, never committed.
+- Names: `FUN_<addr>` is unknown; anything else came from SDK signatures, a sibling decomp, or
+  reading the code.
+
+## Naming (fast, safe, worth doing first)
+Rename in `functions.txt`, delete the old `asm/<addr>_FUN_<addr>.src`, re-run `split_asm.py`, build:
+still `MATCH` (names never change bytes). A function missed by the analysis (`tools/missed_funcs.py`
+lists candidates) is added the same way, as `F <addr> <size> FUN_<addr>`. Its size runs to the end
+of its last `rts` and delay slot before the next entry, pool included: a function with a literal
+pool in the middle of its body (a stray "branch" inside the pool fools a linear sweep) is sized
+that way, not by where the sweep stopped.
+
+Optional, when RetroArch with the Flycast core is at hand: `tools/live.py` reads the running game
+by address or by name (`python3 tools/live.py watch <name>`, `vec <name>+4`), so a global's
+name can be checked against what the value does in play. Setup and commands: `tools/live.py` with
+no arguments. Reading the code stays the evidence; a live value confirms it or sends you back.
+
+## The C loop: Equivalent first
+1. **Write `src/<file>.c`**: the functions you read, in C, as the original source would have them
+   (one file per original source file is the goal, but a few functions are fine to start).
+   Outside names it uses come from `functions.txt`, `globals.txt` and `symbols.txt`.
+2. **Write cases** in `tests/<file>/<function>.json`: the inputs that reach each branch (registers,
+   memory bytes via `poke`, a RAM dump for the world state), what each call it makes returns, and
+   what each case covers (`about`). Split them `{"dev": [...], "holdout": [...]}`: write the dev
+   cases first and iterate on them; then write holdout cases the C was never checked against (other
+   values, another RAM dump) and run once more. A function counts only when both pass.
+   Before writing C, run the three checks (`references/equivalent-pipeline.md` in the kickoff skill): the
+   size is right (`python3 tools/checksizes.py <name>`: a literal pool mid-body ends a listing early), the
+   function can be C (`python3 tools/classify.py <name>`: FPU register banks, `fsrra`, control registers
+   other than SR cannot) and every name it uses exists (`python3 tools/poollist.py <name>`; `python3 tools/shdis.py --func <name>`
+   prints it).
+3. **Check**: `python3 tools/equiv.py src/<file>.c` (`-q`: only what is not Equivalent). Each function runs in the SH-4 interpreter
+   twice per case, the original bytes and your compiled C, and must agree on calls (target and the
+   arguments the callee takes, from the prototype you declare for it; the compiler's `_...` runtime helpers
+   run for real; a stack address is "the stack"), memory writes and the return register (from your prototype).
+   A call may fill an output slot: `"poke_arg": {"r7": "<hex>"}`. `DIFFERS` names the
+   first case and what differed. A function with all cases agreeing is Equivalent: it goes into
+   `tests/equivalent.txt`, and its evidence (address, size, file, case counts, what they cover)
+   into `docs/equivalent.md`, one entry per function.
+4. **Progress**: `python3 tools/progress.py` (Equivalent first, Matching beside it).
+
+Cases are the evidence: one case proves little; cover each branch and edge (zero, negative, the
+values the game really uses). A RAM dump from the running game (`tools/live.py`) gives real
+world state to start from.
+
+## Matching (the bonus tier, one original source file at a time)
+1. **Find the unit.** The compiler's literal pools are shared by every function of one source file,
+   and `bsr` calls only reach functions of the same file: a unit runs from just after the previous
+   file's pool (and its padding) to the end of its own last pool. Both ends must be function
+   boundaries in `functions.txt` (`units.py` refuses otherwise).
+2. **Write `src/<unit>.c`** with the `@unit` header, every function of the unit in address order.
+   Globals and data the code uses go in `symbols.txt` (C names, no leading underscore).
+3. **Build.** `build.sh` compiles it (`shc` with the flags in `build.sh` plus the header's options),
+   lays it out like the original (`fill.py`) and links it in place. Iterate until `MATCH`.
+   Compare function by function while iterating: the first wrong function shifts everything after
+   it, so a whole-file byte compare says little.
+4. **Progress**: `python3 tools/progress.py`.
+
+A unit goes in only when all of it matches. One that will not match after a fair try stays asm,
+written down (what differs) for later; move on.
+
+## Matching notes
+- Library-style code padded with `nop`s to 16 or 32 bytes between functions and before branch
+  targets was built with `-align16`: put it in the `@unit` header.
+- Gaps the compiler reserves (`.RES`) were filled with `0xEE` by the original link; padding before
+  the next unit too. `fill.py` does both.
+- Register choice follows how the C is written: `if ((x = f()) != 0)` versus `x = f(); if (x)`,
+  `a == b` versus `b == a` (operand order of `cmp/eq`), an early `return` versus an `if` block, a
+  value re-read from memory versus the one just stored (`if ((e->prev = p->prev) == 0)`).
+- A difference that no rewording moves is worth checking against another compiler version before
+  more rewording; if two versions give the same bytes, it is the C.
+- Idioms that decide matches (details in the kick-off skill's `references/matching-c.md`):
+  `x ? 1 : 0` for a bit field set from a call (not `!= 0`); one-bit fields rather than `& mask`
+  tests on a flags byte (no `extu.b`); a whole-word field (`unsigned int f : 32`) when the original
+  stores through a computed address (`mov.w off,r2; add rP,r2; mov.l rX,@r2`); globals read at
+  constant offsets as struct members, not array indexing; if/else order decides block layout and
+  stack slots (local declaration order does not); a block-scoped temporary can stay in a register
+  where a function-scoped one spills; `unsigned` can change which constant register is shared.
+- Compiler runtime routines (`__modls`, `__bfslu`, `__quick_evn_mvn`, `__quick_odd_mvn`, ...) are
+  named in `functions.txt` with one underscore less (`_modls`): the asm exports `_<name>`, so the
+  label is exactly what the compiler calls and a C unit links without `symbols.txt` entries for
+  them. If one is still `FUN_...`, rename it.
+
+## Changing the game
+The boot block is not free space. The entry stub copies the start of the executable elsewhere and
+runs it there (seen on a game linked at `0x0C010000`: `0x0C010100-0x0C014000` to `0x0C004000`),
+and the filler after the boot code, which looks unused and has no pointer into it, can be reused
+once gameplay starts: code placed there can give a black screen. Space that has worked for new
+code: an unused function the game's own code already calls.
