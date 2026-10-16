@@ -1,5 +1,7 @@
 # Sonic Adventure decomp (kick-off)
 
+![decomp progress](badge.svg)
+
 A decompilation of the Dreamcast **Sonic Adventure**, in progress. It rebuilds the game's executable
 byte for byte from one assembly file per function (the baseline the build keeps checking), with
 1088 of its 5179 functions named so far. A function is **done** when its C behaves like the
