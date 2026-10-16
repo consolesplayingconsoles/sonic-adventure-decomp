@@ -11,3 +11,31 @@
 #   textures <model file> <texture file> <texture base> <table addr>   a texture list: number -> place in the file
 #   name <file> <offset> <text>   /   table <addr> <group> <label>   /   sound <file> <entry> <text>   /   image <file> <offset> <text>   names (the viewer writes these)
 # Nothing is needed here to start: with no rules the map still lists every model, grouped by the table that holds it.
+
+# Model files with a single texture list, in the order of one archive (texture n = its n-th entry)
+textures SONICAD/EV0003.PRS SONICAD/EV_S_T2C_BODY.PRS index
+textures SONICAD/EV0015.PRS SONICAD/AMY_EGGROBO.PRS index
+textures SONICAD/EV001D.PRS SONICAD/EV_EGGMOBLE0.PRS index
+textures SONICAD/EV0022.PRS SONICAD/EV_ALIFE.PRS index
+textures SONICAD/EV004E.PRS SONICAD/EV_EGGMOBLE0.PRS index
+textures SONICAD/EV0075.PRS SONICAD/AMY_EGGROBO.PRS index
+textures SONICAD/EV0085.PRS SONICAD/K_PATYA.PRS index
+textures SONICAD/EV0099.PRS SONICAD/EV_EGGMOBLE0.PRS index
+textures SONICAD/EV00C1.PRS SONICAD/EV_EGGMOBLE0.PRS index
+textures SONICAD/EV00F0.PRS SONICAD/TR2CRASH.PRS index
+textures SONICAD/EV0180.PRS SONICAD/MOUNTAIN_CARRIER.PRS index
+textures SONICAD/MOVIE.BIN SONICAD/EV_TR2_BIG.PRS index
+
+# Character motion banks and the executable that holds the characters (each motion animates the trees of its node count)
+motions 1ST_READ.BIN SONICAD/S_MOT.PRS
+motions 1ST_READ.BIN SONICAD/S_SBMOT.PRS
+motions 1ST_READ.BIN SONICAD/M_SBMOT.PRS
+motions 1ST_READ.BIN SONICAD/K_MOT.PRS
+motions 1ST_READ.BIN SONICAD/A_MOT.PRS
+motions 1ST_READ.BIN SONICAD/B_MOT.PRS
+motions 1ST_READ.BIN SONICAD/E_MOT.PRS
+
+# Sub-groups, named by group and id (added by the viewer).
+note SONICAD/MOVIE.BIN 0x000000 0x000000 Big_And_Plane
+note 1ST_READ.BIN 0x1C0000 0x1C0000 Sonic
+note 1ST_READ.BIN 0x340000 0x340000 Knuckles
