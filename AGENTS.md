@@ -27,7 +27,7 @@ rebuilds the original bytes (Matching) is the bonus tier: it goes into the build
 - `python3 tools/shdis.py <start> <end>`: SH-4 disassembly with FPU, pool values and names, to
   read the original while writing C.
 - `BASE`: the address the executable is linked at. `1ST_READ.BIN`: yours, never committed.
-- Names: `FUN_<addr>` is unknown; anything else came from SDK signatures, a sibling decomp, or
+- Names: `FUN_<addr>` is unknown; anything else came from SDK signatures or
   reading the code.
 
 ## Naming (fast, safe, worth doing first)

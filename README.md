@@ -59,7 +59,7 @@ Docker, `DC_LOCAL=1` runs the tools through `wibo` instead.
 | `sdk-verified.txt` | Library functions whose bytes the SDK source you supplied reproduces (written by `tools/sdk_source.py`) |
 | `sdk-source/` | The C of those library functions, from the SDK source you supplied (local, git-ignored) |
 | `AGENTS.md` | The per-function decompilation loop: Equivalent first, Matching as the bonus |
-| `tools/` | Disc reader, splitter, text mapper, model mapper, C-unit layout, progress report, missed-function finder, SH-4 disassembler and simulator, the Equivalent check (`equiv.py`) with its helpers (`checksizes.py`, `classify.py`, `poollist.py`, `port_equiv.py`), the SDK-source check (`sdk_source.py`), live checks against the running game (optional) |
+| `tools/` | Disc reader, splitter, text mapper, model mapper, C-unit layout, progress report, missed-function finder, SH-4 disassembler and simulator, the Equivalent check (`equiv.py`) with its helpers (`checksizes.py`, `classify.py`, `poollist.py`), the SDK-source check (`sdk_source.py`), live checks against the running game (optional) |
 
 `text-map/` (generated) lists the executable's strings, how much text each disc file holds, and every image file
 (`images.tsv`). Counts and lists for you to read, not a verdict.
@@ -93,10 +93,7 @@ that stays local). Regenerate it with `python3 tools/model_map.py 1ST_READ.BIN "
 runs each function in an SH-4 interpreter twice per test case, the original bytes and your compiled C,
 and they must agree on calls, memory writes and the result. Passing functions are listed in
 `tests/equivalent.txt` and counted as done. The loop, and how to write many of them quickly, is in
-`AGENTS.md` and the kickoff skill's `references/equivalent-pipeline.md`. Library code the game shares
-with another decomp of this skill (the NAOMI library, the C runtime) need not be rewritten:
-`python3 tools/port_equiv.py <that decomp> .` finds those functions here by their code, ports the C and
-its cases, and keeps only what `equiv.py` confirms on this game's own bytes.
+`AGENTS.md` and the kickoff skill's `references/equivalent-pipeline.md`.
 
 ## Matching C units (the build tier)
 
