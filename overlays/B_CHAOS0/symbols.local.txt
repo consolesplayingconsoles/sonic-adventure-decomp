@@ -1,0 +1,6 @@
+8C95FF54 collimode_old
+8C95F434 tbl
+8C6B67CC chaos_attack_tmr
+8C640068 njDistanceP2P
+8C6B67CA chaos_oldmode
+8C6B67C8 chaos_nextmode

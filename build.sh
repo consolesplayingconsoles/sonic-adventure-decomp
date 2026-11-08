@@ -26,7 +26,7 @@ mkdir -p build/obj
   printf '%s\n' elf "start P($BASE)" "output build\\out.elf"
   python3 tools/units.py objects.txt | while read -r o; do printf 'input %s\n' "$o"; done
   if ls src/*.c >/dev/null 2>&1; then
-    grep -hoE '[A-Za-z_][A-Za-z0-9_]*' $(grep -l '@unit' src/*.c 2>/dev/null) /dev/null | sort -u > build/c_idents.txt
+    { grep -hoE '[A-Za-z_][A-Za-z0-9_]*' $(grep -l '@unit' src/*.c 2>/dev/null || true) /dev/null || true; } | sort -u > build/c_idents.txt
     [ -f symbols.txt ] && awk 'NR==FNR{u[$1]=1; next} !/^#/ && NF==2 && ($2 in u) {printf "define _%s(%s)\n", $2, $1}' build/c_idents.txt symbols.txt
   fi
   printf '%s\n' exit
@@ -54,16 +54,17 @@ STEPS='
   while read -r name start end dstart dend opts; do
     [ -n "$name" ] || continue
     o="build/obj/c_$name.obj"
+    fillopts=""; shcopts=""; for x in $opts; do case "$x" in +*) fillopts="$fillopts --${x#+}";; *) shcopts="$shcopts $x";; esac; done
     if [ ! -f "$o" ] || [ "src/$name.c" -nt "$o" ] || [ src -nt "$o" ]; then
-      SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="Z:\\app\\build\\tmp" wibo "$(tool shc)" "src\\$name.c" -code=asm -object="build\\obj\\c_$name.s" \
+      SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="build\\tmp" wibo "$(tool shc)" "src\\$name.c" -code=asm -object="build\\obj\\c_$name.s" \
         -cpu=sh4 -endian=little -fpu=single -division=cpu -round=nearest -pic=0 -macsave=0 -optimize=1 -size \
-        -string=const -section=p=P,c=C,d=D,b=B -include=src $opts > build/shc.log 2>&1 || { cat build/shc.log; exit 1; }
+        -string=const -section=p=P,c=C,d=D,b=B -include=src $shcopts > build/shc.log 2>&1 || { cat build/shc.log; exit 1; }
       # code at <start>-<end>; with @data, the constant data (C section) as its own piece at <dstart>-<dend>
       if [ "$dstart" = - ]; then
-        python3 tools/fill.py "build/obj/c_$name.s" "build/obj/c_${name}_f.s" "$start" "$end" || exit 1
+        python3 tools/fill.py "build/obj/c_$name.s" "build/obj/c_${name}_f.s" "$start" "$end" $fillopts || exit 1
       else
         python3 tools/fill.py "build/obj/c_$name.s" "build/obj/c_${name}_f.s" "$start" "$end" \
-          "build/obj/c_${name}_data.s" "$dstart" "$dend" "$name" || exit 1
+          "build/obj/c_${name}_data.s" "$dstart" "$dend" "$name" $fillopts || exit 1
         wibo "$(tool asmsh)" "build\\obj\\c_${name}_data.s" -object="build\\obj\\c_${name}_data.obj" -cpu=sh4 -endian=little > build/asm.log 2>&1 \
           || { cat build/asm.log; exit 1; }
       fi

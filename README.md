@@ -1,12 +1,11 @@
 # Sonic Adventure decomp (kick-off)
 
-![decomp progress](badge.svg?p=0.0)
+![decomp progress](badge.svg?p=1.2)
 
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
 
 A decompilation of the Dreamcast **Sonic Adventure**, in progress. It rebuilds the game's executable
-byte for byte from one assembly file per function (the baseline the build keeps checking), with
-1088 of its 5179 functions named so far. A function is **done** when its C behaves like the
+and its code overlays byte for byte from one assembly file per function (the baseline the build keeps checking). A function is **done** when its C behaves like the
 original (Equivalent, checked by `tools/equiv.py`); byte-identical C (Matching) is the bonus tier.
 
 **This repository contains no game code or data.** You supply your own disc; `setup.sh` generates
@@ -34,7 +33,7 @@ echo 'SDK_PATH="/path/to/katana-sdk"' > .env      # once: where your SDK is (not
 bash build.sh
 ```
 
-`build.sh` should end with `MATCH`. It builds its own small tools image the first time (Docker
+`build.sh` should end with `MATCH`; `bash build_overlays.sh` does the same for the overlays (PRS-compressed on the disc: it compares the decompressed images). It builds its own small tools image the first time (Docker
 must be running). The first build assembles every file (a few minutes); after
 that only changed files. (Running the scripts with `bash` means file permissions never matter;
 `./build.sh` works too once `setup.sh` has run.) Docker is required; on Linux x86_64 without
@@ -44,7 +43,9 @@ Docker, `DC_LOCAL=1` runs the tools through `wibo` instead.
 
 | path | what |
 |---|---|
-| `setup.sh` | Extract and verify your executable, generate `asm/`, `text-map/` and `model-map/` |
+| `setup.sh` | Extract and verify your executable and overlays, generate `asm/`, `overlays/`, `text-map/` and `model-map/` |
+| `overlays.tsv`, `overlays/` | Every code overlay on the disc: load address, hash, function list (`docs/matching.md`, `AGENTS.md`) |
+| `build_overlays.sh` | Rebuild every overlay and compare it with the disc's decompressed bytes |
 | `build.sh` | Assemble, link, convert, compare with your original |
 | `disc.sh` | Build a playable disc image of your version (files you put under `disc/`) |
 | `textures.sh` | Optional: every standard texture on one page, to look through |
@@ -116,17 +117,21 @@ the evidence for each equivalent function.
 
 <!-- progress -->
 ```
-THE GAME                          5179 functions, 1074210 bytes of code; each function in one bucket
-  done: equivalent C        0.0%  0 of 5179 functions, 0 bytes (0.0%): C that behaves like the original
-    of which matching C     0.0%  0 functions, 0 bytes, 0 units: rebuilt byte for byte
+THE GAME                          5645 functions, 1169194 bytes of code; each function in one bucket
+  done: equivalent C        1.2%  68 of 5645 functions, 1212 bytes (0.1%): C that behaves like the original
+    of which matching C     1.2%  68 functions, 1212 bytes, 30 units: rebuilt byte for byte
     of which SDK source     0.0%  0 functions, 0 bytes: the SDK's own source reproduces them (sdk-source/, local)
-  named only               21.0%  1088 functions: a name, no C yet (not done work)
-  unnamed                  79.0%  4091 functions (FUN_...), no C yet
-  documented                0.0%  0 named functions in docs/*.md
-  named globals                   0
-  of which library                2060 functions, 391042 bytes of code: the Sega SDK, the NAOMI library and the C runtime bundled in the game
-    done                    0.0%  0 of 2060 library functions, 0 bytes (0.0%)
-    named                  51.8%  1068 of 2060 (the library's own names, from SDK tables)
+  named only               32.7%  1848 functions: a name, no C yet (not done work)
+  unnamed                  66.1%  3729 functions (FUN_...), no C yet
+  documented                0.0%  2 named functions in docs/*.md
+  named globals                   89
+  of which library                2164 functions, 410172 bytes of code: the Sega SDK, the NAOMI library and the C runtime bundled in the game
+    done                    3.1%  67 of 2164 library functions, 1194 bytes (0.3%)
+    named                  61.7%  1336 of 2164 (the library's own names, from SDK tables)
+OVERLAYS                          200 of 232 disc files with code, 19285 functions, 3805636 bytes of code (separate total)
+  matching C                 3.4%  2095 functions, 129002 bytes, 212 units: rebuilt byte for byte (build_overlays.sh)
+  named                     26.3%  5066 functions
+  not in scope                     32 files (overlays.tsv says why)
 ```
 <!-- /progress -->
 
@@ -144,10 +149,6 @@ functions carry a name in all, because small wrappers inherit the name of the fu
 This repo was autogenerated using
 [dc-decomp-kickoff](https://github.com/consolesplayingconsoles/dc-decomp-kickoff) v1.0.
 
-
-## Related work
-
-- [FraGag/sadx_decomp](https://github.com/FraGag/sadx_decomp): a decompilation of the GameCube release. A reference for structures, class names and logic; no bytes match the Dreamcast build.
 
 ## Third-party sources
 

@@ -1,0 +1,5 @@
+8cb80c60 draw_e101factory
+0cbb9884 object_skywalk_cl
+0cbb97d8 gCEventSePP
+0cbb97d4 gMaxId
+0cbb97dc gOneshotId

@@ -1,0 +1,13 @@
+0cbe6748 p_MoveObjTask
+8cb84be0 EV_Alife_dest
+8cb84bea EV_Alife_draw
+8cb84cc2 EV_Alife_exec
+8cb84de0 EV_Alife_cons
+8cb87360 execMoveObjTask
+8cb87b02 dispMoveObjTask
+8cb87b06 destMoveObjTask
+8cb88154 CSkyWalk_cons2
+0cbe6840 object_skywalk_cl
+0cbe6794 gCEventSePP
+0cbe6790 gMaxId
+0cbe6798 gOneshotId

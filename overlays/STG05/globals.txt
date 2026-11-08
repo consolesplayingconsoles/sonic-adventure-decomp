@@ -1,0 +1,4 @@
+0ca39524 texlist_obj_mountain
+0cad4a04 nMountainTgtMissile
+8c90a6d4 ObjectMountainExplosionRock1
+8c90a8e0 ObjectMountainExplosionRock2

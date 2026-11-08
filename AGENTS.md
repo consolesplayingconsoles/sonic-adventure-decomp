@@ -84,10 +84,13 @@ world state to start from.
    it, so a whole-file byte compare says little.
 4. **Progress**: `python3 tools/progress.py`.
 
-A unit goes in only when all of it matches. One that will not match after a fair try stays asm,
+A unit goes in only when all of it matches. `python3 tools/fcmp.py src/<file>.c [function ...] -v` compares a file function by function with the
+original (addresses masked, `--score` for a count of differing instructions), and `python3 tools/permute.py src/<file>.c <function>` tries small
+rewrites that keep the meaning (`docs/matching.md`). One that will not match after a fair try stays asm,
 written down (what differs) for later; move on.
 
 ## Matching notes
+- The game's own code puts each literal pool at a 32-byte boundary (filler word 0x0900, then zeros to the next file): give such a unit `+pool32` in its header (`fill.py`). Options starting with `+` go to `fill.py`, the others to `shc`. `+tail0900`: code after a pool in the middle of a file resumes at the next 32-byte boundary, the gap 0x0900 words. `+poolafter=f1,f2`: the original has a literal pool after these functions as well as at the end. Some files were built with `-speed`. `+synth16`: emulates the game compiler's constants (`mov #hi; shll8 [; add #lo]` for 16-bit values, `mov #v-256; extu.b` for 128 to 255), which no available SHC produces; use it only when that is what differs, and say so in the header. Details and evidence: `docs/matching.md`.
 - Library-style code padded with `nop`s to 16 or 32 bytes between functions and before branch
   targets was built with `-align16`: put it in the `@unit` header.
 - Gaps the compiler reserves (`.RES`) were filled with `0xEE` by the original link; padding before
@@ -108,6 +111,16 @@ written down (what differs) for later; move on.
   named in `functions.txt` with one underscore less (`_modls`): the asm exports `_<name>`, so the
   label is exactly what the compiler calls and a C unit links without `symbols.txt` entries for
   them. If one is still `FUN_...`, rename it.
+
+## Overlays
+Stage, boss, event and Chao code is in PRS overlays on the disc, linked at fixed addresses, one folder each under `overlays/<name>/`
+with its own `functions.txt` and `BASE` (`overlays.tsv` lists them). `bash build_overlays.sh [name ...]` rebuilds each and must print `MATCH`; it builds an overlay's `@unit` C files as `build.sh` does.
+The other tools run on one overlay through `bash tools/overlay/in.sh <name> <tool> <args>` (`shdis.py --func X`, `equiv.py src/x.c`), with
+`src/`, `tests/` and `docs/` inside the overlay's folder. Names of `1ST_READ.BIN` are available there. Rename in the overlay's
+`functions.txt`, then re-run `tools/split_asm.py`. Many names are very likely rather than proven: correct them freely when reading the code shows otherwise.
+Code linked into several overlays matches once and is carried to the others: `python3 tools/overlay/carry_unit.py <overlay> src/<unit>.c [overlay[@address] ...]`
+finds each copy (masked words equal), moves the unit's range and boundaries, reads that overlay's globals from its own pools, and keeps the copy
+only if `build_overlays.sh` matches with it linked (`@address` for a copy whose `functions.txt` lacks the first function's name).
 
 ## Changing the game
 The boot block is not free space. The entry stub copies the start of the executable elsewhere and

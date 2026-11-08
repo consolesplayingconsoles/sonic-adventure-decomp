@@ -1,0 +1,4 @@
+8C038CAC dsScaleLight
+8CA401B8 action_taoreiwam_dai
+8C038CD0 dsReScaleLight
+8CA3FB58 object_taoreiwam_clkiri_iwa0a_iwa0a

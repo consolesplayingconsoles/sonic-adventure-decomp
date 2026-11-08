@@ -1,0 +1,10 @@
+8C09DD74 SpFreeTask
+8C03700C late_DrawShadowModel
+8C1AC990 model_shadow
+8C09DE34 SpFreeLink
+8C0905DC SeqCheckStage
+8C0902D0 SeqSave2
+8C927A78 pos
+8C09062C SeqChangeStage
+8C09036C SeqEndSection
+8C090350 SeqNext

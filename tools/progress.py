@@ -168,3 +168,7 @@ write_badge(rows, 'decomp')
 w = max(len(r[0]) for r in rows)
 for name, p, detail in rows:
     print('%-*s  %7s  %s' % (w, name, p, detail))
+
+if os.path.exists('overlays.tsv'):
+    sys.stdout.flush()
+    subprocess.run([sys.executable, os.path.join(here, 'overlay', 'progress.py')])

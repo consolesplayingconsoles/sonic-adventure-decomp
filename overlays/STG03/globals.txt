@@ -1,0 +1,3 @@
+0c9dce70 texlist_obj_shareobj
+0c9fa390 ego_flag
+8c9fa450 CartSplineData

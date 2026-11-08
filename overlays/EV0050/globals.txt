@@ -1,0 +1,8 @@
+0cba446c p_MoveObjTask
+8caa17c4 object_ssrotyucar_body_body
+8cb84980 execMoveObjTask
+8cb85122 dispMoveObjTask
+8cb85126 destMoveObjTask
+0cba4498 gCEventSePP
+0cba4494 gMaxId
+0cba449c gOneshotId

@@ -1,0 +1,4 @@
+0cb8f908 gParticleInfo
+0cb8f900 gCEventSePP
+0cb8f8fc gMaxId
+0cb8f904 gOneshotId

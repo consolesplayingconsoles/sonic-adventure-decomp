@@ -1,0 +1,13 @@
+0c90a760 texlist_shooting0
+0c93fca0 action_shot_bf_s_bodya
+0c9423c0 action_shot_s_ecfire
+0c9556ec lock_mk_list
+0c955730 lock_mk_spr
+8cad3cfc tornade
+8cad4d70 RoundMode
+8cadcc88 fHitRate
+8cadccbc lockon_list
+8c9036e0 UnlockMytask
+8c955390 CamBackDelay
+8c955394 CamBackTarget
+8cad4d5c ShtScore

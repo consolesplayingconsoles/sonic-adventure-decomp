@@ -1,0 +1,10 @@
+0caa15b8 object_sea_wt_60x04nbg_wt_60x04nbg
+0cab0490 nusobaneref
+0cab19ac usobanetwp
+0cab19fc OrukaTask
+0cab1dd4 WaveTask
+8c908820 ObjectBeachYurehasi
+8c90b600 Exec3
+8c90b6cc Disp3
+8c90b708 Destructor
+8cab0884 yurehasi_tp

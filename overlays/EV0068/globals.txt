@@ -1,0 +1,7 @@
+8cb83280 EV_Alife_dest
+8cb8328a EV_Alife_draw
+8cb83362 EV_Alife_exec
+8cb83480 EV_Alife_cons
+0cbc7f80 gCEventSePP
+0cbc7f7c gMaxId
+0cbc7f84 gOneshotId

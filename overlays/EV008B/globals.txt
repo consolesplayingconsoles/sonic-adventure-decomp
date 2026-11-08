@@ -1,0 +1,8 @@
+0cbddcf8 p_MoveObjTask
+8cb82600 capturebeam_dest
+8cb82604 capturebeam_disp
+8cb8268c capturebeam_exec
+8cb86e60 execMoveObjTask
+8cb87602 dispMoveObjTask
+8cb87606 destMoveObjTask
+0cbddfc0 gParticleInfo

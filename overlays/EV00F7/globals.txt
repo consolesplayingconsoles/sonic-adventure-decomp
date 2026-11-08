@@ -1,0 +1,15 @@
+0cb86820 g_RotaryCircleR
+0cbf5bd0 p_MoveObjTask
+0cbf5c1c g_EmeraldDTheta
+8cb82660 EV_Alife_dest
+8cb8266a EV_Alife_draw
+8cb82742 EV_Alife_exec
+8cb82860 EV_Alife_cons
+8cb83fc0 execMoveObjTask
+8cb84762 dispMoveObjTask
+8cb84766 destMoveObjTask
+8cb84c58 execRotaryEmeraldTask
+8cb85286 destRotaryEmeraldTask
+0cbf5c28 gCEventSePP
+0cbf5c24 gMaxId
+0cbf5c2c gOneshotId

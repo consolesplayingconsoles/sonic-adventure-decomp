@@ -1,0 +1,8 @@
+0c938644 tikal_now
+8c959158 egm3_sippo_pos
+8c95918c egm3_taskptr
+8c959190 egm3koma_taskptr
+8c959198 egm3_sippo_ang
+8c95a1f8 adx_narasitaka
+8c95b11c eggman_taskptr
+8c938648 adx_table

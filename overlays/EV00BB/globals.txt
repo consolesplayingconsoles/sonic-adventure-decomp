@@ -1,0 +1,10 @@
+0cbe1070 p_MoveObjTask
+8cb81be0 capturebeam_dest
+8cb81be4 capturebeam_disp
+8cb81c6c capturebeam_exec
+8cb830e0 execMoveObjTask
+8cb83882 dispMoveObjTask
+8cb83886 destMoveObjTask
+0cbe10bc gCEventSePP
+0cbe10b8 gMaxId
+0cbe10c0 gOneshotId

@@ -1,0 +1,10 @@
+0ca57b3c texlist_jetbomb
+0cab0824 iceposition
+0cab0a2c turaratask
+0cab0b45 KuguriTimer
+0cac2e58 sprite_bomb
+0cac2e9c NadareStart
+8c908b72 Object_IcecapFuusya1End
+8c908b76 Object_IcecapFuusya1Exec
+8c908bd2 Object_IcecapFuusya1Draw
+8c90e40a RdSnowSwitchNadareStartDestructor

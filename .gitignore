@@ -20,3 +20,7 @@ __pycache__/
 
 # kick-off scratch (SDK archive, executable copies): never commit
 .transfer/
+
+# generated per overlay (tools/overlay/in.sh, the checker)
+overlays/*/symbols.txt
+overlays/*/state/

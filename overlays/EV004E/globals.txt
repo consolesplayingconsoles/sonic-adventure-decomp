@@ -1,0 +1,5 @@
+8cb81306 eggmoble_init
+0cb97b2c gMaxId
+0cb97b30 gCEventSePP
+0cb97b34 gOneshotId
+0cb97c78 gParticleInfo

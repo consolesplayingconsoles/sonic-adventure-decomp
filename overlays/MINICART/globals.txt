@@ -1,0 +1,11 @@
+0c918114 RaceManageTask_p
+0ca44538 texlist_obj_shareobj
+8ca5e1c4 ActDiff
+8ca5e1c8 e_flame
+8ca5e1cc add_rate
+8ca5e20c ego_flag
+8c90a654 startDushCheck
+8c90a81e endCheckSeq
+8ca5e1f8 CartGoalFlag
+8ca5e200 cart_data
+8ca5e2c4 CartSplineData

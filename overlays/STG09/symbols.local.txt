@@ -1,0 +1,11 @@
+8CA7887C memcpy
+8C07CA94 SetAccelerationP
+8C036F12 ds_DrawObjectClip
+8C900C14 SetObjectTexture2
+8CB1B070 SAL_casinoliontexuvpitch
+8C03700C ds_DrawModelClip
+8C199458 object_sphere01
+8C90CD34 DispH
+8C90D320 DispUVObj
+8C90D3F6 ExecUV
+8C90DF5A ExecUVC

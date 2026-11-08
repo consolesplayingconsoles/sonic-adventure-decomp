@@ -1,0 +1,8 @@
+8C639AD8 late_DrawObjectClipEx
+8CAD8C20 object_c_info_S
+8CAD8C54 ObjectSkydeck_c_top_Display
+8C902A5C cylhit_c_info_S
+8C902A28 ObjectSkydeck_com_Exit
+8C90295A ObjectSkydeck_hangpole_s_Exec
+8C904EE0 ObjectSkydeck_homing_Exit
+8CAD8E34 object_homing_info

@@ -1,0 +1,10 @@
+8C03700C ds_DrawModelClip
+8CA7AEE0 object_obj_tower01_tower01
+8C90DBC0 late_SetFunc
+8C051C6A LandChangeStage
+8C091826 AddSetStage
+8C01976C AddCameraStage
+8C04F84E AdvanceAct
+8C107A06 SetPlayerInitialPosition
+8C07BC6A KillHimByFallingDownP
+8C640068 njDistanceP2P

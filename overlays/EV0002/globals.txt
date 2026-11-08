@@ -1,0 +1,4 @@
+0cba6848 object_skywalk_cl
+0cba679c gCEventSePP
+0cba6798 gMaxId
+0cba67a0 gOneshotId

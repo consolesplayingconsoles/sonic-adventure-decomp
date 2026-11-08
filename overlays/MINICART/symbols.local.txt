@@ -1,0 +1,5 @@
+8C916DB8 info
+8C052F34 SetMleriRangeRad
+8C0A0BFC MirenSoundPlayOneShotSE
+8C916D94 CartReadyVolume
+8C916DA0 CartStartVolume

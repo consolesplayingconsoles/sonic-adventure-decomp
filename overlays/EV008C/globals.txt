@@ -1,0 +1,7 @@
+0cba94a4 p_MoveObjTask
+8cb80ec0 capturebeam_dest
+8cb80ec4 capturebeam_disp
+8cb80f4c capturebeam_exec
+8cb843e0 execMoveObjTask
+8cb84b82 dispMoveObjTask
+8cb84b86 destMoveObjTask

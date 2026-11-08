@@ -1,0 +1,9 @@
+0cbeae24 p_MoveObjTask
+8cb83480 execMoveObjTask
+8cb83c22 dispMoveObjTask
+8cb83c26 destMoveObjTask
+0cbeaf50 gParticleInfo
+0cbeaf1c object_skywalk_cl
+0cbeae70 gCEventSePP
+0cbeae6c gMaxId
+0cbeae74 gOneshotId

@@ -1,0 +1,6 @@
+8C109DEC VibShot
+8C90B428 ObjectBeachWaveBG2
+8CAB1A08 attackoruka_head_pos
+8C909F20 ObjectBeachWave25
+8CAB1A20 pier_se_flag
+8CAB1A00 OrukaFlag

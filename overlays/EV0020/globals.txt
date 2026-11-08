@@ -1,0 +1,7 @@
+0cb85c60 p_MoveObjTask
+8cb81620 execMoveObjTask
+8cb81dc2 dispMoveObjTask
+8cb81dc6 destMoveObjTask
+0cb867ec gCEventSePP
+0cb867e8 gMaxId
+0cb867f0 gOneshotId

@@ -1,0 +1,10 @@
+0cb89704 g_RotaryCircleR
+0cbcb540 p_MoveObjTask
+0cbcb58c g_EmeraldDTheta
+8cb863c0 execMoveObjTask
+8cb86b62 dispMoveObjTask
+8cb86b66 destMoveObjTask
+0cbcb644 object_skywalk_cl
+0cbcb598 gCEventSePP
+0cbcb594 gMaxId
+0cbcb59c gOneshotId

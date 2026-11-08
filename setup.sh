@@ -21,6 +21,8 @@ echo "Text files: the disc files models.txt lists as text (text-dump/)"
 "$PY" tools/text_dump.py "$GDI" models.txt text-dump
 echo "Model map: the 3D models, textures and sounds in the disc files, models named by the tables that hold them (models.txt: known tables)"
 "$PY" tools/model_map.py 1ST_READ.BIN "$(cat BASE)" functions.txt "$GDI" model-map
+echo "Overlays: stage, boss, event and Chao code, decompressed and split (overlays.tsv, overlays/)"
+"$PY" tools/overlay/setup_overlays.py "$GDI"
 chmod +x build.sh setup.sh 2>/dev/null || true
 echo "Textures (optional, to find text drawn into images): bash \"$PWD/textures.sh\" \"$GDI\""
 if grep -q '^SDK_PATH=' .env 2>/dev/null; then

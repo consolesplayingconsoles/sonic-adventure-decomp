@@ -1,0 +1,5 @@
+0cae3714 object_eff_smallbomb1_info
+0cae3ab4 pslottop
+8cae74bc trail_work
+8cae863c trail_num
+8caf0fd4 ocmdataarray

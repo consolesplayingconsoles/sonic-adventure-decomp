@@ -1,0 +1,3 @@
+0cb82f58 gCEventSePP
+0cb82f54 gMaxId
+0cb82f5c gOneshotId

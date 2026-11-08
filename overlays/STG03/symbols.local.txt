@@ -1,0 +1,4 @@
+8C03700C ds_DrawModelClip
+8C09216C Shadow
+8C640068 njDistanceP2P
+8C10D038 atan2f
