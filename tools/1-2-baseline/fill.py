@@ -14,6 +14,7 @@ from <dstart> to <dend> (the unit's @data range): the original link put each fil
 the data area, far from its code. Labels one piece defines and the other uses get unit-unique names
 with .EXPORT/.IMPORT, so the two pieces link as one. --pool32 (a unit's header option +pool32): the game's own code puts each literal pool at a 32-byte boundary and fills the gap before it with the word 0x0900, and
 the rest up to the next file with zero bytes; no compiler option of SHC 5.0 or 5.1 lays it out so (342 of 469 source files of 1ST_READ.BIN's game code).
+--pool00 (+pool00): the gap a literal pool reserves between its 16-bit and 32-bit entries is zero bytes, not 0xEE (implied by --pool32).
 A unit with constant data and no @data range,
 or with initialised variables (D/B sections), is refused with the reason.
 """
@@ -105,9 +106,9 @@ def layout(lines, start, end, data, what):
             pos += n; continue
         if mr:
             n = int(args, 0) * SIZES[mr.group(1)]
-            # inside a literal pool (right after its .DATA words: the gap before the longs) the original has zero bytes, in the game and the
-            # library alike (153 of 157 such gaps in 1ST_READ.BIN); other reserved gaps were filled with 0xEE
-            fillb = '00' if last_data else 'EE'
+            # --pool00 (and --pool32): inside a literal pool (right after its .DATA words: the gap before the longs) the original has zero
+            # bytes, in the game and the library alike (153 of 157 such gaps in 1ST_READ.BIN); other reserved gaps were filled with 0xEE
+            fillb = '00' if last_data and (POOL00 or POOL32) else 'EE'
             if n: out.append('          .DATAB.B    %d,H\'%s\n' % (n, fillb))
             pos += n; continue
         md = re.match(r'\.DATA\.([BWL])$', op)
@@ -144,6 +145,7 @@ def layout(lines, start, end, data, what):
 POOL32 = False        # --pool32: the game's layout of a literal pool (see the module notes)
 POOL_AFTER = []       # --poolafter=f1,f2: a literal pool of its own right after these functions (see split_pools)
 SYNTH16 = False       # --synth16: 16-bit constants built with mov #hi / shll8 [/ add #lo], as the game's own compiler does (see synth16)
+POOL00 = False        # --pool00: zero bytes, not 0xEE, in the gap a literal pool reserves between its 16-bit and 32-bit entries
 TAIL0900 = False      # --tail0900: after the pool the same 0x0900 words to the unit's end (code of the same file follows), not zero bytes
 
 
@@ -346,7 +348,9 @@ def synth16(lines, align=False):
 def main():
     global POOL32
     a = sys.argv[1:]
-    global TAIL0900
+    global TAIL0900, POOL00
+    if '--pool00' in a:
+        a.remove('--pool00'); POOL00 = True
     if '--pool32' in a:
         a.remove('--pool32'); POOL32 = True
     if '--tail0900' in a:

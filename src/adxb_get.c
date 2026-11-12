@@ -1,4 +1,4 @@
-/* @unit 8C6675CC-8C667718 */
+/* @unit 8C6675CC-8C667718 +pool00 */
 /* CRI ADX: the bitstream decoder's accessors, data entry and start/stop. One source file of the library: its functions share one literal pool.
    The decoder layout is read from the code; names from the SDK's function names; the C written for this game's bytes. */
 

@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""The overlays' state, printed after tools/progress.py's report. Run in the repo. A separate total: the main metric stays 1ST_READ.BIN's."""
-import csv, glob, os, re
+"""The overlays' state (their units from overlays/units.tsv, the one list of them), printed after tools/progress.py's report. Run in the repo. A separate total: the main metric stays 1ST_READ.BIN's."""
+import csv, os
+import place_units      # noqa: E402  (tools/overlay: overlays/units.tsv, the overlays' units and their ranges)
+RANGES = {}
+for o_, unit_, start_, end_ in place_units.rows():
+    RANGES.setdefault(o_, []).append((int(start_, 16), int(end_, 16)))
 rows = list(csv.DictReader(open('overlays.tsv'), delimiter='\t'))
 ok = [r for r in rows if r['status'] == 'ok']
 fn = by = named = mt = mt_b = mt_u = 0
@@ -9,11 +13,7 @@ for r in ok:
     p = o + '/functions.txt'
     if not os.path.exists(p):
         continue
-    unit_ranges = []
-    for g in glob.glob(o + '/src/*.c'):
-        m_ = re.match(r'\s*/\*\s*@unit\s+([0-9A-Fa-f]{8})-([0-9A-Fa-f]{8})', open(g, errors='replace').readline())
-        if m_:
-            unit_ranges.append((int(m_.group(1), 16), int(m_.group(2), 16)))
+    unit_ranges = RANGES.get(r['name'], [])
     mt_u += len(unit_ranges)
     for l in open(p):
         q = l.split()

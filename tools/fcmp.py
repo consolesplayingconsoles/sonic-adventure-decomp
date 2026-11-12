@@ -4,11 +4,12 @@
     python3 tools/fcmp.py src/<file>.c [function ...] [-v]
 
 Compiles the file with the build's flags (shc under wibo, SDK_PATH from .env; options from its @unit header), and for each function it defines
-that functions.txt names: MATCH when its instructions equal the game's with addresses masked (tools/sdk_masked.py), else the first instruction that differs
+that functions.txt names: MATCH when its instructions equal the game's with addresses masked (tools/1-2-baseline/sdk_masked.py), else the first instruction that differs
 and, with -v, both listings side by side. Literal pools are not compared here: the build does that, on the whole unit.
 """
 import os, re, shutil, struct, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import toolpath  # noqa: E402,F401  (the shared tools: sdk_masked, shdis, fill)
 _a, sys.argv = sys.argv, ['x']
 try:
     import sdk_masked as M
@@ -35,13 +36,12 @@ m = re.match(r'\s*/\*\s*@unit\s+\S+(?:\s+@data\s+\S+)?\s*(.*?)\s*\*/', head)
 opts = m.group(1).split() if m else []
 shutil.copy(cfile, W + '/u.c')
 env = dict(os.environ, SHC_LIB=TW, SHC_INC=TW, SHC_TMP=WB + '\\tmp')
-FLAGS = ('-cpu=sh4 -endian=little -fpu=single -division=cpu -round=nearest -pic=0 -macsave=0 -optimize=1 -size -string=const '
-         '-section=p=P,c=C,d=D,b=B -include=src').split()
+FLAGS = open(os.path.join(toolpath.ROOT, '1-2-baseline', 'shc_flags.txt')).read().split()      # the build's flags (build.sh reads the same file)
 FL = [f for f in FLAGS if not ('-speed' in opts and f == '-size')]      # a unit built for speed: not for size
 r = subprocess.run(['wibo', tool('shc.exe'), WB + '\\u.c', '-code=asm', '-object=' + WB + '\\u.s', *FL, *[o for o in opts if not o.startswith('+')]], env=env, capture_output=True, text=True, errors='replace')
 if not os.path.exists(W + '/u.s'):
     sys.exit(r.stdout + r.stderr)
-if '+synth16' in opts:                   # the unit asks for the game compiler's constants (tools/fill.py, synth16): compare what the build assembles
+if '+synth16' in opts:                   # the unit asks for the game compiler's constants (tools/1-2-baseline/fill.py, synth16): compare what the build assembles
     import fill
     lines = fill.synth16(open(W + '/u.s', encoding='latin-1').readlines(), align=True)
     open(W + '/u.s', 'w', encoding='latin-1').writelines(lines)

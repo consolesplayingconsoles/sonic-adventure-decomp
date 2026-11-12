@@ -10,6 +10,7 @@ share of the file's pointers that land inside the file at the winning base; `lea
 import hashlib, struct, sys
 from collections import Counter
 sys.path.insert(0, 'tools')
+import toolpath  # noqa: F401  (the shared tools: gdi_read, model_map ...)
 import gdi_read, model_map
 d = gdi_read.Disc(sys.argv[1])
 print('name\tpath\tcompressed\tsize\tsha1\tbase\tvotes\tlead\tself_share\tprologues')

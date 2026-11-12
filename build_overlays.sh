@@ -1,17 +1,14 @@
 #!/usr/bin/env bash
-# Rebuild every overlay image from overlays/<name>/asm and check each against the disc's decompressed bytes.
-#   bash build_overlays.sh [name ...]     (setup.sh prepares them; SDK_PATH as for build.sh)
-set -euo pipefail
+# Rebuild every code overlay with build.sh --overlay and check each against the disc's decompressed image.
+#   bash build_overlays.sh [name ...]     (setup.sh prepares them; SDK_PATH, DC_LOCAL as for build.sh)
+# JOBS=<n> (opt-in) builds n overlays at a time; the default is one at a time.
+set -uo pipefail
 cd "$(dirname "$0")"
-[ -z "${SDK_PATH:-}" ] && [ -f .env ] && . ./.env
-[ -n "${SDK_PATH:-}" ] || { echo "[ERROR] no SDK_PATH"; exit 1; }
-SDK_PATH="$(cd "$SDK_PATH" && pwd)"
-ASMSH="$(find "$SDK_PATH" -iname asmsh.exe -print -quit)"
-REL="${ASMSH#"$SDK_PATH"/}"; REL="${REL%/*}"
-if [ "${DC_LOCAL:-0}" = 1 ]; then
-  T="$SDK_PATH/$REL" python3 tools/overlay/build.py "$@"
-else
-  . tools/docker_check.sh
-  docker_ready tools/tools-image || exit 1
-  docker run --rm -v "$SDK_PATH":/sdk:ro -v "$PWD":/app -w /app -e T="/sdk/$REL" -e JOBS "${DC_TOOLS_IMAGE:-dc-tools}" python3 tools/overlay/build.py "$@"
-fi
+if [ $# -gt 0 ]; then names=("$@")
+else mapfile -t names < <(for d in overlays/*/; do [ -f "$d/objects.txt" ] && basename "$d"; done); fi
+mkdir -p build
+printf '%s\n' "${names[@]}" | xargs -P "${JOBS:-1}" -I{} sh -c 'mkdir -p "overlays/$1/build"; bash build.sh --overlay "$1" > "overlays/$1/build/build.log" 2>&1; echo "$1 $(tail -1 "overlays/$1/build/build.log")"' _ {} > build/overlays.txt
+bad=$(grep -vc ' MATCH: ' build/overlays.txt)
+grep -v ' MATCH: ' build/overlays.txt
+echo "${#names[@]} overlays, $(( ${#names[@]} - bad )) MATCH, $bad not"
+[ "$bad" = 0 ]

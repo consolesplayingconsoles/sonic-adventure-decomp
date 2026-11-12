@@ -55,7 +55,7 @@ echo 'SDK_PATH="/path/to/katana-sdk"' > .env      # once: where your SDK is (not
 make
 ```
 
-`make` (which runs `build.sh`) should end with `MATCH`. 
+`make` (which runs `build.sh`) should end with `MATCH`. `bash build_overlays.sh` does the same for the code overlays: see [docs/overlays.md](docs/overlays.md).
 
 It builds its own small tools image the first time (Docker must be running). The first build assembles every file
 (a few minutes); after that only changed files. (Running the scripts with `bash` means file permissions never matter;
@@ -121,9 +121,10 @@ Other releases are different builds: `setup.sh` refuses them rather than produce
 
 | path | what |
 |---|---|
-| [setup.sh](setup.sh) | Extract and verify your executable, generate [asm/](asm/), [text-map/](text-map/) and [model-map/](model-map/) |
+| [setup.sh](setup.sh) | Extract and verify your executable and code overlays, generate [asm/](asm/), `overlays/<name>/asm/`, [text-map/](text-map/) and [model-map/](model-map/) |
 | [Makefile](Makefile) | The build commands: `make setup`, `make`, `make progress` |
-| [build.sh](build.sh) | Assemble, link, convert, compare with your original |
+| [build.sh](build.sh) | Assemble, link, convert, compare with your original (`--overlay <name>`: one code overlay) |
+| [build_overlays.sh](build_overlays.sh), [overlays.tsv](overlays.tsv), [overlays/](overlays/) | The code overlays: their list and load addresses, function lists, C units, and the build of them all ([docs/overlays.md](docs/overlays.md)) |
 | [disc.sh](disc.sh) | Build a playable disc image of your version (files you put under `disc/`) |
 | [textures.sh](textures.sh) | Optional: every standard texture on one page, to look through |
 | [tools/](tools/README.md) | The tools several steps use: the SH-4 disassembler and simulator, progress and status reports, renaming |
@@ -176,7 +177,7 @@ data becomes its own piece at that range, in source order; both ranges must star
 file boundaries (add them to `functions.txt`: `F <addr> 0 FUN_<addr>` for a function start,
 `D <addr> 0 data_<addr>` for a data boundary, which is not counted as a function). A unit is one
 original source file: all its functions share literal pools, so it goes in only when all of it
-matches. `python3 tools/progress.py` reports the state,
+matches. The layout options (`+pool32` and others) and what made the units match: [docs/matching.md](docs/matching.md). `python3 tools/progress.py` reports the state,
 each function in one bucket: done (matching C, and library functions the SDK's own source reproduces), named only (a name is
 not done work), unnamed; plus documented functions and named globals.
 

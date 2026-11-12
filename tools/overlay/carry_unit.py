@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 """A matching unit of one overlay into every overlay that has the same code. Run in the repo.
 
-    python3 tools/overlay/carry_unit.py <overlay> src/<unit>.c [overlay[@address] ...]
+    python3 tools/overlay/carry_unit.py <overlay> <unit> [overlay[@address] ...]      (<unit>: overlays/src/<unit>.c, a row of <overlay> in overlays/units.tsv)
 
 overlay@address: the copy starts there (for an overlay whose functions.txt does not have the first function's name).
 
 The unit's range in <overlay> is compared with every other overlay at the place its first function sits there (found by name): with
-position-dependent fields masked (tools/sdk_masked.py) the words must be the same. Where they are, the overlay gets the same function and data
-boundaries in that range (moved), the names of the reference's globals the C uses (read from the same pool slots there), and the unit with its
-range moved. build_overlays.sh decides; a copy that does not match is taken out again. Prints one line per overlay.
+position-dependent fields masked (tools/1-2-baseline/sdk_masked.py) the words must be the same. Where they are, the overlay gets the same function and data
+boundaries in that range (moved), the names of the reference's globals the C uses (read from the same pool slots there), and a row in
+overlays/units.tsv with the range moved (the C itself is stored once). build.sh --overlay decides; a copy that does not match is taken out
+again. Prints one line per overlay.
 """
 import os, re, struct, subprocess, sys
 sys.path.insert(0, 'tools')
+import toolpath  # noqa: E402,F401  (the shared tools: sdk_masked)
+import ovtsv, place_units  # noqa: E402  (tools/overlay)
 _a, sys.argv = sys.argv, ['x']
 try:
     import sdk_masked as M
@@ -25,17 +28,19 @@ R = os.getcwd()
 
 def image(o):
     d = os.path.join('overlays', o)
-    return d, open(os.path.join(d, o + '.bin'), 'rb').read(), int(open(os.path.join(d, 'BASE')).read().strip(), 16)
+    return d, open(os.path.join(d, o + '.bin'), 'rb').read(), int(ovtsv.row(o)['base'], 16)
 
 
 def entries(d):
     return [l.split() for l in open(os.path.join(d, 'functions.txt')) if l.startswith(('F ', 'D '))]
 
 
+unit = os.path.basename(unit)[:-2] if unit.endswith('.c') else unit
 rd, rex, rbase = image(ref)
-text = open(os.path.join(rd, unit), encoding='latin1').read()
-m = re.match(r'\s*/\*\s*@unit\s+([0-9A-Fa-f]{8})-([0-9A-Fa-f]{8})', text)
-start, end = int(m.group(1), 16), int(m.group(2), 16)
+text = open(os.path.join('overlays', 'src', unit + '.c'), encoding='latin1').read()
+TSV = os.path.join('overlays', 'units.tsv')
+row = next(q for q in place_units.rows() if q[0] == ref and q[1] == unit)
+start, end = int(row[2], 16), int(row[3], 16)
 size = end - start
 rwords = struct.unpack_from('<%dH' % (size // 2), rex, start - rbase)
 rmask = M.mask(rwords)
@@ -71,8 +76,7 @@ for o in targets:
     if any(x != y and a != b for x, y, a, b in zip(M.mask(tw), rmask, tw, rwords)):
         print(o, 'other code')
         continue
-    cpath = os.path.join(d, 'src', os.path.basename(unit))
-    if os.path.exists(cpath):
+    if any(q[0] == o and q[1] == unit for q in place_units.rows()):
         print(o, 'has the unit already')
         continue
     L = open(os.path.join(d, 'functions.txt')).read().splitlines()
@@ -93,25 +97,26 @@ for o in targets:
         for n, off in rglob.items():
             if (' %s\n' % n) not in have:
                 f.write('%08x %s\n' % (struct.unpack_from('<I', ex, s - base + off)[0], n))
-    os.makedirs(os.path.join(d, 'src'), exist_ok=True)
-    open(cpath, 'w', encoding='latin1').write(re.sub(r'^(\s*/\*\s*@unit\s+)[0-9A-Fa-f]{8}-[0-9A-Fa-f]{8}', r'\g<1>%08X-%08X' % (s, s + size), text, count=1))
+    oldt = open(TSV).read()
+    open(TSV, 'a').write('%s\t%s\t%08X\t%08X\n' % (o, unit, s, s + size))
     subprocess.run(['rm', '-rf', os.path.join(d, 'asm')])
-    subprocess.run([sys.executable, os.path.join(R, 'tools/split_asm.py'), o + '.bin', '%08x' % base, 'functions.txt', '.'], cwd=d, capture_output=True)
+    subprocess.run([sys.executable, os.path.join(R, 'tools/1-2-baseline/split_asm.py'), o + '.bin', '%08x' % base, 'functions.txt', '.'], cwd=d, capture_output=True)
     for x in os.listdir(os.path.join(d, 'build', 'obj')) if os.path.isdir(os.path.join(d, 'build', 'obj')) else []:
         if x.startswith('c_'):
             os.remove(os.path.join(d, 'build', 'obj', x))
-    r = subprocess.run(['bash', 'build_overlays.sh', o], capture_output=True, text=True)
-    linked = os.path.exists(os.path.join(d, 'build', 'link.sub')) and ('c_' + os.path.basename(unit)[:-2]) in open(os.path.join(d, 'build', 'link.sub')).read()
-    if '1 MATCH' in r.stdout and linked:
+    r = subprocess.run(['bash', 'build.sh', '--overlay', o], capture_output=True, text=True)
+    linked = os.path.exists(os.path.join(d, 'build', 'link.sub')) and ('c_' + unit) in open(os.path.join(d, 'build', 'link.sub')).read()
+    if 'MATCH:' in r.stdout and linked:
         print(o, 'MATCH')
         continue
     # take it out again: the overlay as it was
-    os.remove(cpath)
+    open(TSV, 'w').write(oldt)
+    place_units.place(o)
     open(os.path.join(d, 'functions.txt'), 'w').write(old)
     if oldg is None:
         os.remove(gl)
     else:
         open(gl, 'w').write(oldg)
     subprocess.run(['rm', '-rf', os.path.join(d, 'asm')])
-    subprocess.run([sys.executable, os.path.join(R, 'tools/split_asm.py'), o + '.bin', '%08x' % base, 'functions.txt', '.'], cwd=d, capture_output=True)
+    subprocess.run([sys.executable, os.path.join(R, 'tools/1-2-baseline/split_asm.py'), o + '.bin', '%08x' % base, 'functions.txt', '.'], cwd=d, capture_output=True)
     print(o, 'no:', (r.stdout + r.stderr).strip().splitlines()[-1][:120] if (r.stdout + r.stderr).strip() else '?')

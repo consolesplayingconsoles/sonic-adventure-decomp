@@ -1,26 +1,14 @@
 # Matching notes
 
 What it took to rebuild source files of Sonic Adventure DC byte for byte, and what is still open. The binary is the authority throughout:
-a unit counts only when `build.sh` (1ST_READ.BIN) or `build_overlays.sh` (an overlay) prints `MATCH` from a clean build.
+a unit counts only when `build.sh` (1ST_READ.BIN) or `build_overlays.sh` (an overlay, [overlays.md](overlays.md)) prints `MATCH` from a clean build.
 
-## Overlays
+The units are built with SHC 5.1 Release 13 (`SDK_PATH`); SHC 5.0 Release 32 lays out `adxb_get.c` 8 bytes longer.
 
-Stage, boss, event and Chao code lives in PRS overlays (`overlays.tsv`). Bases: `0c900000` stages and bosses, `0c920000` Egg Carrier,
-`0cb80000` events and Chao, `8c900000` ADVERTISE. `2_DP.BIN` (the Dream Passport browser, a separate program) is out of scope, and files with too
-little code or an undecided base are listed with their `status` and stay out.
+## The game's layout (`tools/1-2-baseline/fill.py` options, in the `@unit` header)
 
-- Function lists come from `tools/overlay/analyze.py`, a reachability pass (about 90% of the known starts on 1ST_READ.BIN). Boundaries never change
-  the rebuilt bytes, but a wrong one blocks a C unit: check them before writing C. A typical fault is a boundary on the delay slot of the
-  previous function's `rts`.
-- A byte match compares decompressed images; recompressing to the disc's exact PRS bytes is not done.
-- Much code is linked into several images (6,116 overlay functions fall in 812 identical-code groups). A unit written once is carried to every
-  copy with `tools/overlay/carry_unit.py`; most copies are unnamed in their overlay's list, so `<overlay>@<address>` places them by address.
-  Units of only a few words match everywhere by chance: such hits are not copies.
-- `build_overlays.sh` builds an overlay's units as `build.sh` does (`tools/overlay/build.py`). The compiler needs a short temp folder: under a long
-  path it cannot open its temp files ("Cannot open internal file"). The build stops when `units.py` refuses a unit (a range not on function
-  boundaries) and deletes the previous image before linking, so a failed link can never compare a stale image.
+Options starting with `+` go to `fill.py`, the others to `shc` (whose flags for every unit are in `tools/1-2-baseline/shc_flags.txt`).
 
-## The game's layout (`fill.py` options, in the `@unit` header)
 
 - `+pool32`: the game's own code puts a source file's literal pool on a 32-byte boundary; the gap before it is the word 0x0900, and zero bytes run
   from the pool to the next file (342 of 469 game source files of 1ST_READ.BIN). The instructions are the compiler's own; only the layout differs.
@@ -28,7 +16,8 @@ little code or an undecided base are listed with their `status` and stay out.
   tail is 0x0900 too. The Kamui register functions (`src/kamui_regs.c`) match so: what looked like hand-written assembly was this layout.
 - `+poolafter=f1,f2`: the original link has a literal pool after these functions as well as at the end; each group of functions gets its own pool
   right after it, entries in the compiler's order.
-- A gap the compiler reserves inside a literal pool (`.RES` after `.DATA`) is zero in the original (153 of 157 cases); other reserved gaps are 0xEE.
+- `+pool00`: a gap the compiler reserves inside a literal pool (`.RES` after `.DATA`) is zero in the original (153 of 157 cases), where `fill.py`
+  fills reserved gaps with 0xEE by default (`+pool32` implies it). A unit with no `+` option is laid out as before these options existed.
 - `-speed` (a compiler option): some game files were built for speed. Signs: struct copies inlined, plain `for` loops kept as such.
 - Library code padded with `nop`s between functions was built with `-align16`.
 
@@ -44,7 +33,7 @@ The code of the game itself (not the SDK libraries) was built by a compiler that
 
 `+synth16` emulates it: `fill.py` writes the game's form for each such `mov.w` (not one in a branch's delay slot), drops the constant from the pool
 and moves the pool's other loads to their new offsets. It changes instructions, so a unit asks for it by name and says why in its header.
-`tools/fcmp.py` applies it too when the header asks. First use: `skywalk.c` (EV0001 and 12 other event overlays), where `twp->flag |= 0x100` was
+`tools/fcmp.py` applies it too when the header asks. First use: `skywalk.c` (13 event overlays), where `twp->flag |= 0x100` was
 the one difference left.
 
 SHC 5.0 runs under wibo only with short paths ("Illegal environment variable" otherwise); 5.0r10 refuses `-fpu=single` and `-round=nearest`.

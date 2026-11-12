@@ -1,4 +1,4 @@
-/* @unit 8C6672B0-8C6673C8 */
+/* @unit 8C6672B0-8C6673C8 +pool00 */
 /* CRI ADX: the bitstream decoders' pool (eight of them), create and destroy, and the default write-position callbacks. One source file
    of the library: its functions share one literal pool. Layout in adxb_dc.h, read from the code; the C written for this game's bytes. */
 
