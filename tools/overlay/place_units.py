@@ -18,6 +18,8 @@ HEAD = re.compile(r'^\s*/\*\s*@unit\s+[0-9A-Fa-f]{8}-[0-9A-Fa-f]{8}\s*(.*?)\s*\*
 def rows():
     """[(overlay, stored path from the repo root, start, end, options or None)]; a bare unit name means overlays/src/<name>.c."""
     out = []
+    if not os.path.exists(os.path.join(ROOT, 'overlays', 'units.tsv')):      # no overlay unit yet
+        return out
     for l in open(os.path.join(ROOT, 'overlays', 'units.tsv')):
         q = l.rstrip('\n').split('\t')
         if q and q[0] and not l.startswith('#'):
