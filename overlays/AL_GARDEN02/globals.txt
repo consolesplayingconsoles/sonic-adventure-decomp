@@ -1,0 +1,8 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8ff0c mine_cart_texlist
+0cb91ef0 mine_cart_actions
+0cb92624 mine_cart_wheel_object
+0cb8ec54 chao_gardens_init
+0cb8f184 alife_chao_create_garden
+0cb95a84 sky_evening_texlist
+0cb98b64 sky_night_texlist

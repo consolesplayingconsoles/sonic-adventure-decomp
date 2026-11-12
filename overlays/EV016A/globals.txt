@@ -1,0 +1,15 @@
+0cb8f170 gCEventSePP
+0cb8f16c gMaxId
+0cb8f174 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8ece4 path_editor_axis_names
+0cb8ecf0 path_editor_origin_names
+0cb85044 path_editor_order_items
+0cb89f10 knuckles_texlist
+0cb87084 event_message_wait
+# events/shared/sdk/_fmtin.c (the Japanese release's names, tools/jpport)
+8c7ac048 _errno
+8c1601c4 _ctype
+8c1601c4 _stf
+# events/shared/sdk/_packf.c (the Japanese release's name: _calcfpow calls it)
+0cb84ab0 _packf

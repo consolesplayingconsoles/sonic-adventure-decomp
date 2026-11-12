@@ -1,0 +1,17 @@
+0cbab6f8 p_MoveObjTask
+8cb81ba0 execMoveObjTask
+8cb82342 dispMoveObjTask
+8cb82346 destMoveObjTask
+0cbab744 gCEventSePP
+0cbab740 gMaxId
+0cbab748 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb82960 event_sound_init
+0cb9f1a0 ev0046_frog
+0cb9b068 event_sound_play
+0cb915ec ev0046_emerald_texlist
+0cba8c04 event_voice_play
+0cba6d60 ev0046_tails_action_3
+0cba8c18 vibration_start
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbab720 event_fade_corners

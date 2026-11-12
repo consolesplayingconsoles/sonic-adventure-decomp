@@ -1,0 +1,15 @@
+0cba5754 p_MoveObjTask
+8cb824e0 execMoveObjTask
+8cb82c82 dispMoveObjTask
+8cb82c86 destMoveObjTask
+0cba57a0 gCEventSePP
+0cba579c gMaxId
+0cba57a4 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb83edd ev0063_hints_saved
+0cb83edc ev0063_hints_before
+0cb8c9b0 event_set_flags
+# events/shared/zero_grab.c (the Japanese release's names, tools/jpport)
+8c106e6e zero_event_grab
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cba577c event_fade_corners

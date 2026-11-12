@@ -1,0 +1,22 @@
+0cba8d10 p_MoveObjTask
+8cb84040 execMoveObjTask
+8cb847e2 dispMoveObjTask
+8cb847e6 destMoveObjTask
+8cb84820 capturebeam_dest
+8cb84824 capturebeam_disp
+8cb848ac capturebeam_exec
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb9d1dc event_eggmobile_texlist
+0cb9cf6c event_eggmobile_nozzle
+0cb9cf78 event_eggmobile_glare_aim
+0cb9cf84 event_eggmobile_actions
+0cb9cfc8 event_eggmobile_welds
+0cb9d040 event_eggmobile_task
+0cb84be4 event_set_pos
+0cb9ab00 event_prop_set_action
+0cb9ce20 event_beam_create
+# events/shared/prop.c (the Japanese release's names, tools/jpport)
+0cba8ce8 event_props
+# events/shared/beam.c (the Japanese release's names, tools/jpport)
+0cba8d44 event_beam_texlist
+0cba9384 event_beam_object

@@ -1,0 +1,10 @@
+0cb860f0 gCEventSePP
+0cb860ec gMaxId
+0cb860f4 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb84528 egg_viper_event_hush
+0cb84604 ev0024_wreckage_texlist
+0cb84530 wreckage_objects
+0cb84550 wreckage_puff
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb860cc event_fade_corners

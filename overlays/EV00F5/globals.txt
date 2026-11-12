@@ -1,0 +1,25 @@
+0cbb94f4 gCEventSePP
+0cbb94f0 gMaxId
+0cbb94f8 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbb9048 path_editor_axis_names
+0cbb9054 path_editor_origin_names
+0cb86ea0 sscanf
+0cb88cc4 path_editor_order_items
+0cba04dc event_sound_start
+0cb96f80 ev00f5_sonic_action_0
+0cba1dd0 event_pads_on
+0cbad4b8 event_eggmobile_texlist
+0cbad248 event_eggmobile_nozzle
+0cbad254 event_eggmobile_glare_aim
+0cbad260 event_eggmobile_actions
+0cbad2a4 event_eggmobile_welds
+0cbad31c event_eggmobile_task
+# events/shared/sdk/_fmtin.c (the Japanese release's names, tools/jpport)
+8c7ac048 _errno
+8c1601c4 _ctype
+8c1601c4 _stf
+# events/shared/sdk/_packf.c (the Japanese release's name: _calcfpow calls it)
+0cb88070 _packf
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbb94d0 event_fade_corners

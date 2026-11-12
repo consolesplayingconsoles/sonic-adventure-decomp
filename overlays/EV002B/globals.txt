@@ -1,0 +1,23 @@
+0cbcf280 p_MoveObjTask
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbcecdc event_chaos0_task
+0cbc35e8 event_chaos0_hop1_action
+0cbcf32c path_editor_axis_names
+0cbcf338 path_editor_origin_names
+0cb8aa8c path_editor_order_items
+0cbcf7b4 event_chaos0_hold_task
+0cbcf140 event_sprite_frames
+0cbcefe0 event_sprite_slots
+0cb80004 event_chaos0_get_task
+0cb8b05c event_clear_paths
+0cb8b08c event_voice_play
+0cbaa9dc event_talk_stop
+0cb8ae78 event_move_stop_all
+0cb80005 event_chaos0_hold_release
+0cb8af70 ev002b_police_5
+# events/shared/sdk/_fmtin.c (the Japanese release's names, tools/jpport)
+8c7ac048 _errno
+8c1601c4 _ctype
+8c1601c4 _stf
+# events/shared/sdk/_packf.c (the Japanese release's name: _calcfpow calls it)
+0cb8a1f0 _packf

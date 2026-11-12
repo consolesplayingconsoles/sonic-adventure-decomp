@@ -1,0 +1,4 @@
+0cb80a5c p_EfWhiteTask
+0cb80a60 gMaxId
+0cb80a64 gCEventSePP
+0cb80a68 gOneshotId

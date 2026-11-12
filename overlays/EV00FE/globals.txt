@@ -1,0 +1,35 @@
+0cbe6748 p_MoveObjTask
+8cb84be0 EV_Alife_dest
+8cb84bea EV_Alife_draw
+8cb84cc2 EV_Alife_exec
+8cb84de0 EV_Alife_cons
+8cb87360 execMoveObjTask
+8cb87b02 dispMoveObjTask
+8cb87b06 destMoveObjTask
+8cb88154 CSkyWalk_cons2
+0cbe6840 object_skywalk_cl
+0cbe6794 gCEventSePP
+0cbe6790 gMaxId
+0cbe6798 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb9ca44 event_look_clear
+0cb89368 event_camera_release
+0cb89358 con_regular_texlist
+0cbccaa0 event_chaos0_task
+0cbc13ac event_chaos0_hop1_action
+0cbb1ccc draw_attr_set
+0cbe6874 event_chaos7_task
+0cbcd15c event_eggmobile_texlist
+0cbcceec event_eggmobile_nozzle
+0cbccef8 event_eggmobile_glare_aim
+0cbccf04 event_eggmobile_actions
+0cbccf48 event_eggmobile_welds
+0cbccfc0 event_eggmobile_task
+# events/shared/white.c (the Japanese release's names, tools/jpport)
+0cbccda4 event_white
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbe6770 event_fade_corners
+# events/shared/chao.c (the Japanese release's names, tools/jpport)
+0cbd8cec event_chao_texlist
+0cbdb734 event_chao_object
+0cbdb700 event_chao_body

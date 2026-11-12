@@ -1,0 +1,8 @@
+0cb90f3c gCEventSePP
+0cb90f38 gMaxId
+0cb90f40 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb90f10 event_movers
+0cb822b4 event_set_ang
+0cb90f08 event_move
+0cb8a728 event_run_to_speed

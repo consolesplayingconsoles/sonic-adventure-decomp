@@ -1,0 +1,25 @@
+0cbddacc effect_anim
+0cbddc0c p_MoveObjTask
+8cb847c0 execMoveObjTask
+8cb84f62 dispMoveObjTask
+8cb84f66 destMoveObjTask
+0cbe2748 object_skywalk_cl
+0cbddc58 gCEventSePP
+0cbddc54 gMaxId
+0cbddc5c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbb1920 ev00d0_frog_action_1
+0cbba9f0 event_voice_play
+0cbbbe54 event_run_to
+0cb86390 event_run_clear
+0cbe1ae8 event_frog_object
+0cbddd14 event_frog_welds
+0cbddce8 event_frog_models
+0cbddd24 event_frog_collision
+0cbddd58 event_frog
+0cbdd5fc event_chaos0_task
+0cbd1f08 event_chaos0_hop1_action
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbddc34 event_fade_corners
+# events/shared/sprite.c (the Japanese release's names, tools/jpport)
+0cbdd96c event_sprite_slots

@@ -26,3 +26,10 @@ __pycache__/
 *.orig
 # case-file backups the retest tool leaves behind
 *.json.old
+# generated per overlay (tools/overlay/in.sh, the checker)
+overlays/*/symbols.txt
+overlays/*/state/
+# C units of the overlays: written from overlays/src/ and overlays/units.tsv when building (tools/overlay/place_units.py)
+overlays/*/src/
+# an overlay's load address for the shared tools, written by tools/overlay/in.sh from overlays.tsv
+overlays/*/BASE

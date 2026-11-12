@@ -1,0 +1,20 @@
+0cbeae24 p_MoveObjTask
+8cb83480 execMoveObjTask
+8cb83c22 dispMoveObjTask
+8cb83c26 destMoveObjTask
+0cbeaf50 gParticleInfo
+0cbeaf1c object_skywalk_cl
+0cbeae70 gCEventSePP
+0cbeae6c gMaxId
+0cbeae74 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb84518 event_sound_init
+0cb8b720 event_talk_stop
+0cba2908 event_message_close
+0cb9151c event_picture_set_depth
+0cb8565c event_message_show
+0cbeadbc event_black_colors
+0cbeadcc event_black_polygon
+0cbeadec event_black
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbeae4c event_fade_corners

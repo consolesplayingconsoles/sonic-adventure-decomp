@@ -1,0 +1,5 @@
+0cb89f0c gCEventSePP
+0cb89f08 gMaxId
+0cb89f10 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb84b98 event_message_wait

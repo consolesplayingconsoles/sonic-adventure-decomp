@@ -1,0 +1,10 @@
+0cb8d720 gCEventSePP
+0cb8d71c gMaxId
+0cb8d724 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb816c8 ev009a_shadow
+0cb816c4 event_reset_player
+0cb86bb4 event_message_close
+0cb8d718 event_white
+# events/shared/rays.c (the Japanese release's names, tools/jpport)
+0cb8d714 event_rays

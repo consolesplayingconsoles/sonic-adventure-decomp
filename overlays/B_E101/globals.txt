@@ -1,0 +1,11 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0c94113c hover_dust
+0c91b3d4 shapes
+0c91b43c actions
+0c91eb84 head_object
+0c94117c missile_shape
+0c91b6c4 e101_texlist
+0c9241a8 e101_missile_object
+# modules/b_e101/missile.c (the Japanese release's names, tools/jpport)
+0c941178 e101_missile_count
+0c9411b0 missile_exhaust

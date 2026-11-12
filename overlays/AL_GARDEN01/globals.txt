@@ -1,0 +1,11 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8dfc0 egg_carrier_garden_sky_texlist
+0cb8c748 sea_materials
+0cb81d00 sea_materials_2
+0cb8924c sea_materials_3
+0cb86510 wave_materials
+0cb905e4 egg_carrier_garden_sky_object
+# modules/al_garden01/garden.c (the Japanese release's names, tools/jpport)
+0c910d52 alife_create
+0c904420 garden_camera_step
+0c900ba8 alife_chao_create_garden

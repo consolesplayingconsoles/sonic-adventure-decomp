@@ -1,0 +1,8 @@
+0cb8a494 gCEventSePP
+0cb8a490 gMaxId
+0cb8a498 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb80d80 event_sound_init
+0cb869fc task_kill
+# events/shared/white.c (the Japanese release's names, tools/jpport)
+0cb8a48c event_white

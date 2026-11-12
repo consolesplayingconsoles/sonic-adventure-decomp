@@ -1,0 +1,11 @@
+0cb93ae4 gCEventSePP
+0cb93ae0 gMaxId
+0cb93ae8 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb93ad8 event_scanlines
+0cb93adc event_scanlines_row
+0cb8211c event_scanlines_height
+0cb82118 event_scanlines_width
+0cb81c60 event_sound_init
+0cb8bd20 event_message_close
+0cb93ad4 event_noise_task

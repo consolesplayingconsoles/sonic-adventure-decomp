@@ -701,6 +701,19 @@ class CPU:
             return
 
 
+_ALSO = None
+
+
+def also():
+    """Code that is in memory on every run, from the JSON file SH4SIM_ALSO names ({hex address: hex bytes}); nothing when the variable is
+    not set. An overlay's calls into the compiler's runtime helpers, which live in the main executable (tools/overlay/in.sh sets it)."""
+    global _ALSO
+    if _ALSO is None:
+        p = os.environ.get('SH4SIM_ALSO')
+        _ALSO = [(int(a, 16), bytes.fromhex(b)) for a, b in json.load(open(p)).items()] if p else []
+    return _ALSO
+
+
 def run(case, case_dir='.', code=None, deep=False, entry=None, end=None, argc=None, stackfill=None):
     """Run one case. code = (address, bytes) puts other code (a compiled C unit) at its address;
     entry/end then name the function inside it (default: all of it). deep: True runs every call;
@@ -712,6 +725,8 @@ def run(case, case_dir='.', code=None, deep=False, entry=None, end=None, argc=No
     path = lambda p: p if os.path.isabs(p) else os.path.join(case_dir, p)
     if case.get('dump'):
         mem.load(RAM_LO, open(path(case['dump']), 'rb').read())
+    for a, data in also():
+        mem.load(a, data)
     if case.get('exe'):
         mem.load(int(case['base'], 16), open(path(case['exe']), 'rb').read())
     if code:

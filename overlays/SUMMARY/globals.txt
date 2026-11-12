@@ -1,0 +1,25 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+8c9091cc picture_files
+8c90e1e0 picture_color
+8c90e1d8 picture_texlist
+8c90e1dc picture_parts
+8c9094c0 picture_texlists
+8c90963c picture_parts_table
+8c909658 picture_colors
+8c90e1ec tutorial_phase
+8c90e1f0 tutorial_back_texlist
+8c90e1f8 tutorial_menu_task
+8c90e1e4 tutorial_fade
+8c90e1e8 tutorial_fade_step
+8c90e1f4 menu_create
+8c9a6b94 menu_result
+8c909700 tutorial_controls_voices
+8c9091bc summary_end_flags
+8c909168 summary_scripts
+8c909780 back_files
+8c909944 back_texlists
+8c909974 controls_pages
+8c90995c game_pages
+8c9a6f10 tutorial_pos
+8c90e21c advertise_font_loaded
+8c90e220 advertise_font_current

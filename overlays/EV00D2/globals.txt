@@ -1,0 +1,9 @@
+0cb89cac gCEventSePP
+0cb89ca8 gMaxId
+0cb89cb0 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb81ce0 event_take_control
+0cb81f5c ev00d2_frog_texlist
+0cb83cb4 ev00d2_frog_action_1
+0cb88224 event_sound_play
+0cb89c80 event_movers

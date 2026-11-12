@@ -1,0 +1,26 @@
+0c938644 tikal_now
+8c959158 egm3_sippo_pos
+8c95918c egm3_taskptr
+8c959190 egm3koma_taskptr
+8c959198 egm3_sippo_ang
+8c95a1f8 adx_narasitaka
+8c95b11c eggman_taskptr
+8c938648 adx_table
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0c956fbc shard_matrices
+0c95701c floor_panel_texlists
+0c938c38 shard_nodes
+0c938c3c end_shard_nodes
+0c938c40 shard_speeds
+0c938c70 shard_spins
+0c938ca0 shard_models
+0c938cb0 end_shard_models
+0c957690 shake_heights
+0c938298 segment_kinds
+0c95804c event_segment_kinds
+0c958038 event_viper_modes
+0c956f88 egg_viper_objects
+0c94e808 egm3mdl_texlist
+0c956fb8 egg_viper_eggman_motions
+0c957730 blast_beam_params
+0c959118 unit_z

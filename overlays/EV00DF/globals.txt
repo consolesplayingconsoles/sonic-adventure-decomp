@@ -1,0 +1,16 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb9cb78 event_frog_object
+0cb98da4 event_frog_welds
+0cb98e4c event_frog_texlist
+0cb98d5c event_frog_made
+0cb98d78 event_frog_models
+0cb98d40 event_frog_shape_points
+0cb98d24 event_frog_scripts
+0cb98db4 event_frog_collision
+0cb98de8 event_frog
+0cb98cec event_chaos6_task
+0cb816e0 ev00df_frog
+0cb853b0 ev00df_big_action_1
+0cb8a900 ev00df_frog_texlist
+0cb90964 ev00df_frog_action_1
+0cb98cc4 ev00df_sonic_action_1

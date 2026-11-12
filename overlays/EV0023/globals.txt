@@ -1,0 +1,14 @@
+0cb9a2a4 gCEventSePP
+0cb9a2a0 gMaxId
+0cb9a2a8 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb83680 event_sound_init
+0cb9a2ac event_stopwatch
+0cb8e774 event_eggmobile_texlist
+0cb8e504 event_eggmobile_nozzle
+0cb8e510 event_eggmobile_glare_aim
+0cb8e51c event_eggmobile_actions
+0cb8e560 event_eggmobile_welds
+0cb8e5d8 event_eggmobile_task
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb9a280 event_fade_corners

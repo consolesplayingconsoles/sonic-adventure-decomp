@@ -1,0 +1,3 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb81f4c ev0028_sonic_action_5
+0cb99654 event_movers

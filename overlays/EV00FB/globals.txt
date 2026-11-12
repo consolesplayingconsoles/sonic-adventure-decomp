@@ -1,0 +1,11 @@
+0cbae21c gCEventSePP
+0cbae218 gMaxId
+0cbae220 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb811e0 event_sound_init
+0cb88f84 event_camera_set_pos
+0cb90f28 event_clear_motions
+0cb8458c event_pads_on
+0cb99e9c event_kill_player
+# events/shared/prop.c (the Japanese release's names, tools/jpport)
+0cbae1f0 event_props

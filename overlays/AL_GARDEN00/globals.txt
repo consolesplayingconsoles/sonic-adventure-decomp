@@ -1,0 +1,15 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb94cfc fountain_uv_speed
+0cb94990 fountain_object
+0cb91eb8 garden_objects_texlist
+0cb94450 elevator_object
+0cb94b90 elevator_shapes
+0cb92adc garden_door_action
+0cb94d00 garden_door_shapes
+0cb94dd0 garden_door_posts
+0cb91388 water_material
+# modules/al_garden00/garden.c (the Japanese release's names, tools/jpport)
+0c910d52 alife_create
+0c904420 garden_camera_step
+0c901d40 alife_save
+0c900ba8 alife_chao_create_garden

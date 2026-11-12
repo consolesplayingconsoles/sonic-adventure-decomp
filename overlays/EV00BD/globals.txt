@@ -1,0 +1,17 @@
+8cb80c60 draw_e101factory
+0cbb9884 object_skywalk_cl
+0cbb97d8 gCEventSePP
+0cbb97d4 gMaxId
+0cbb97dc gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb879ac event_pads_on
+0cb8eb8c ev00bd_factory_texlist
+0cb8d374 ev00bd_factory_parts
+0cb8d394 ev00bd_factory_pieces
+0cb8d3b4 ev00bd_factory_machines
+0cb8d3e4 ev00bd_factory
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbb97b4 event_fade_corners
+# events/shared/claw.c (the Japanese release's names, tools/jpport)
+0cb8d43c event_claw_texlist
+0cb8e6a4 event_claw_nodes

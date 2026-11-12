@@ -1,0 +1,18 @@
+0cba3844 gCEventSePP
+0cba3840 gMaxId
+0cba3848 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cba3814 ev00fa_splash_ripples_task
+0cb9ad74 ev00fa_splash_ripples_action
+0cb99be8 ev00fa_splash_texlist
+0cb9a448 ev00fa_splash_ripples_object
+0cb9ad68 ev00fa_splash_ripples_motion
+0cba3808 ev00fa_splash_ripples_shape
+0cba3818 ev00fa_splash_column_task
+0cb9aa0c ev00fa_splash_column_object
+0cb9afd0 ev00fa_splash_ring_action
+0cba381c ev00fa_splash_task
+0cb8a7cc event_kill_player
+0cb99b9c event_props
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cba3820 event_fade_corners
