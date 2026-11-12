@@ -1,2 +1,136 @@
 0cab21cc adxflag
 0cab4a9c ccinfo
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cab3df8 street_light_shape
+0cab3e40 street_light_glow
+0ca972b8 ss_kanban_texlist
+0ca96bd8 shop1_sign_object
+0cab1ccc shop1_sign_shape
+0ca64564 folding_door_action
+0cab519c container_big_shape
+0cab51d0 container_shape
+0ca836e8 target_fence_object
+0cab3f68 fence_target_shape
+0ca83b8c fence_target_object
+0cab541c office_time_table
+0cab54dc office_night_lights
+0cab5438 casino_time_table
+0cab54a4 station_time_table
+0cab5704 station_night_lights
+0cab54d4 hotel_time_table
+0cab1784 egg_stand_swapped_shape
+0ca7e0bc egg_stand_object
+0ca7e600 fake_egg_object
+0cab4650 land_anims
+0cb32eb8 walk_routes
+0cb32ccc walker_models
+0cb2c548 walker_shapes
+0cb32f5c walker_move_steps
+0cab26b0 casino_button_step
+0cab5910 chao_card_shapes
+0cab450c highway_shutter_broken_wall
+0cab42cc highway_shutter_wall
+0ca87094 hidden_door_object
+0cab5980 hidden_door_shapes
+0cab4ca4 station_back_shapes
+0caadfc4 station_back_object
+0cb2c5b0 people_count
+0cb354f4 people_lists
+0cb331d8 people_kinds
+0cab4a00 barricade_shapes
+0ca9b040 sscar_texlist
+0ca89dc0 barricade_barrier_object
+0ca9f390 police_car_object
+0ca6c3fc twinkle_elevator_object
+0cab17b8 twinkle_elevator_shape
+0cab58dc power_box_shape
+0cab466c planets_shape
+0ca85a20 planets_object
+0cab19f4 folding_door_shapes
+0ca734bc clock_object
+0ca86b2c ice_stone_action
+0cab4e44 ice_stone_shapes
+0ca8937c key_block_object
+0cab5204 key_block_full_shape
+0cab5238 key_block_empty_shape
+0cab526c key_block_loose_shapes
+0cab1c44 shop1_lamp_glow
+0ca97280 ss_dentou_texlist
+0ca97228 shop1_lamp_object
+0ca8b0d8 kart_pass_object
+0cab4ee8 kart_pass_shapes
+0cb2c024 ss_people_texlist
+0cac9e40 mannequin_object
+0cb1fb04 mannequin_motion
+0cb32778 njUnitMatrix
+0cab4540 parked_car_shape
+0caa17c4 parked_car_object
+0cab152c prop_bottle_shape
+0ca6e048 prop_bottle_object
+0ca699d4 twinkle_a_door_action
+0ca74290 shop1_salt_object
+0cab28e4 traffic_groups
+0cab27e4 car_kinds
+0cab2714 car_shapes
+0cab270c traffic_roads
+0cab2914 car_lookaheads
+0cab26f4 car_colors
+0cab4fc8 office_barricade_shape
+0cab4ffc office_barricade_wall_shape
+0ca77e84 shop2_frame_object
+0cab1af8 shop1_chairs_shapes
+0ca76218 shop1_chair_object
+0caa4fd4 ss_casino_texlist
+0ca68a94 shop2_door_action
+0cab1ec0 shop2_door_wall
+0ca8bdb4 ss_train_texlist
+0ca95fd0 train_action
+0ca963c8 train_floor_object
+0cab1fc4 train_car_shapes
+0ca5eb60 ss_bg_texlist
+0ca5e2d0 station_square_sky_models
+0cab22d4 twinkle_handrail_shapes
+0ca7edf0 real_egg_object
+0ca75364 signal_object
+0cab1f90 signal_shape
+0ca73ba4 shop2_fence_object
+0cab1ef4 shop2_fence_shapes
+0ca78bb0 elevator_sign_object
+0caac5f0 casino_ornament_object
+0caa9448 casino_lamps_object
+0cab46a0 casino_ornament_parts
+0cab233c back_door_shape
+0cab1c64 shop1_door_shapes
+0ca88a34 elevator_object
+0cab4704 elevator_shapes
+0ca6d950 highway_elevator_object
+0cab4808 highway_elevator_shapes
+0caae0ac ss_twins_texlist
+0cab490c twinkle_light_textures
+0caaeebc twinkle_light_object
+0cab4918 twinkle_light_places
+# modules/adv00/elevator_sign.c (the Japanese release's names, tools/jpport)
+8c090500 story_get_time
+# modules/adv00/script_knuckles_highway.c (the Japanese release's names, tools/jpport)
+8c0904b2 story_set_time
+# modules/adv00/kart_sign.c (the Japanese release's names, tools/jpport)
+0caaedb8 kart_sign_object
+# modules/adv00/pole.c (the Japanese release's names, tools/jpport)
+0ca64a30 pole_object
+0cab1ac4 pole_shape
+# modules/adv00/twinkle_sign.c (the Japanese release's names, tools/jpport)
+0caae724 twinkle_sign_object
+# modules/adv00/street_light.c (the Japanese release's names, tools/jpport)
+0ca7dde8 street_light_object
+# modules/adv00/shop2_fossil.c (the Japanese release's names, tools/jpport)
+0ca769f8 shop2_fossil_object
+# modules/adv00/shop2_robot.c (the Japanese release's names, tools/jpport)
+0ca77904 shop2_robot_object
+# modules/adv00/twinkle_handrail.c (the Japanese release's names, tools/jpport)
+0ca79cd4 twinkle_handrail_object
+# modules/adv00/power_box.c (the Japanese release's names, tools/jpport)
+0ca8ac88 power_box_object
+# modules/adv00/egg_stand.c (the Japanese release's names, tools/jpport)
+0ca7e6f0 egg_stand_solid_object
+# modules/adv00/back_door.c (the Japanese release's names, tools/jpport)
+0ca6a900 back_door_action

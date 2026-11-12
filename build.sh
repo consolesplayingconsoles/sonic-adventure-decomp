@@ -29,14 +29,18 @@ if [ "${1:-}" = --overlay ]; then       # an overlay is built in its own folder,
   SHCT="Z:\\tmp\\shc_$OV"           # the compiler cannot open its temp files under a long path: a short one, one per overlay
 fi
 mkdir -p build/obj
+# shc's include folders: the unit's own src/, and the source tree's roots where the repo has them (src, modules, events, sdk:
+# the headers of C that keeps its original layout); an overlay builds in its own folder, two levels down
+P=""; [ -n "$OV" ] && P="..\\..\\"
+INC="-include=src"; for d in src modules events sdk/include sdk; do [ -d "$R/$d" ] && [ -n "$(ls "$R/$d"/*/ 2>/dev/null)$(ls "$R/$d"/*.h 2>/dev/null)" ] && INC="$INC,$P${d//\//\\}"; done
 # C units (src/*.c starting with /* @unit <start>-<end> [@data <dstart>-<dend>] [shc options] */)
 # replace the asm files in their range(s);
 # symbols.txt gives the linker the addresses of globals they use that no file defines.
 {
   printf '%s\n' elf "start P($BASE)" "output build\\out.elf"
   python3 "$R/tools/1-2-baseline/units.py" objects.txt | while read -r o; do printf 'input %s\n' "$o"; done
-  if ls src/*.c >/dev/null 2>&1; then
-    grep -hoE '[A-Za-z_][A-Za-z0-9_]*' $(grep -l '@unit' src/*.c 2>/dev/null) /dev/null | sort -u > build/c_idents.txt || true
+  if [ -n "$(grep -rl --include="*.c" "@unit" src 2>/dev/null)" ]; then
+    grep -hoE '[A-Za-z_][A-Za-z0-9_]*' $(grep -rl --include='*.c' '@unit' src 2>/dev/null) /dev/null | sort -u > build/c_idents.txt || true
     if [ -n "$OV" ]; then python3 "$R/tools/overlay/link_defs.py" "$OV" build/c_idents.txt
     elif [ -f symbols.txt ]; then awk 'NR==FNR{u[$1]=1; next} !/^#/ && NF==2 && ($2 in u) {printf "define _%s(%s)\n", $2, $1}' build/c_idents.txt symbols.txt; fi
   fi
@@ -47,6 +51,7 @@ python3 "$R/tools/1-2-baseline/units.py" --units > build/units.txt
 # The steps, run with $T = the tools folder and the repo as the working directory.
 STEPS='
   set -e
+  export FILL_IMAGE="$IMG" FILL_BASE="$B"      # the original bytes a unit keeps (+asmfunc) come from this image
   tool() { find "$T" -maxdepth 1 -iname "$1.exe" -print -quit; }
   n=0; i=0; total=$(wc -l < objects.txt | tr -d " ")
   echo "Assembling $total files (first build: a few minutes; later builds: only changed files)"
@@ -65,21 +70,37 @@ STEPS='
   case "$SHCT" in Z:*tmp*shc_*) mkdir -p "/tmp/${SHCT##*\\}";; esac
   while read -r name start end dstart dend opts; do
     [ -n "$name" ] || continue
-    o="build/obj/c_$name.obj"
-    fillopts=""; shcopts=""; for x in $opts; do case "$x" in +*) fillopts="$fillopts --${x#+}";; *) shcopts="$shcopts $x";; esac; done
+    on="${name//\//_}"; sw="${name//\//\\}"      # a unit in a folder of src/: objects named after its path
+    o="build/obj/c_$on.obj"
+    flags="$(cat "$R/tools/1-2-baseline/shc_flags.txt")"; fillopts=""; shcopts=""; shc="$(tool shc)"; shcw="$TW"; pieces=""
+    for x in $opts; do case "$x" in
+      +*flags) f="${x#+}"; f="$R/tools/1-2-baseline/shc_flags.${f%flags}.txt"       # opt-in (+egflags ...): another set in place of shc_flags.txt
+        [ -f "$f" ] || { echo "[ERROR] unit $name: no $f for $x"; exit 1; }
+        flags="$(cat "$f")";;
+      +r04) [ -n "$R04" ] || { echo "[ERROR] unit $name asks for SHC 5.1r04 (+r04): set SDK_R04_PATH (see README)"; exit 1; }
+        shc="$(find "$R04" -maxdepth 1 -iname shc.exe -print -quit)"; shcw="$R04W";;
+      @ddata=*|@bdata=*) k="${x#@}"; k="${k%%data=*}"; r="${x#*=}"; pieces="$pieces $k"
+        fillopts="$fillopts --${k}sec=build/obj/c_${on}_${k}data.s:${r%-*}:${r#*-}";;
+      +*) fillopts="$fillopts --${x#+}";;
+      *) shcopts="$shcopts $x";; esac; done
+    [ -z "$pieces" ] || fillopts="$fillopts --name=$on"
     if [ ! -f "$o" ] || [ "src/$name.c" -nt "$o" ] || [ src -nt "$o" ]; then
-      SHC_LIB="$TW" SHC_INC="$TW" SHC_TMP="$SHCT" wibo "$(tool shc)" "src\\$name.c" -code=asm -object="build\\obj\\c_$name.s" \
-        $(cat "$R/tools/1-2-baseline/shc_flags.txt") $shcopts > build/shc.log 2>&1 || { cat build/shc.log; exit 1; }
-      # code at <start>-<end>; with @data, the constant data (C section) as its own piece at <dstart>-<dend>
+      SHC_LIB="$shcw" SHC_INC="$shcw" SHC_TMP="$SHCT" wibo "$shc" "src\\$sw.c" -code=asm -object="build\\obj\\c_$on.s" \
+        ${flags%%-include=*} $INC $shcopts > build/shc.log 2>&1 || { cat build/shc.log; exit 1; }
+      # code at <start>-<end>; with @data, the constant data (C section) as its own piece at <dstart>-<dend>; @ddata/@bdata the D and B sections
       if [ "$dstart" = - ]; then
-        python3 "$R/tools/1-2-baseline/fill.py" "build/obj/c_$name.s" "build/obj/c_${name}_f.s" "$start" "$end" $fillopts || exit 1
+        python3 "$R/tools/1-2-baseline/fill.py" "build/obj/c_$on.s" "build/obj/c_${on}_f.s" "$start" "$end" $fillopts || exit 1
       else
-        python3 "$R/tools/1-2-baseline/fill.py" "build/obj/c_$name.s" "build/obj/c_${name}_f.s" "$start" "$end" \
-          "build/obj/c_${name}_data.s" "$dstart" "$dend" "$name" $fillopts || exit 1
-        wibo "$(tool asmsh)" "build\\obj\\c_${name}_data.s" -object="build\\obj\\c_${name}_data.obj" -cpu=sh4 -endian=little > build/asm.log 2>&1 \
-          || { cat build/asm.log; exit 1; }
+        python3 "$R/tools/1-2-baseline/fill.py" "build/obj/c_$on.s" "build/obj/c_${on}_f.s" "$start" "$end" \
+          "build/obj/c_${on}_data.s" "$dstart" "$dend" "$on" $fillopts || exit 1
+        pieces="$pieces _"
       fi
-      wibo "$(tool asmsh)" "build\\obj\\c_${name}_f.s" -object="build\\obj\\c_$name.obj" -cpu=sh4 -endian=little > build/asm.log 2>&1 \
+      for k in $pieces; do
+        p="c_${on}_${k#_}data"; [ "$k" = _ ] && p="c_${on}_data"
+        wibo "$(tool asmsh)" "build\\obj\\$p.s" -object="build\\obj\\$p.obj" -cpu=sh4 -endian=little > build/asm.log 2>&1 \
+          || { cat build/asm.log; exit 1; }
+      done
+      wibo "$(tool asmsh)" "build\\obj\\c_${on}_f.s" -object="build\\obj\\c_$on.obj" -cpu=sh4 -endian=little > build/asm.log 2>&1 \
         || { cat build/asm.log; exit 1; }
       echo "  compiled C unit $name"
     fi
@@ -94,13 +115,15 @@ if [ "${DC_LOCAL:-0}" = 1 ]; then
   command -v wibo >/dev/null || { echo "[ERROR] DC_LOCAL=1 needs wibo on PATH (github.com/decompals/wibo, Linux x86_64)"; exit 1; }
   TW="Z:$(printf '%s' "$SDK_PATH/$TOOLS_REL" | tr / '\\')"     # wibo maps Z:\ to /
   [ -n "$OV" ] || SHCT="build\\tmp"     # Z:\app is the container's mount: here the repo's own build/tmp
-  T="$SDK_PATH/$TOOLS_REL" TW="$TW" B="$BASE" R="$R" SHCT="$SHCT" OV="$OV" bash -c "$STEPS" </dev/null
+  R04="${SDK_R04_PATH:-}"; R04W=""; [ -n "$R04" ] && R04W="Z:$(printf '%s' "$R04" | tr / '\\')"
+  T="$SDK_PATH/$TOOLS_REL" TW="$TW" B="$BASE" IMG="$IMG" R="$R" SHCT="$SHCT" OV="$OV" INC="$INC" R04="$R04" R04W="$R04W" bash -c "$STEPS" </dev/null
 else
   . "$R/tools/docker_check.sh"
   docker_ready "$R/tools/tools-image" || exit 1      # builds the dc-tools image (wibo) on first use
   IMAGE="${DC_TOOLS_IMAGE:-dc-tools}"
   TW="Z:$(printf '%s' "/sdk/$TOOLS_REL" | tr / '\\')"
-  docker run --rm -v "$SDK_PATH":/sdk:ro -v "$R":/app -w "/app${OV:+/overlays/$OV}" -e T="/sdk/$TOOLS_REL" -e TW="$TW" -e B="$BASE" -e R=/app -e SHCT="$SHCT" -e OV="$OV" "$IMAGE" bash -c "$STEPS" </dev/null
+  docker run --rm -v "$SDK_PATH":/sdk:ro -v "$R":/app -w "/app${OV:+/overlays/$OV}" -e T="/sdk/$TOOLS_REL" -e TW="$TW" -e B="$BASE" -e R=/app -e SHCT="$SHCT" -e OV="$OV" -e IMG="$IMG" -e INC="$INC" \
+    ${SDK_R04_PATH:+-v "$SDK_R04_PATH":/r04:ro -e R04=/r04 -e R04W='Z:\\r04'} "$IMAGE" bash -c "$STEPS" </dev/null
 fi
 if cmp -s build/out.bin "$IMG"; then
   echo "MATCH: build/out.bin is byte-identical to $IMG"

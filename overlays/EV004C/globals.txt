@@ -1,3 +1,13 @@
 0cba77b8 gCEventSePP
 0cba77b4 gMaxId
 0cba77bc gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cba776c event_dust_ring_task
+0cb85754 ev004c_carry
+0cb8c938 event_lightning_kill
+0cb9bd70 event_message_close
+0cba7728 ev004c_fade
+0cba7770 event_lightning_sprite
+0cba7790 event_lightning_task
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cba7794 event_fade_corners

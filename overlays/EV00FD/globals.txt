@@ -8,3 +8,22 @@
 0cbcb598 gCEventSePP
 0cbcb594 gMaxId
 0cbcb59c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbcb50c event_highway_texlist
+0cbcb448 event_highway_object
+0cbcb514 event_highway
+0cb9f91c event_prop_create
+0cbb2b20 stream_stop_music
+0cb9f818 event_orbit_create
+0cbc0530 event_dome_texlist
+0cbb4514 event_eggmobile_nozzle
+0cbb4520 event_eggmobile_glare_aim
+0cbb452c event_eggmobile_actions
+0cbb4570 event_eggmobile_welds
+0cbb45e8 event_eggmobile_task
+0cbcb588 event_orbit_task
+0cbcb678 event_chaos7_task
+# events/shared/prop.c (the Japanese release's names, tools/jpport)
+0cbcb518 event_props
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbcb568 event_fade_corners

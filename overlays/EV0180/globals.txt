@@ -5,3 +5,5 @@
 0cb94118 gCEventSePP
 0cb94114 gMaxId
 0cb9411c gOneshotId
+# events/shared/prop.c (the Japanese release's names, tools/jpport)
+0cb940c4 event_props

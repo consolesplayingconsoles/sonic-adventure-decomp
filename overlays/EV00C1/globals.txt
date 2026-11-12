@@ -1,0 +1,9 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb9e2c4 event_eggmobile_texlist
+0cb9e054 event_eggmobile_nozzle
+0cb9e060 event_eggmobile_glare_aim
+0cb9e06c event_eggmobile_actions
+0cb9e0b0 event_eggmobile_welds
+0cb9e128 event_eggmobile_task
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cba9dd0 event_fade_corners

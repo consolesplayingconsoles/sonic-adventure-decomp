@@ -1,6 +1,6 @@
 /* @unit 0CB82B60-0CB82F80 -speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume */
 /* Event sound effects: one id per sound, each a task that eases its volume, pan and pitch toward a target. Sonic Adventure DC's own se.c, read
-   from the code. The sound state lives in the task's work, from +16. */
+   from the code with sadx-decomp's event/src/se.c (SADX's C, read as text) as the guide. The sound state lives in the task's work, from +16. */
 
 typedef int Sint32;
 typedef struct task task;

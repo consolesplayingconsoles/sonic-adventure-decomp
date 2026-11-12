@@ -1,0 +1,5 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb83ba0 event_sprite_frames
+0cb83a40 event_sprite_slots
+# events/shared/sprite.c (the Japanese release's names, tools/jpport)
+8c19bbb0 njLoadTexture

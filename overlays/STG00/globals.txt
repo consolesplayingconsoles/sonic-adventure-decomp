@@ -1,1 +1,8 @@
 8c92f6d4 mogura_data
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0c92ee50 mole_best
+0c92ef5c mole_breaks
+0c92f358 mole_panel_points
+0c912c48 mole_texlist
+0c92f088 mole_font
+0c92f398 mole_scroll_texanim

@@ -2,3 +2,8 @@
 8cb82d20 execMoveObjTask
 8cb834c2 dispMoveObjTask
 8cb834c6 destMoveObjTask
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cba953c event_fade_in_corners
+0cba955c event_fade_in
+0cb856f8 event_create_player
+0cba3904 event_wait_motions

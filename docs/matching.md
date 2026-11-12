@@ -3,7 +3,33 @@
 What it took to rebuild source files of Sonic Adventure DC byte for byte, and what is still open. The binary is the authority throughout:
 a unit counts only when `build.sh` (1ST_READ.BIN) or `build_overlays.sh` (an overlay, [overlays.md](overlays.md)) prints `MATCH` from a clean build.
 
-The units are built with SHC 5.1 Release 13 (`SDK_PATH`); SHC 5.0 Release 32 lays out `adxb_get.c` 8 bytes longer.
+The units are built with SHC 5.1 Release 13 (`SDK_PATH`); SHC 5.0 Release 32 lays out `adxb_get.c` 8 bytes longer. Most of the game's own
+code matches the older SHC 5.1 Release 4 instead: a unit with `+r04` in its header is compiled by it (`SDK_R04_PATH` in `.env`: the folder
+that holds its `shc.exe`; the build stops with a message when a unit needs it and it is not set).
+
+## The source tree of the Japanese release
+
+Most of the matching C comes from the matching decompilation of the Japanese release (reshaped/sonic-adventure), ported to this release
+function by function: the same source file, the changes this release made to it (a guard, a constant, a function added or gone, the order
+of the functions), and the names this repo gives (the Sonic Adventure DX names where they exist). Such a unit keeps the original tree:
+`src/<dir>/<file>.c` for 1ST_READ.BIN, `modules/<dir>/<file>.c` and `events/<dir>/<file>.c` for the overlays (stored once, placed in each
+overlay by `overlays/units.tsv`, see [overlays.md](overlays.md)), and the headers they include beside them, with `sdk/` for the library
+headers. `build.sh` gives shc those folders to include from. Data the Japanese build generates from the disc (its `.inc` files) is not
+in the tree: where a unit needs a value it is written in place, and the rest of the data stays the original bytes.
+
+Some ported units are still the port's preprocessed text (`src/jp_<dir>_<file>.c`, and `overlays/src/` files named so): the source's
+headers inlined, because a change of this release lies in a header or a name in a header means two functions here. They match all the same.
+
+Where the C names a function or a global otherwise than the tables, the name is in `symbols.txt` (an overlay: `symbols.local.txt`) at
+the same address, for the link and for `fill.py`.
+
+Header options these units use, besides the layout ones below:
+- `+egflags`, `+jpflags`, `+spflags`, `+rtflags`: another set of shc flags in place of `tools/1-2-baseline/shc_flags.txt`
+  (`shc_flags.eg.txt` ...): the European game code's, the Japanese game code's, the game's other speed-built files, the C runtime's.
+- `@ddata <a>-<b>`, `@bdata <a>-<b>`: the unit's initialised and zeroed variables (D and B sections) as pieces of their own at those ranges.
+- `+asmfunc=f[:end]`: one function whose C does not give the original's register choices stays the original's bytes inside the unit.
+- `+poolkeep=`, `+poolbra=`, `+brafpool=`, `+onepool`, `+hoist` and others: where the original link put a literal pool; `fill.py`'s
+  docstring says what each does. None of them changes a unit that does not ask for it.
 
 ## The game's layout (`tools/1-2-baseline/fill.py` options, in the `@unit` header)
 

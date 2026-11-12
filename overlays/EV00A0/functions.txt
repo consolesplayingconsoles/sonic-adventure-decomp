@@ -13,9 +13,10 @@ F 0cb80a26 44 EventSe_Volume
 F 0cb80a80 44 EventSe_Pan
 F 0cb80aac 44 EventSe_Pitch
 F 0cb80ad8 88 EventSe_Oneshot
-D 0cb80b60 0 data_0cb80b60
-F 0cb80bf8 28 FUN_0cb80bf8
+F 0cb80b60 152 FUN_0cb80b60
+F 0cb80bf8 28 event_rays_kill
 F 0cb80c14 14 initCrushLightTask
 F 0cb80c22 68 execCrushLightTask
 F 0cb80c66 18 destCrushLightTask
+F 0cb80cc0 2 FUN_0cb80cc0
 F 0cb80cd0 4 FUN_0cb80cd0

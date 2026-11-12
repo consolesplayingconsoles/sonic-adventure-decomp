@@ -6,3 +6,18 @@
 0cbbe608 gCEventSePP
 0cbbe604 gMaxId
 0cbbe60c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb86030 event_wait_motions
+0cbb0398 ev004b_claw
+0cbacb48 e102_texlist
+0cbb1424 event_sound_stop
+0cbb1570 event_eggmobile_nozzle
+0cbb157c event_eggmobile_glare_aim
+0cbb1588 event_eggmobile_actions
+0cbb15cc event_eggmobile_welds
+0cbb1644 event_eggmobile_task
+# events/shared/claw.c (the Japanese release's names, tools/jpport)
+0cbbd340 event_claw_texlist
+0cbbe5a8 event_claw_nodes
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbbe5e4 event_fade_corners

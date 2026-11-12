@@ -1,3 +1,10 @@
 0cb8bc74 gCEventSePP
 0cb8bc70 gMaxId
 0cb8bc78 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8bc48 event_movers
+0cb81e24 ev00d9_frog_texlist
+0cb8bbec event_camera_set_pos
+# events/ev00e3/frog.c (the Japanese release's names, tools/jpport)
+0cb8bc04 ev00e3_frog_welds
+0cb8bc14 ev00e3_frog_collision

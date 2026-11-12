@@ -1,3 +1,6 @@
 0cb95b44 gCEventSePP
 0cb95b40 gMaxId
 0cb95b48 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb80a5c event_sound_init
+0cb80a54 event_play_pad

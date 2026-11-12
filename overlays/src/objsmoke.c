@@ -1,5 +1,5 @@
 /* @unit 0CB85860-0CB85990 -speed +pool32 */
-/* Smoke puffs in events. Sonic Adventure DC's own objsmoke.c, written from the code. */
+/* Smoke puffs in events. Sonic Adventure DC's own objsmoke.c, written from the code with sadx-decomp's event/src/objsmoke.c (SADX's C, read as text) as the guide. */
        
 typedef unsigned char Uint8;
 typedef signed char Sint8;

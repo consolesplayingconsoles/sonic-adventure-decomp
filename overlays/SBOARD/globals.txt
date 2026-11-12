@@ -1,0 +1,36 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0c907ba8 rolling_rock_desc
+0c97bca0 rolling_rock_roll
+0c96e01c sand_rocky_head_object
+0c97bc40 slide
+0c96ea40 sand_jump_object
+0c90a5b8 act_parent_desc
+0c97c030 act_parent
+0c90a5d0 sun_pos
+0c90a5dc gate_combo_desc
+0c97c034 gate_combo
+0c90a5f4 gate_combo_white
+0c90a604 gate_combo_none
+0c90a614 gate_combo_pri
+0c97c04c gate_combo_sprite
+0c907bf4 small_cactus_collision
+0c9725d4 small_cactus_piece_object
+0c907bf0 sand_gate_collision
+0c905e1c big_cactus_collision
+0c975a2c sand_worm_segment_desc
+0c975e44 rumble_near_camera
+0c90a280 sand_worm_smoke_ang
+0c90a274 sand_worm_falloff
+0c97c010 sand_smoke_sprite
+# modules/sboard/gate_combo.c (the Japanese release's names, tools/jpport)
+0c97c038 gate_combo_frame
+# modules/sboard/sand_frog.c (the Japanese release's names, tools/jpport)
+8c5661a8 big_kaeru_texlist
+8c568028 big_kaeru_object
+# modules/sboard/sand_rock.c (the Japanese release's names, tools/jpport)
+8c09fc4c object_force_clear
+# modules/sboard/big_cactus.c (the Japanese release's names, tools/jpport)
+0c905e20 big_cactus_desc
+0c97bba8 big_cactus_a
+0c97bbec big_cactus_b
+0c97bc30 big_cactus_c

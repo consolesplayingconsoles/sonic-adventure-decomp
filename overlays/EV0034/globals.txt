@@ -9,3 +9,48 @@
 0cc00168 gCEventSePP
 0cc00164 gMaxId
 0cc0016c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbfee28 jet_long_objects
+0cb8b8e4 jet_textures
+0cb8b8bc jet_texture_timers
+0cb8b910 jet_glow_frames
+0cb8b904 jet_glow_intervals
+0cb8b8f8 jet_glow_timers
+0cb8b880 jet_glow_anim
+0cbfee44 event_jet_glow_texlist
+0cbfee3c event_jet_texlist
+0cbfd764 jet_ring_object
+0cbfd9f0 jet_cone_object
+0cbfe12c jet_core_object
+0cbfdc48 jet_plus_x_object
+0cbfdea0 jet_minus_x_object
+0cbdc958 event_eggmobile_nozzle
+0cbdc964 event_eggmobile_glare_aim
+0cbdc970 event_eggmobile_actions
+0cbdc9b4 event_eggmobile_welds
+0cbdca2c event_eggmobile_task
+0cbf17fc event_eggman_body_texlist
+0cbf1720 event_eggman_body_object
+0cbed744 event_hornet_texlist
+0cbee158 event_hornet_action
+0cbed5e4 event_hornet_object
+0cbdc50c event_chaos1_task
+0cbdc504 event_chaos1_action
+0cbdc660 event_chaos1_welds
+0cbabfd4 ev0034_eggmobile_action_7
+0cb8bb2c ev0034_smoke_0
+0cb8bb34 ev0034_smoke_2
+0cb8ea34 event_sound_stop
+0cba7d88 tails_stand_action
+0cbdcc30 ev0034_scorched_texlist
+0cbdca30 scorched_actions
+0cbdca74 scorched_welds
+0cbcb404 event_chaos0_task
+0cbbfd10 event_chaos0_hop1_action
+# events/shared/claw.c (the Japanese release's names, tools/jpport)
+0cbfeea0 event_claw_texlist
+0cc00108 event_claw_nodes
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cc00144 event_fade_corners
+# events/shared/rays.c (the Japanese release's names, tools/jpport)
+0cbdc810 event_rays

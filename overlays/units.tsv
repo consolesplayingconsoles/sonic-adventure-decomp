@@ -1,213 +1,1046 @@
-# overlay	unit (overlays/src/<unit>.c)	start	end: the range of each copy; build.sh --overlay writes overlays/<overlay>/src/<unit>.c from it
-ADV00	o_carrier_sidelift	0C90B520	0C90B580
-ADV0100	o_carrier_sidelift	0C928880	0C9288E0
-ADV0100	o_eggcarrier_eggcap	0C9254A4	0C9254A8
-ADV0100	o_eggcarrier_itembox	0C925EF6	0C925EFA
-ADV0100	o_eggcarrier_palmbase	0C92BA80	0C92BB00
-ADV02	o_mysticruin_eggmandoor	0C90700E	0C907012
-B_EGM3	egm3	0C903744	0C903748
-EV0001	event_se	0CB82B60	0CB82F80
-EV0001	skywalk	0CB82F80	0CB830C0
-EV0001	tikallight	0CB830C0	0CB83210
-EV0002	event_se	0CB825A0	0CB829C0
-EV0002	skywalk	0CB829C0	0CB82B00
-EV0003	event_se	0CB81100	0CB81520
-EV0006	event_se	0CB81240	0CB81660
-EV0007	event_se	0CB87AE0	0CB87F00
-EV0007	objsmoke	0CB85860	0CB85990
-EV0008	event_se	0CB896E0	0CB89B00
-EV0008	objsmoke	0CB893E0	0CB89510
-EV0009	capturebeam	0CB810E0	0CB810E4
-EV0009	event_se	0CB84C80	0CB850A0
-EV000B	capturebeam	0CB82500	0CB82504
-EV000B	objsmoke	0CB87540	0CB87670
-EV000C	capturebeam	0CB80EE0	0CB80EE4
-EV000D	event_se	0CB82000	0CB82420
-EV0011	event_se	0CB80BC0	0CB80FE0
-EV0013	event_se	0CB824C0	0CB828E0
-EV0016	capturebeam	0CB812A0	0CB812A4
-EV0016	event_se	0CB82D60	0CB83180
-EV0017	event_se	0CB82560	0CB82980
-EV001A	event_se	0CB85BA0	0CB85FC0
-EV001A	skywalk	0CB85FC0	0CB86100
-EV001C	event_se	0CB83320	0CB83740
-EV001D	skywalk	0CB83120	0CB83260
-EV001E	event_se	0CB84BA0	0CB84FC0
-EV001E	tikallight	0CB851A0	0CB852F0
-EV0020	event_se	0CB822C0	0CB826E0
-EV0020	tikallight	0CB81E00	0CB81F50
-EV0021	event_se	0CB806A0	0CB80AC0
-EV0022	event_se	0CB81040	0CB81460
-EV0023	event_se	0CB83080	0CB834A0
-EV0024	event_se	0CB81DA0	0CB821C0
-EV0026	objsmoke	0CB852C0	0CB853F0
-EV0029	event_se	0CB83DE0	0CB84200
-EV0030	event_se	0CB861C0	0CB865E0
-EV0030	objsmoke	0CB82D60	0CB82E90
-EV0031	event_se	0CB809C0	0CB80DE0
-EV0031	objsmoke	0CB806C0	0CB807F0
-EV0033	event_se	0CB87AA0	0CB87EC0
-EV0033	objsmoke	0CB877A0	0CB878D0
-EV0034	event_se	0CB89C80	0CB8A0A0
-EV0034	objsmoke	0CB89980	0CB89AB0
-EV0035	capturebeam	0CB810A0	0CB810A4
-EV0035	event_se	0CB84F00	0CB85320
-EV0039	capturebeam	0CB82440	0CB82444
-EV0039	objsmoke	0CB87480	0CB875B0
-EV003A	capturebeam	0CB84820	0CB84824
-EV003B	event_se	0CB82180	0CB825A0
-EV003E	event_se	0CB81120	0CB81540
-EV0042	event_se	0CB81BA0	0CB81FC0
-EV0044	event_se	0CB80600	0CB80A20
-EV0045	event_se	0CB81060	0CB81480
-EV0046	event_se	0CB82540	0CB82960
-EV0047	event_se	0CB85AA0	0CB85EC0
-EV0048	event_se	0CB826C0	0CB82AE0
-EV004B	event_se	0CB85860	0CB85C80
-EV004B	skywalk	0CB85C80	0CB85DC0
-EV004C	event_se	0CB821E0	0CB82600
-EV004D	event_se	0CB89D60	0CB8A180
-EV004D	objsmoke	0CB86B80	0CB86CB0
-EV004E	event_se	0CB83280	0CB836A0
-EV004E	objsmoke	0CB82F80	0CB830B0
-EV0050	event_se	0CB85160	0CB85580
-EV0051	event_se	0CB80DC0	0CB811E0
-EV0054	event_se	0CB83DE0	0CB84200
-EV0055	event_se	0CB80800	0CB80C20
-EV0055	tikallight	0CB80C20	0CB80D70
-EV0058	event_se	0CB803A0	0CB807C0
-EV0060	event_se	0CB83F60	0CB84380
-EV0060	objsmoke	0CB83C60	0CB83D90
-EV0060	skywalk	0CB84380	0CB844C0
-EV0061	event_se	0CB83000	0CB83420
-EV0062	event_se	0CB82700	0CB82B20
-EV0063	event_se	0CB82EC0	0CB832E0
-EV0064	event_se	0CB82DC0	0CB831E0
-EV0066	event_se	0CB81F60	0CB82380
-EV0066	tikallight	0CB81E00	0CB81F50
-EV0067	event_se	0CB819E0	0CB81E00
-EV0068	event_se	0CB84980	0CB84DA0
-EV0069	event_se	0CB85980	0CB85DA0
-EV006A	event_se	0CB83220	0CB83640
-EV006C	event_se	0CB805C0	0CB809E0
-EV006D	event_se	0CB82BC0	0CB82FE0
-EV006E	event_se	0CB80500	0CB80920
-EV006F	event_se	0CB818E0	0CB81D00
-EV0070	event_se	0CB81860	0CB81C80
-EV0071	event_se	0CB858C0	0CB85CE0
-EV0072	event_se	0CB86420	0CB86840
-EV0080	event_se	0CB85200	0CB85620
-EV0080	objsmoke	0CB84F00	0CB85030
-EV0080	tikallight	0CB85800	0CB85950
-EV0083	event_se	0CB80780	0CB80BA0
-EV0083	tikallight	0CB80620	0CB80770
-EV0084	event_se	0CB806A0	0CB80AC0
-EV0085	event_se	0CB80A20	0CB80E40
-EV0086	event_se	0CB806A0	0CB80AC0
-EV0088	event_se	0CB810E0	0CB81500
-EV008B	capturebeam	0CB82600	0CB82604
-EV008B	objsmoke	0CB87640	0CB87770
-EV008C	capturebeam	0CB80EC0	0CB80EC4
-EV008D	event_se	0CB80500	0CB80920
-EV008D	tikallight	0CB80920	0CB80A70
-EV008E	event_se	0CB805A0	0CB809C0
-EV008F	event_se	0CB81400	0CB81820
-EV0091	event_se	0CB83CC0	0CB840E0
-EV0095	event_se	0CB806A0	0CB80AC0
-EV0095	tikallight	0CB80AC0	0CB80C10
-EV0096	event_se	0CB80660	0CB80A80
-EV0097	event_se	0CB82180	0CB825A0
-EV0098	event_se	0CB807E0	0CB80C00
-EV009A	event_se	0CB80E00	0CB81220
-EV009D	event_se	0CB81B00	0CB81F20
-EV00A0	event_se	0CB80740	0CB80B60
-EV00B0	event_se	0CB81840	0CB81C60
-EV00B1	event_se	0CB80900	0CB80D20
-EV00B3	event_se	0CB809C0	0CB80DE0
-EV00B4	event_se	0CB824A0	0CB828C0
-EV00B4	objsmoke	0CB82360	0CB82490
-EV00B5	event_se	0CB82260	0CB82680
-EV00B7	event_se	0CB82E00	0CB83220
-EV00B7	skywalk	0CB83220	0CB83360
-EV00B8	event_se	0CB80560	0CB80980
-EV00B8	tikallight	0CB80980	0CB80AD0
-EV00B9	event_se	0CB809E0	0CB80E00
-EV00BA	event_se	0CB838C0	0CB83CE0
-EV00BB	capturebeam	0CB81BE0	0CB81BE4
-EV00BB	event_se	0CB83A80	0CB83EA0
-EV00BC	event_se	0CB80440	0CB80860
-EV00BD	event_se	0CB814C0	0CB818E0
-EV00BD	skywalk	0CB818E0	0CB81A20
-EV00C2	event_se	0CB86840	0CB86C60
-EV00C2	objsmoke	0CB86540	0CB86670
-EV00C3	event_se	0CB86180	0CB865A0
-EV00C5	event_se	0CB807C0	0CB80BE0
-EV00C7	event_se	0CB84F40	0CB85360
-EV00C7	objsmoke	0CB84A40	0CB84B70
-EV00D0	event_se	0CB85160	0CB85580
-EV00D0	skywalk	0CB85AA0	0CB85BE0
-EV00D2	event_se	0CB818C0	0CB81CE0
-EV00D3	event_se	0CB82080	0CB824A0
-EV00D9	event_se	0CB81860	0CB81C80
-EV00DA	event_se	0CB80BA0	0CB80FC0
-EV00DA	tikallight	0CB80780	0CB808D0
-EV00DB	event_se	0CB80580	0CB809A0
-EV00DC	event_se	0CB810E0	0CB81500
-EV00DD	event_se	0CB80A40	0CB80E60
-EV00DE	event_se	0CB87540	0CB87960
-EV00E3	event_se	0CB819C0	0CB81DE0
-EV00F0	event_se	0CB80760	0CB80B80
-EV00F2	event_se	0CB82EE0	0CB83300
-EV00F3	event_se	0CB839C0	0CB83DE0
-EV00F4	skywalk	0CB80A20	0CB80B60
-EV00F5	event_se	0CB86A80	0CB86EA0
-EV00F5	tikallight	0CB83880	0CB839D0
-EV00F6	event_se	0CB805C0	0CB809E0
-EV00F7	event_se	0CB85300	0CB85720
-EV00F8	event_se	0CB81380	0CB817A0
-EV00F9	event_se	0CB80A40	0CB80E60
-EV00FA	event_se	0CB818A0	0CB81CC0
-EV00FB	event_se	0CB80DC0	0CB811E0
-EV00FD	event_se	0CB87700	0CB87B20
-EV00FD	skywalk	0CB87B20	0CB87C60
-EV00FD	tikallight	0CB88040	0CB88190
-EV00FE	event_se	0CB87D00	0CB88120
-EV00FE	skywalk	0CB88120	0CB88260
-EV00FF	event_se	0CB83920	0CB83D40
-EV00FF	skywalk	0CB83D40	0CB83E80
-EV0142	event_se	0CB80BE0	0CB81000
-EV0160	event_se	0CB857C0	0CB85BE0
-EV0165	event_se	0CB80560	0CB80980
-EV0165	tikallight	0CB80400	0CB80550
-EV0166	event_se	0CB80740	0CB80B60
-EV0166	tikallight	0CB805E0	0CB80730
-EV0167	event_se	0CB810E0	0CB81500
-EV0167	tikallight	0CB80F80	0CB810D0
-EV0168	event_se	0CB80560	0CB80980
-EV0168	tikallight	0CB80400	0CB80550
-EV0169	event_se	0CB80540	0CB80960
-EV0169	tikallight	0CB803E0	0CB80530
-EV016A	event_se	0CB83360	0CB83780
-EV016A	tikallight	0CB83780	0CB838D0
-EV016B	event_se	0CB83340	0CB83760
-EV016B	tikallight	0CB83760	0CB838B0
-EV016C	event_se	0CB83340	0CB83760
-EV016C	tikallight	0CB83760	0CB838B0
-EV016D	event_se	0CB832E0	0CB83700
-EV016D	tikallight	0CB83700	0CB83850
-EV016E	event_se	0CB83320	0CB83740
-EV016E	tikallight	0CB83740	0CB83890
-EV016F	event_se	0CB83320	0CB83740
-EV016F	tikallight	0CB83740	0CB83890
-EV0170	event_se	0CB832E0	0CB83700
-EV0170	tikallight	0CB83700	0CB83850
-EV0171	event_se	0CB832E0	0CB83700
-EV0171	tikallight	0CB83700	0CB83850
-EV0180	event_se	0CB81840	0CB81C60
-MINICART	o_twinkle_rocket	0C916360	0C9163A0
-SHOOTING	sht_score	0C9014E0	0C9014E4
-SHOOTING	sht_target	0C902EAA	0C902EAE
-SHOOTING	sht_tenkyu	0C903E68	0C903E6C
-STG03	o_twinkle_catapult	0C903320	0C903324
-STG03	o_twinkle_rocket	0C914640	0C914680
-STG12	o_carrier_sidelift	0C90C1A0	0C90C200
+# overlay	unit (the one stored copy: a source of the original tree, or overlays/src/<unit>.c)	start	end	options: build.sh --overlay writes overlays/<overlay>/src/ from these rows (tools/overlay/place_units.py)
+ADV00	modules/adv00/back_door.c	0C9055E0	0C905980	+r04 +egflags +pool32 +poolafter=back_door_close,back_door_locked
+ADV00	modules/adv00/barricade.c	0C90B960	0C90BC00	@data 0CB3289C-0CB328B0 +jpflags +pool32
+ADV00	modules/adv00/egg_stand.c	0C9012A0	0C901600	+r04 +egflags +asmfunc=egg_stand_destroy:0c901600
+ADV00	modules/adv00/elevator_sign.c	0C901600	0C901740	+jpflags +pool32
+ADV00	modules/adv00/folding_door.c	0C9028E0	0C902C40	+r04 +egflags +pool32 +poolafter=folding_door_close,folding_door_idle
+ADV00	modules/adv00/hotel_doors.c	0C90BC00	0C90C340	+r04 +egflags +pool32 +poolafter=hotel_door_draw,hotel_door_close,hotel_door_idle,ObjectSSHotelfront +asmfunc=station_door_unlocked:0c90bcf4
+ADV00	modules/adv00/kart_sign.c	0C9027C0	0C9028E0	@data 0CB32728-0CB3273C +egflags +pool32
+ADV00	overlays/src/lead_adv00_jp_adv00_land_anim.c	0C90A200	0C90A380	+r04 +egflags +pool32 +asmfunc=FUN_0c90a292:0c90a37a
+ADV00	modules/adv00/planets.c	0C90A380	0C90A600	+egflags +pool32
+ADV00	modules/adv00/pole.c	0C902C40	0C902D20	+egflags +pool32
+ADV00	modules/adv00/power_box.c	0C90EC00	0C90ED00	+egflags +pool32
+ADV00	modules/adv00/script_amy_opening.c	0C912BA0	0C912C60	@ddata 0CB2E680-0CB2E688 +r04 +egflags +pool32
+ADV00	modules/adv00/script_knuckles_highway.c	0C9129A0	0C912AA0	+egflags +pool32
+ADV00	modules/adv00/script_sonic_highway.c	0C912540	0C912600	@ddata 0CB2E648-0CB2E650 +r04 +egflags +pool32
+ADV00	modules/adv00/script_sonic_opening.c	0C911F00	0C911F80	@ddata 0CB2E610-0CB2E618 +r04 +egflags +pool32
+ADV00	modules/adv00/script_sonic_twinkle.c	0C912460	0C912524	@ddata 0CB2E640-0CB2E648 +r04 +egflags
+ADV00	modules/adv00/script_tails_opening.c	0C912600	0C9126C8	@ddata 0CB2E650-0CB2E658 +r04 +egflags
+ADV00	modules/adv00/shop1_chairs.c	0C902D20	0C902E20	+jpflags +pool32
+ADV00	modules/adv00/shop1_salt.c	0C9035C0	0C9036E0	+egflags +pool32
+ADV00	modules/adv00/shop1_sign.c	0C903460	0C9035C0	+egflags +pool32
+ADV00	modules/adv00/shop2_fossil.c	0C900560	0C9005E0	+egflags +pool32
+ADV00	modules/adv00/shop2_frame.c	0C903C40	0C903D00	+egflags +pool32
+ADV00	modules/adv00/shop2_robot.c	0C903D00	0C903DC0	+egflags +pool32
+ADV00	modules/adv00/street_light.c	0C9088E0	0C908B80	+egflags +pool32
+ADV00	modules/adv00/twinkle_handrail.c	0C9054E0	0C9055E0	+egflags +pool32
+ADV00	modules/adv00/twinkle_sign.c	0C9053C0	0C9054E0	@data 0CB32750-0CB32764 +egflags +pool32
+ADV00	overlays/src/sx_unit_0c928880.c	0C90B520	0C90B580	+pool32
+ADV0100	modules/adv0100/back_fire.c	0C92CC60	0C92CD00	+jpflags
+ADV0100	modules/adv0100/beach_chair.c	0C924220	0C924380	+r04 +egflags +pool32
+ADV0100	modules/adv0100/book.c	0C9240C0	0C924220	+egflags +pool32
+ADV0100	modules/adv0100/countdown.c	0C92CD00	0C92CD80	+jpflags +pool32
+ADV0100	modules/adv0100/egg_cap.c	0C925340	0C925560	+r04 +egflags +pool32 +poolafter=ObjectECEggmanCap
+ADV0100	modules/adv0100/eggman_bed.c	0C924380	0C9244C0	+egflags +pool32
+ADV0100	modules/adv0100/heli.c	0C925D80	0C925E60	+egflags +pool32
+ADV0100	modules/adv0100/living_light.c	0C9267A0	0C926920	@data 0CB2C224-0CB2C248 +r04 +egflags +pool32
+ADV0100	modules/adv0100/mast.c	0C92C100	0C92C360	+r04 +egflags +pool32 +asmfunc=ObjectECMast:0c92c266
+ADV0100	modules/adv0100/move_seat.c	0C926920	0C926BA0	+egflags +pool32
+ADV0100	modules/adv0100/palm.c	0C926BA0	0C926CA0	+egflags +pool32
+ADV0100	modules/adv0100/parasol.c	0C9244C0	0C9245C0	+egflags +pool32
+ADV0100	modules/adv0100/pool_door.c	0C929DA0	0C929FA0	@data 0CB2C394-0CB2C3B8 +egflags +pool32
+ADV0100	modules/adv0100/pool_water.c	0C929FA0	0C92A1D8	+r04 +egflags +onepool +asmfunc=pool_water_destroy:0c92a146
+ADV0100	modules/adv0100/propeller.c	0C929C40	0C929DA0	@data 0CB2C370-0CB2C394 +egflags +pool32
+ADV0100	modules/adv0100/saturn.c	0C925160	0C925340	+r04 +egflags +pool32 +poolafter=saturn_draw +asmfunc=saturn_init:0c925208
+ADV0100	overlays/src/sx_unit_0c925ef6.c	0C925EF6	0C925EFA	+pool32
+ADV0100	overlays/src/sx_unit_0c928880.c	0C928880	0C9288E0	+pool32
+ADV0100	overlays/src/sx_unit_0c92ba80.c	0C92BA80	0C92BB00	+pool32
+ADV0130	modules/adv0130/batten.c	0C9252C0	0C925460	+r04 +egflags +poolafter=DisplayBlock +asmfunc=ObjectECDoorBlock_sub:0c925460
+ADV0130	modules/adv0130/booster.c	0C925FE0	0C9261C0	+egflags +pool32
+ADV0130	modules/adv0130/bridge.c	0C922780	0C922A60	+egflags +pool32
+ADV0130	modules/adv0130/container.c	0C925580	0C925640	+egflags +pool32
+ADV0130	modules/adv0130/hall_duct.c	0C922A60	0C922B40	+jpflags +pool32
+ADV0130	modules/adv0130/hall_lights.c	0C92AE00	0C92AF60	+r04 +egflags +pool32
+ADV0130	modules/adv0130/reservoir.c	0C922FC0	0C9231E0	+egflags +pool32
+ADV02	modules/adv02/dig_place_1.c	0C904840	0C904D60	+r04 +egflags +pool32 +poolafter=dig_place_1_init,dig_place_1_update +asmfunc=dig_place_1_init:0c904892,DesertATask:0c9048ae,FUN_0c9048ae:0c904900,FUN_0c904900:0c904a20
+ADV02	modules/adv02/dig_place_2.c	0C904E80	0C9051A0	+r04 +egflags +pool32
+ADV02	modules/adv02/knuckles_statue.c	0C90B3C0	0C90B620	+egflags +pool32
+ADV02	modules/adv02/ladder.c	0C90C6A0	0C90C900	+egflags +pool32
+ADV02	modules/adv02/long_ladder.c	0C9119E0	0C911CA0	+egflags +pool32
+ADV02	modules/adv02/runway.c	0C90BA60	0C90BD00	+r04 +egflags +pool32
+ADV02	modules/adv02/script_amy_go_egg_carrier.c	0C915580	0C915640	+jpflags +pool32
+ADV02	modules/adv02/script_big_opening.c	0C915A20	0C915AA0	@ddata 0CB39528-0CB39530 +r04 +egflags +pool32
+ADV02	modules/adv02/script_e102_go_egg_carrier.c	0C915980	0C915A20	@ddata 0CB39520-0CB39528 +r04 +egflags +pool32
+ADV02	modules/adv02/script_e102_mountain.c	0C9158A0	0C915980	@ddata 0CB39518-0CB39520 +r04 +egflags +pool32
+ADV02	modules/adv02/script_sonic_ending.c	0C914880	0C914900	+jpflags +pool32
+ADV02	modules/adv02/station_door.c	0C90B800	0C90B900	+r04 +egflags +pool32
+ADV02	modules/adv02/tornado2.c	0C911CA0	0C911D60	+jpflags +pool32
+ADV02	modules/adv02/workshop_door.c	0C90D4C0	0C90D7E0	+r04 +egflags +pool32 +poolafter=workshop_door_reset,workshop_door_draw +asmfunc=ObjectMysticRuinTailsDoor:0c90d576
+ADV02	overlays/src/sx_unit_0c90700e.c	0C90700E	0C907012	+pool32
+ADV03	modules/adv03/burning.c	0C902A60	0C902CA0	+jpflags +pool32
+ADV03	modules/adv03/chaos_emerald.c	0C9026C0	0C9027C0	+egflags +pool32
+ADV03	modules/adv03/fall_tree.c	0C9015E0	0C9017A0	+egflags +pool32
+ADV03	modules/adv03/knuckles_lamp.c	0C9027C0	0C902960	+jpflags +pool32
+ADV03	modules/adv03/master_emerald.c	0C9025C0	0C9026C0	+egflags +pool32
+ADV03	modules/adv03/people.c	0C9049A0	0C904F20	+r04 +egflags +pool32 +poolafter=pastpc_init,pastpc_exec
+ADV03	modules/adv03/plants.c	0C901B40	0C901F40	+r04 +egflags +pool32 +poolafter=ShidaDestructor +asmfunc=ObjectPastSotetsu:0c901e2a
+ADV03	modules/adv03/pyramid_snake.c	0C901520	0C9015E0	+egflags +pool32
+ADV03	modules/adv03/scene_change.c	0C9010C0	0C901200	+jpflags +pool32
+ADV03	modules/adv03/script_sonic_fire.c	0C900920	0C9009E0	+egflags +pool32
+ADV03	modules/adv03/smoke.c	0C901F40	0C902440	+jpflags +pool32
+ADV03	modules/adv03/well.c	0C901200	0C9012E0	+jpflags +pool32
+ADVERTISE	modules/advertise/buttons.c	8C900D40	8C900DA0	+egflags +pool32
+ADVERTISE	modules/advertise/emblems.c	8C900CC0	8C900D40	+jpflags +pool32
+ADVERTISE	modules/advertise/sound_config.c	8C900DA0	8C900F00	+r04 +egflags +pool32
+ADVERTISE	modules/advertise/story_progress.c	8C907AC0	8C907B60	+jpflags +pool32
+ADVERTISE	modules/advertise/wheel.c	8C9013E0	8C901440	+jpflags +pool32
+AL_GARDEN00	modules/al_garden00/fountain.c	0CB80768	0CB80940	@data 0CB81168-0CB81174 +egflags +pool32
+AL_GARDEN00	modules/al_garden00/garden.c	0CB80000	0CB80240	@data 0CB8115C-0CB81168 +egflags +pool32
+AL_GARDEN01	modules/al_garden01/garden.c	0CB80000	0CB802A0	@data 0CB8087C-0CB8088C +r04 +egflags +pool32
+AL_MAIN	modules/al_main/sleep.c	0C916B40	0C916D00	+egflags +pool32
+AL_RACE	overlays/src/lead_al_race_jp_al_race_body.c	0CB813C0	0CB8176C	+r04 +egflags +pool32 +poolafter=AL_FaceEyeLidControl +asmfunc=FUN_0cb81642:0cb8176c
+AL_RACE	modules/al_race/bow_chao.c	0CB93820	0CB93A00	@data 0CB9A378-0CB9A390 +r04 +egflags +pool32
+AL_RACE	modules/al_race/cards.c	0CB91E00	0CB92020	+r04 +egflags +pool32
+AL_RACE	modules/al_race/cheer_chao.c	0CB94620	0CB947E0	@data 0CB9A4CC-0CB9A4E4 +r04 +egflags +pool32
+AL_RACE	modules/al_race/course_model.c	0CB966A0	0CB96740	+r04 +egflags +pool32
+AL_RACE	modules/al_race/cycle.c	0CB89B40	0CB89C00	@data 0CB989E0-0CB989F8 +r04 +egflags +pool32
+AL_RACE	modules/al_race/deal.c	0CB91C40	0CB91E00	@data 0CB99644-0CB9965C +egflags +pool32
+AL_RACE	modules/al_race/debug.c	0CB8AF80	0CB8B000	+jpflags +pool32
+AL_RACE	modules/al_race/flag.c	0CB95AA0	0CB95BC0	@data 0CB9A630-0CB9A648 +r04 +egflags +pool32
+AL_RACE	modules/al_race/flower.c	0CB95BC0	0CB95D00	@data 0CB9A64C-0CB9A664 +r04 +egflags +pool32
+AL_RACE	modules/al_race/item.c	0CB89C00	0CB89D60	+r04 +egflags +onepool +asmfunc=zone_get_size:0cb89d60
+AL_RACE	modules/al_race/lamps.c	0CB961E0	0CB96380	+r04 +egflags +pool32
+AL_RACE	modules/al_race/palm.c	0CB96380	0CB9642C	@data 0CB9A7FC-0CB9A814 +r04 +egflags
+AL_RACE	modules/al_race/props.c	0CB96740	0CB96820	@data 0CB9A864-0CB9A87C +r04 +egflags +pool32
+AL_RACE	modules/al_race/race.c	0CB98020	0CB98110	+r04 +egflags
+AL_RACE	modules/al_race/sign.c	0CB960C0	0CB961E0	@data 0CB9A698-0CB9A6B0 +r04 +egflags +pool32
+AL_RACE	modules/al_race/sky.c	0CB92020	0CB92200	@data 0CB99694-0CB996A4 +r04 +egflags +pool32
+AL_RACE	modules/al_race/tune.c	0CB87BE0	0CB87D20	+r04 +egflags +pool32
+AL_RACE	modules/al_race/zone.c	0CB97F60	0CB98020	+r04 +egflags +pool32
+B_CHAOS0	modules/b_chaos0/chaos0.c	0C900280	0C900340	+r04 +egflags +pool32
+B_CHAOS0	modules/b_chaos0/pole.c	0C9051A0	0C905278	+r04 +egflags +pool32
+B_CHAOS2	modules/b_chaos2/camera.c	0C9002C0	0C9003C0	+jpflags +pool32
+B_CHAOS2	modules/b_chaos2/chandelier.c	0C906940	0C906E00	+r04 +egflags +pool32 +asmfunc=chandelier_draw:0c906c40
+B_CHAOS2	modules/b_chaos2/light.c	0C9060C0	0C906240	@ddata 0C963514-0C963524 +egflags +pool32
+B_CHAOS2	modules/b_chaos2/ripple.c	0C906400	0C906580	@ddata 0C964D64-0C964D74 +egflags +pool32
+B_CHAOS2	modules/b_chaos2/trail.c	0C906580	0C9066A0	+jpflags +pool32
+B_CHAOS4	modules/b_chaos4/chaos4.c	0C90701A	0C907158	@data 0C9078CC-0C9078D4 +r04 +egflags +poolafter=bottom_destroy +asmfunc=bottom_destroy:0c907080
+B_CHAOS4	modules/b_chaos4/counts.c	0C905A80	0C905B00	+egflags +pool32
+B_CHAOS4	modules/b_chaos4/surface.c	0C9051E0	0C905360	+egflags +pool32
+B_CHAOS6	modules/b_chaos6/chaos6.c	0C900360	0C900400	+r04 +egflags +pool32
+B_CHAOS6	modules/b_chaos6/debris.c	0C9058A0	0C905C20	+r04 +egflags +pool32
+B_CHAOS6	modules/b_chaos6/smoke.c	0C906A00	0C906AA0	@data 0C907858-0C907874 +jpflags +pool32
+B_CHAOS6	modules/b_chaos6/snow.c	0C903140	0C9031E0	+egflags +pool32
+B_E101	modules/b_e101/e101.c	0C9000E0	0C900160	+r04 +egflags +pool32
+B_E101	overlays/src/jp_b_e101_missile.c	0C902120	0C9028E0	+egflags +pool32
+B_EGM1	modules/b_egm1/camera.c	0C9011C0	0C901320	+egflags +pool32
+B_EGM1	modules/b_egm1/debris.c	0C901C00	0C9020E0	+jpflags +pool32
+B_EGM1	modules/b_egm1/ground.c	0C9042C0	0C904920	+r04 +egflags +pool32
+B_EGM1	modules/b_egm1/music.c	0C904960	0C904A00	+egflags +pool32
+B_EGM1	modules/b_egm1/rumble.c	0C904920	0C904960	+jpflags +pool32
+B_EGM1	modules/b_egm1/shots.c	0C903D40	0C9042C0	+r04 +egflags +pool32
+B_EGM1	overlays/src/lead_b_egm1_jp_b_egm1_util.c	0C901500	0C901C00	+r04 +egflags +pool32 +poolafter=FUN_0c901620 +asmfunc=FUN_0c901840:0c90198a,FUN_0c901ace:0c901b58
+B_EGM2	overlays/src/jp_b_egm2_bombs.c	0C901B40	0C901F60	+egflags +pool32
+B_EGM2	modules/b_egm2/eggman.c	0C903F80	0C903FE0	+jpflags +pool32
+B_EGM2	modules/b_egm2/eggmobile2.c	0C9072E0	0C9073E0	+r04 +egflags +pool32
+B_EGM3	overlays/src/sx_unit_0c903744.c	0C903744	0C903748	+pool32
+B_ROBO	modules/b_robo/banks.c	0C9029C0	0C902C40	@data 0C908D80-0C908D98 +jpflags +pool32
+B_ROBO	modules/b_robo/tuning.c	0C904F00	0C905040	+r04 +egflags +pool32
+EV0001	overlays/src/event_se.c	0CB82B60	0CB82F80	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0001	events/shared/fade.c	0CB829A0	0CB82B60	+egflags +pool32
+EV0001	overlays/src/jp_shared_move.c	0CB81740	0CB821C0	+egflags +pool32 +tail0900
+EV0001	events/shared/mover.c	0CB821C0	0CB82984	+r04 +egflags +asmfunc=execMoveObjTask:0cb82962
+EV0001	overlays/src/skywalk.c	0CB82F80	0CB830C0	-speed +pool32 +synth16
+EV0001	overlays/src/tikallight.c	0CB830C0	0CB83210	+pool32
+EV0002	overlays/src/event_se.c	0CB825A0	0CB829C0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0002	events/shared/fade.c	0CB823E0	0CB825A0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0002	overlays/src/skywalk.c	0CB829C0	0CB82B00	-speed +pool32 +synth16
+EV0003	overlays/src/event_se.c	0CB81100	0CB81520	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0006	overlays/src/event_se.c	0CB81240	0CB81660	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0006	events/shared/fade.c	0CB81080	0CB81240	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0007	overlays/src/event_se.c	0CB87AE0	0CB87F00	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0007	events/shared/claw.c	0CB859A0	0CB85DC0	+r04 +egflags +pool32
+EV0007	events/shared/fade.c	0CB856A0	0CB85860	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0007	events/shared/mover.c	0CB84EC0	0CB85684	+r04 +egflags +asmfunc=execMoveObjTask:0cb85662
+EV0007	events/shared/rays.c	0CB82540	0CB826A0	+egflags +pool32
+EV0007	overlays/src/objsmoke.c	0CB85860	0CB85990	-speed +pool32
+EV0008	overlays/src/event_se.c	0CB896E0	0CB89B00	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0008	events/shared/claw.c	0CB87D60	0CB88180	+egflags +pool32
+EV0008	events/shared/fade.c	0CB89520	0CB896E0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0008	events/shared/move.c	0CB88180	0CB88C00	+egflags +pool32 +tail0900
+EV0008	events/shared/mover.c	0CB88C00	0CB893C4	+r04 +egflags +asmfunc=execMoveObjTask:0cb893a2
+EV0008	events/shared/rays.c	0CB84520	0CB84680	+r04 +egflags +pool32
+EV0008	overlays/src/objsmoke.c	0CB893E0	0CB89510	-speed +pool32
+EV0009	overlays/src/event_se.c	0CB84C80	0CB850A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0009	events/shared/beam.c	0CB810E0	0CB81460	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV0009	events/shared/fade.c	0CB84AC0	0CB84C80	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0009	events/shared/move.c	0CB83860	0CB842E0	+egflags +pool32 +tail0900
+EV0009	events/shared/mover.c	0CB842E0	0CB84AA4	+r04 +egflags +asmfunc=execMoveObjTask:0cb84a82
+EV000B	events/shared/beam.c	0CB82500	0CB82880	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV000B	events/shared/fade.c	0CB87680	0CB87840	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV000B	events/shared/move.c	0CB862E0	0CB86D60	+egflags +pool32 +tail0900
+EV000B	events/shared/mover.c	0CB86D60	0CB87524	+r04 +egflags +asmfunc=execMoveObjTask:0cb87502
+EV000B	events/shared/rays.c	0CB83D80	0CB83EE0	+jpflags +pool32
+EV000B	overlays/src/jp_shared_shapes.c	0CB87840	0CB87898	+egflags
+EV000B	overlays/src/objsmoke.c	0CB87540	0CB87670	-speed +pool32
+EV000C	events/shared/beam.c	0CB80EE0	0CB81260	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV000C	events/shared/move.c	0CB83980	0CB84400	+egflags +pool32 +tail0900
+EV000C	events/shared/mover.c	0CB84400	0CB84BC4	+r04 +egflags +asmfunc=execMoveObjTask:0cb84ba2
+EV000C	events/shared/prop.c	0CB83660	0CB83980	+egflags +pool32
+EV000D	overlays/src/event_se.c	0CB82000	0CB82420	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV000D	events/shared/fade.c	0CB81E40	0CB82000	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV000D	events/shared/move.c	0CB80BE0	0CB81660	+r04 +egflags +pool32 +tail0900
+EV000D	events/shared/mover.c	0CB81660	0CB81E24	+r04 +egflags +asmfunc=execMoveObjTask:0cb81e02
+EV0011	overlays/src/event_se.c	0CB80BC0	0CB80FE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0011	events/shared/fade.c	0CB80A00	0CB80BC0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0012	events/shared/move.c	0CB81120	0CB81BA0	+egflags +pool32 +tail0900
+EV0012	events/shared/mover.c	0CB81BA0	0CB82364	+r04 +egflags +asmfunc=execMoveObjTask:0cb82342
+EV0013	overlays/src/event_se.c	0CB824C0	0CB828E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0013	events/shared/fade.c	0CB82300	0CB824C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0013	events/shared/move.c	0CB810A0	0CB81B20	+egflags +pool32 +tail0900
+EV0013	events/shared/mover.c	0CB81B20	0CB822E4	+r04 +egflags +asmfunc=execMoveObjTask:0cb822c2
+EV0015	events/shared/move.c	0CB80780	0CB81200	+egflags +pool32 +tail0900
+EV0015	events/shared/mover.c	0CB81200	0CB819C4	+r04 +egflags +asmfunc=execMoveObjTask:0cb819a2
+EV0016	overlays/src/event_se.c	0CB82D60	0CB83180	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0016	events/shared/beam.c	0CB812A0	0CB81620	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV0016	events/shared/fade.c	0CB82BA0	0CB82D60	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0016	events/shared/move.c	0CB81940	0CB823C0	+egflags +pool32 +tail0900
+EV0016	events/shared/mover.c	0CB823C0	0CB82B84	+r04 +egflags +asmfunc=execMoveObjTask:0cb82b62
+EV0016	events/shared/prop.c	0CB81620	0CB81940	+egflags +pool32
+EV0017	overlays/src/event_se.c	0CB82560	0CB82980	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0017	events/shared/fade.c	0CB823A0	0CB82560	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0017	events/shared/move.c	0CB81140	0CB81BC0	+egflags +pool32 +tail0900
+EV0017	events/shared/mover.c	0CB81BC0	0CB82384	+r04 +egflags +asmfunc=execMoveObjTask:0cb82362
+EV0017	events/shared/prop.c	0CB80E20	0CB81140	+egflags +pool32
+EV001A	overlays/src/event_se.c	0CB85BA0	0CB85FC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV001A	events/shared/claw.c	0CB84360	0CB84780	+egflags +pool32
+EV001A	events/shared/fade.c	0CB859E0	0CB85BA0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV001A	events/shared/move.c	0CB84780	0CB85200	+egflags +pool32 +tail0900
+EV001A	events/shared/mover.c	0CB85200	0CB859C4	+r04 +egflags +asmfunc=execMoveObjTask:0cb859a2
+EV001A	overlays/src/skywalk.c	0CB85FC0	0CB86100	-speed +pool32 +synth16
+EV001C	overlays/src/event_se.c	0CB83320	0CB83740	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV001D	events/shared/fade.c	0CB83260	0CB83420	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV001D	overlays/src/skywalk.c	0CB83120	0CB83260	-speed +pool32 +synth16
+EV001E	overlays/src/event_se.c	0CB84BA0	0CB84FC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV001E	events/shared/move.c	0CB80A60	0CB814E0	+r04 +egflags +pool32 +tail0900
+EV001E	events/shared/mover.c	0CB814E0	0CB81CA4	+r04 +egflags +asmfunc=execMoveObjTask:0cb81c82
+EV001E	events/shared/sdk/_calcfpow.c	0CB86264	0CB86424	+rtflags +resff
+EV001E	events/shared/sdk/_calcint.c	0CB86424	0CB864D0	+rtflags +resff
+EV001E	overlays/src/lead_ev001e_jp_shared_sdk__fmtin.c	0CB85358	0CB861D8	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb85c28:0cb860a4
+EV001E	events/shared/sdk/_packf.c	0CB864D0	0CB8653C	+rtflags +resff
+EV001E	events/shared/sdk/_stf.c	0CB861D8	0CB86264	+rtflags +resff
+EV001E	events/shared/sdk/sscanf.c	0CB85300	0CB8533C	+rtflags +resff
+EV001E	events/shared/sdk/strchr.c	0CB8533C	0CB85358	+rtflags +resff
+EV001E	overlays/src/tikallight.c	0CB851A0	0CB852F0	+pool32
+EV0020	overlays/src/event_se.c	0CB822C0	0CB826E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0020	events/shared/move.c	0CB80BA0	0CB81620	+egflags +pool32 +tail0900
+EV0020	events/shared/mover.c	0CB81620	0CB81DE4	+r04 +egflags +asmfunc=execMoveObjTask:0cb81dc2
+EV0020	events/shared/white.c	0CB808E0	0CB80BA0	+r04 +egflags +pool32
+EV0020	overlays/src/tikallight.c	0CB81E00	0CB81F50	+pool32
+EV0021	overlays/src/event_se.c	0CB806A0	0CB80AC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0021	overlays/src/lead_ev0021_jp_shared_fade.c	0CB804E0	0CB806A0	+egflags +pool32 +poolafter=FUN_0cb80622
+EV0022	overlays/src/event_se.c	0CB81040	0CB81460	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0022	events/shared/fade.c	0CB80BA0	0CB80D60	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0023	overlays/src/event_se.c	0CB83080	0CB834A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0023	events/shared/fade.c	0CB82EC0	0CB83080	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0024	overlays/src/event_se.c	0CB81DA0	0CB821C0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0024	events/shared/fade.c	0CB81BE0	0CB81DA0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0026	events/shared/fade.c	0CB85400	0CB855C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0026	events/shared/move.c	0CB84060	0CB84AE0	+egflags +pool32 +tail0900
+EV0026	events/shared/mover.c	0CB84AE0	0CB852A4	+r04 +egflags +asmfunc=execMoveObjTask:0cb85282
+EV0026	events/shared/sdk/_calcfpow.c	0CB8963C	0CB897FC	+rtflags +resff
+EV0026	events/shared/sdk/_calcint.c	0CB897FC	0CB898A8	+rtflags +resff
+EV0026	overlays/src/lead_ev0026_jp_shared_sdk__fmtin.c	0CB88730	0CB895B0	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb89000:0cb8947c
+EV0026	events/shared/sdk/_packf.c	0CB898A8	0CB89914	+rtflags +resff
+EV0026	events/shared/sdk/_stf.c	0CB895B0	0CB8963C	+rtflags +resff
+EV0026	events/shared/sdk/sscanf.c	0CB886D8	0CB88714	+rtflags +resff
+EV0026	events/shared/sdk/strchr.c	0CB88714	0CB88730	+rtflags +resff
+EV0026	events/shared/shapes.c	0CB886AC	0CB886D8	+r04 +egflags
+EV0026	overlays/src/objsmoke.c	0CB852C0	0CB853F0	-speed +pool32
+EV0028	events/shared/move.c	0CB80C00	0CB81680	+egflags +pool32 +tail0900
+EV0028	events/shared/mover.c	0CB81680	0CB81E44	+r04 +egflags +asmfunc=execMoveObjTask:0cb81e22
+EV0028	overlays/src/jp_shared_shapes.c	0CB81E60	0CB81EB8	+r04 +egflags
+EV0029	overlays/src/event_se.c	0CB83DE0	0CB84200	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0029	events/shared/sdk/_calcfpow.c	0CB85344	0CB85504	+rtflags +resff
+EV0029	events/shared/sdk/_calcint.c	0CB85504	0CB855B0	+rtflags +resff
+EV0029	overlays/src/lead_ev0029_jp_shared_sdk__fmtin.c	0CB84438	0CB852B8	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb84d08:0cb85184
+EV0029	events/shared/sdk/_packf.c	0CB855B0	0CB8561C	+rtflags +resff
+EV0029	events/shared/sdk/_stf.c	0CB852B8	0CB85344	+rtflags +resff
+EV0029	events/shared/sdk/sscanf.c	0CB843E0	0CB8441C	+rtflags +resff
+EV0029	events/shared/sdk/strchr.c	0CB8441C	0CB84438	+rtflags +resff
+EV002A	events/shared/fade.c	0CB80840	0CB80A00	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV002B	events/shared/move.c	0CB84B00	0CB85580	+egflags +pool32 +tail0900
+EV002B	events/shared/mover.c	0CB85580	0CB85D44	+r04 +egflags +asmfunc=execMoveObjTask:0cb85d22
+EV002B	events/shared/sdk/_calcfpow.c	0CB89F84	0CB8A144	+rtflags +resff
+EV002B	events/shared/sdk/_calcint.c	0CB8A144	0CB8A1F0	+rtflags +resff
+EV002B	overlays/src/lead_ev002b_jp_shared_sdk__fmtin.c	0CB89078	0CB89EF8	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb89948:0cb89dc4
+EV002B	events/shared/sdk/_packf.c	0CB8A1F0	0CB8A25C	+rtflags +resff
+EV002B	events/shared/sdk/_stf.c	0CB89EF8	0CB89F84	+rtflags +resff
+EV002B	events/shared/sdk/sscanf.c	0CB89020	0CB8905C	+rtflags +resff
+EV002B	events/shared/sdk/strchr.c	0CB8905C	0CB89078	+rtflags +resff
+EV0030	overlays/src/event_se.c	0CB861C0	0CB865E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0030	events/ev0030/plane.c	0CB85F40	0CB861C0	+r04 +egflags +pool32
+EV0030	events/shared/fade.c	0CB82EA0	0CB83060	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0030	events/shared/move.c	0CB81B00	0CB82580	+egflags +pool32 +tail0900
+EV0030	events/shared/mover.c	0CB82580	0CB82D44	+r04 +egflags +asmfunc=execMoveObjTask:0cb82d22
+EV0030	events/shared/sdk/_calcfpow.c	0CB87544	0CB87704	+rtflags +resff
+EV0030	events/shared/sdk/_calcint.c	0CB87704	0CB877B0	+rtflags +resff
+EV0030	overlays/src/lead_ev0030_jp_shared_sdk__fmtin.c	0CB86638	0CB874B8	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb86f08:0cb87384
+EV0030	events/shared/sdk/_packf.c	0CB877B0	0CB8781C	+rtflags +resff
+EV0030	events/shared/sdk/_stf.c	0CB874B8	0CB87544	+rtflags +resff
+EV0030	events/shared/sdk/sscanf.c	0CB865E0	0CB8661C	+rtflags +resff
+EV0030	events/shared/sdk/strchr.c	0CB8661C	0CB86638	+rtflags +resff
+EV0030	overlays/src/objsmoke.c	0CB82D60	0CB82E90	-speed +pool32
+EV0031	overlays/src/event_se.c	0CB809C0	0CB80DE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0031	events/ev0031/prop.c	0CB80600	0CB806C0	+egflags +pool32
+EV0031	events/shared/fade.c	0CB80800	0CB809C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0031	overlays/src/objsmoke.c	0CB806C0	0CB807F0	-speed +pool32
+EV0033	overlays/src/event_se.c	0CB87AA0	0CB87EC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0033	events/shared/claw.c	0CB86120	0CB86540	+r04 +egflags +pool32
+EV0033	events/shared/fade.c	0CB878E0	0CB87AA0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0033	events/shared/move.c	0CB86540	0CB86FC0	+egflags +pool32 +tail0900
+EV0033	events/shared/mover.c	0CB86FC0	0CB87784	+r04 +egflags +asmfunc=execMoveObjTask:0cb87762
+EV0033	events/shared/rays.c	0CB828E0	0CB82A40	+egflags +pool32
+EV0033	overlays/src/objsmoke.c	0CB877A0	0CB878D0	-speed +pool32
+EV0034	overlays/src/event_se.c	0CB89C80	0CB8A0A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0034	events/ev0034/scorched.c	0CB854C0	0CB856E0	+egflags +pool32
+EV0034	events/shared/claw.c	0CB88300	0CB88720	+egflags +pool32
+EV0034	events/shared/fade.c	0CB89AC0	0CB89C80	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0034	events/shared/move.c	0CB88720	0CB891A0	+egflags +pool32 +tail0900
+EV0034	events/shared/mover.c	0CB891A0	0CB89964	+r04 +egflags +asmfunc=execMoveObjTask:0cb89942
+EV0034	events/shared/rays.c	0CB848A0	0CB84A00	+r04 +egflags +pool32
+EV0034	overlays/src/objsmoke.c	0CB89980	0CB89AB0	-speed +pool32
+EV0035	overlays/src/event_se.c	0CB84F00	0CB85320	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0035	events/shared/beam.c	0CB810A0	0CB81420	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV0035	events/shared/fade.c	0CB84D40	0CB84F00	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0035	events/shared/move.c	0CB83AE0	0CB84560	+egflags +pool32 +tail0900
+EV0035	events/shared/mover.c	0CB84560	0CB84D24	+r04 +egflags +asmfunc=execMoveObjTask:0cb84d02
+EV0035	events/shared/white.c	0CB81420	0CB816E0	+r04 +egflags +pool32
+EV0039	events/shared/beam.c	0CB82440	0CB827C0	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV0039	events/shared/fade.c	0CB875C0	0CB87780	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0039	events/shared/move.c	0CB86220	0CB86CA0	+egflags +pool32 +tail0900
+EV0039	events/shared/mover.c	0CB86CA0	0CB87464	+r04 +egflags +asmfunc=execMoveObjTask:0cb87442
+EV0039	events/shared/rays.c	0CB83CC0	0CB83E20	+jpflags +pool32
+EV0039	overlays/src/jp_shared_shapes.c	0CB87780	0CB877D8	+egflags
+EV0039	overlays/src/objsmoke.c	0CB87480	0CB875B0	-speed +pool32
+EV003A	events/shared/beam.c	0CB84820	0CB84BA0	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV003A	events/shared/move.c	0CB835C0	0CB84040	+egflags +pool32 +tail0900
+EV003A	events/shared/mover.c	0CB84040	0CB84804	+r04 +egflags +asmfunc=execMoveObjTask:0cb847e2
+EV003A	events/shared/prop.c	0CB832A0	0CB835C0	+egflags +pool32
+EV003B	overlays/src/event_se.c	0CB82180	0CB825A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV003B	events/shared/fade.c	0CB81FC0	0CB82180	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV003B	events/shared/move.c	0CB80D60	0CB817E0	+egflags +pool32 +tail0900
+EV003B	events/shared/mover.c	0CB817E0	0CB81FA4	+r04 +egflags +asmfunc=execMoveObjTask:0cb81f82
+EV003B	events/shared/prop.c	0CB80A40	0CB80D60	+r04 +egflags +pool32
+EV003E	overlays/src/event_se.c	0CB81120	0CB81540	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV003E	events/shared/fade.c	0CB80F60	0CB81120	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0042	overlays/src/event_se.c	0CB81BA0	0CB81FC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0042	events/shared/move.c	0CB80940	0CB813C0	+egflags +pool32 +tail0900
+EV0042	events/shared/mover.c	0CB813C0	0CB81B84	+r04 +egflags +asmfunc=execMoveObjTask:0cb81b62
+EV0044	overlays/src/event_se.c	0CB80600	0CB80A20	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0044	events/shared/white.c	0CB80340	0CB80600	+r04 +egflags +pool32
+EV0045	overlays/src/event_se.c	0CB81060	0CB81480	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0045	events/shared/white.c	0CB80DA0	0CB81060	+r04 +egflags +pool32
+EV0046	overlays/src/event_se.c	0CB82540	0CB82960	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0046	events/shared/fade.c	0CB82380	0CB82540	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0046	events/shared/move.c	0CB81120	0CB81BA0	+egflags +pool32 +tail0900
+EV0046	events/shared/mover.c	0CB81BA0	0CB82364	+r04 +egflags +asmfunc=execMoveObjTask:0cb82342
+EV0047	overlays/src/event_se.c	0CB85AA0	0CB85EC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0047	events/shared/fade.c	0CB82A00	0CB82BC0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0047	events/shared/move.c	0CB817A0	0CB82220	+egflags +pool32 +tail0900
+EV0047	events/shared/mover.c	0CB82220	0CB829E4	+r04 +egflags +asmfunc=execMoveObjTask:0cb829c2
+EV0047	events/shared/sdk/_calcfpow.c	0CB87004	0CB871C4	+rtflags +resff
+EV0047	events/shared/sdk/_calcint.c	0CB871C4	0CB87270	+rtflags +resff
+EV0047	overlays/src/lead_ev0047_jp_shared_sdk__fmtin.c	0CB860F8	0CB86F78	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb869c8:0cb86e44
+EV0047	events/shared/sdk/_packf.c	0CB87270	0CB872DC	+rtflags +resff
+EV0047	events/shared/sdk/_stf.c	0CB86F78	0CB87004	+rtflags +resff
+EV0047	events/shared/sdk/sscanf.c	0CB860A0	0CB860DC	+rtflags +resff
+EV0047	events/shared/sdk/strchr.c	0CB860DC	0CB860F8	+rtflags +resff
+EV0048	overlays/src/event_se.c	0CB826C0	0CB82AE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0048	events/shared/fade.c	0CB82500	0CB826C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0048	events/shared/move.c	0CB812A0	0CB81D20	+egflags +pool32 +tail0900
+EV0048	events/shared/mover.c	0CB81D20	0CB824E4	+r04 +egflags +asmfunc=execMoveObjTask:0cb824c2
+EV0048	events/shared/prop.c	0CB80F80	0CB812A0	+egflags +pool32
+EV004B	overlays/src/event_se.c	0CB85860	0CB85C80	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV004B	events/shared/claw.c	0CB84020	0CB84440	+egflags +pool32
+EV004B	events/shared/fade.c	0CB856A0	0CB85860	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV004B	events/shared/move.c	0CB84440	0CB84EC0	+egflags +pool32 +tail0900
+EV004B	events/shared/mover.c	0CB84EC0	0CB85684	+r04 +egflags +asmfunc=execMoveObjTask:0cb85662
+EV004B	overlays/src/skywalk.c	0CB85C80	0CB85DC0	-speed +pool32 +synth16
+EV004C	overlays/src/event_se.c	0CB821E0	0CB82600	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV004C	events/shared/fade.c	0CB82020	0CB821E0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV004C	events/shared/shapes.c	0CB8262C	0CB82658	+egflags
+EV004D	overlays/src/event_se.c	0CB89D60	0CB8A180	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV004D	events/shared/fade.c	0CB86CC0	0CB86E80	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV004D	events/shared/move.c	0CB85920	0CB863A0	+egflags +pool32 +tail0900
+EV004D	events/shared/mover.c	0CB863A0	0CB86B64	+r04 +egflags +asmfunc=execMoveObjTask:0cb86b42
+EV004D	events/shared/prop.c	0CB85600	0CB85920	+r04 +egflags +pool32
+EV004D	events/shared/sdk/_calcfpow.c	0CB8B264	0CB8B424	+rtflags +resff
+EV004D	events/shared/sdk/_calcint.c	0CB8B424	0CB8B4D0	+rtflags +resff
+EV004D	overlays/src/lead_ev004d_jp_shared_sdk__fmtin.c	0CB8A358	0CB8B1D8	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb8ac28:0cb8b0a4
+EV004D	events/shared/sdk/_packf.c	0CB8B4D0	0CB8B53C	+rtflags +resff
+EV004D	events/shared/sdk/_stf.c	0CB8B1D8	0CB8B264	+rtflags +resff
+EV004D	events/shared/sdk/sscanf.c	0CB8A300	0CB8A33C	+rtflags +resff
+EV004D	events/shared/sdk/strchr.c	0CB8A33C	0CB8A358	+rtflags +resff
+EV004D	overlays/src/objsmoke.c	0CB86B80	0CB86CB0	-speed +pool32
+EV004E	overlays/src/event_se.c	0CB83280	0CB836A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV004E	events/shared/fade.c	0CB830C0	0CB83280	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV004E	overlays/src/objsmoke.c	0CB82F80	0CB830B0	-speed +pool32
+EV0050	overlays/src/event_se.c	0CB85160	0CB85580	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0050	events/shared/move.c	0CB83F00	0CB84980	+egflags +pool32 +tail0900
+EV0050	events/shared/mover.c	0CB84980	0CB85144	+r04 +egflags +asmfunc=execMoveObjTask:0cb85122
+EV0051	overlays/src/event_se.c	0CB80DC0	0CB811E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0051	events/shared/fade.c	0CB80C00	0CB80DC0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0052	events/shared/fade.c	0CB82D80	0CB82F40	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0052	events/shared/move.c	0CB81B20	0CB825A0	+egflags +pool32 +tail0900
+EV0052	events/shared/mover.c	0CB825A0	0CB82D64	+r04 +egflags +asmfunc=execMoveObjTask:0cb82d42
+EV0052	events/shared/sdk/_calcfpow.c	0CB86FBC	0CB8717C	+rtflags +resff
+EV0052	events/shared/sdk/_calcint.c	0CB8717C	0CB87228	+rtflags +resff
+EV0052	overlays/src/lead_ev0052_jp_shared_sdk__fmtin.c	0CB860B0	0CB86F30	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb86980:0cb86dfc
+EV0052	events/shared/sdk/_packf.c	0CB87228	0CB87294	+rtflags +resff
+EV0052	events/shared/sdk/_stf.c	0CB86F30	0CB86FBC	+rtflags +resff
+EV0052	events/shared/sdk/sscanf.c	0CB86058	0CB86094	+rtflags +resff
+EV0052	events/shared/sdk/strchr.c	0CB86094	0CB860B0	+rtflags +resff
+EV0052	overlays/src/jp_shared_shapes.c	0CB86000	0CB86058	+egflags
+EV0054	overlays/src/event_se.c	0CB83DE0	0CB84200	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0055	overlays/src/event_se.c	0CB80800	0CB80C20	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0055	events/shared/white.c	0CB80540	0CB80800	+r04 +egflags +pool32
+EV0055	overlays/src/tikallight.c	0CB80C20	0CB80D70	+pool32
+EV0056	events/shared/fade.c	0CB80700	0CB808C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0058	overlays/src/event_se.c	0CB803A0	0CB807C0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0058	events/shared/fade.c	0CB801E0	0CB803A0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0060	overlays/src/event_se.c	0CB83F60	0CB84380	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0060	events/shared/black.c	0CB82740	0CB82840	+egflags +pool32
+EV0060	events/shared/fade.c	0CB83DA0	0CB83F60	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0060	events/shared/move.c	0CB82A00	0CB83480	+egflags +pool32 +tail0900
+EV0060	events/shared/mover.c	0CB83480	0CB83C44	+r04 +egflags +asmfunc=execMoveObjTask:0cb83c22
+EV0060	overlays/src/jp_shared_shapes_2.c	0CB844C0	0CB84518	+egflags
+EV0060	overlays/src/objsmoke.c	0CB83C60	0CB83D90	-speed +pool32
+EV0060	overlays/src/skywalk.c	0CB84380	0CB844C0	-speed +pool32 +synth16
+EV0061	overlays/src/event_se.c	0CB83000	0CB83420	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0061	events/ev0061/look_camera.c	0CB81CE0	0CB81D9C	+r04 +egflags
+EV0061	events/shared/black.c	0CB81BE0	0CB81CE0	+r04 +egflags +pool32
+EV0061	events/shared/move.c	0CB81DA0	0CB82820	+egflags +pool32 +tail0900
+EV0061	events/shared/mover.c	0CB82820	0CB82FE4	+r04 +egflags +asmfunc=execMoveObjTask:0cb82fc2
+EV0061	events/shared/shapes.c	0CB8344C	0CB83478	+egflags
+EV0061	events/shared/white.c	0CB81920	0CB81BE0	+r04 +egflags +pool32
+EV0062	overlays/src/event_se.c	0CB82700	0CB82B20	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0062	events/shared/fade.c	0CB82540	0CB82700	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0062	events/shared/move.c	0CB812E0	0CB81D60	+egflags +pool32 +tail0900
+EV0062	events/shared/mover.c	0CB81D60	0CB82524	+r04 +egflags +asmfunc=execMoveObjTask:0cb82502
+EV0063	overlays/src/event_se.c	0CB82EC0	0CB832E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0063	events/shared/fade.c	0CB82D00	0CB82EC0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0063	events/shared/move.c	0CB81A60	0CB824E0	+egflags +pool32 +tail0900
+EV0063	events/shared/mover.c	0CB824E0	0CB82CA4	+r04 +egflags +asmfunc=execMoveObjTask:0cb82c82
+EV0063	events/shared/zero_grab.c	0CB82CC0	0CB82D00	+jpflags +pool32
+EV0064	overlays/src/event_se.c	0CB82DC0	0CB831E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0064	events/shared/move.c	0CB81B60	0CB825E0	+egflags +pool32 +tail0900
+EV0064	events/shared/mover.c	0CB825E0	0CB82DA4	+r04 +egflags +asmfunc=execMoveObjTask:0cb82d82
+EV0064	events/shared/zero_grab.c	0CB81B20	0CB81B60	+jpflags +pool32
+EV0065	events/shared/fade_in.c	0CB83500	0CB836A0	+egflags +pool32
+EV0065	events/shared/move.c	0CB822A0	0CB82D20	+egflags +pool32 +tail0900
+EV0065	events/shared/mover.c	0CB82D20	0CB834E4	+r04 +egflags +asmfunc=execMoveObjTask:0cb834c2
+EV0066	overlays/src/event_se.c	0CB81F60	0CB82380	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0066	events/shared/move.c	0CB80BA0	0CB81620	+egflags +pool32 +tail0900
+EV0066	events/shared/mover.c	0CB81620	0CB81DE4	+r04 +egflags +asmfunc=execMoveObjTask:0cb81dc2
+EV0066	events/shared/prop.c	0CB80880	0CB80BA0	+egflags +pool32
+EV0066	events/shared/white.c	0CB805C0	0CB80880	+r04 +egflags +pool32
+EV0066	overlays/src/tikallight.c	0CB81E00	0CB81F50	+pool32
+EV0067	overlays/src/event_se.c	0CB819E0	0CB81E00	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0067	events/shared/fade.c	0CB81820	0CB819E0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0067	events/shared/move.c	0CB805C0	0CB81040	+egflags +pool32 +tail0900
+EV0067	events/shared/mover.c	0CB81040	0CB81804	+r04 +egflags +asmfunc=execMoveObjTask:0cb817e2
+EV0068	overlays/src/event_se.c	0CB84980	0CB84DA0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0068	events/shared/fade.c	0CB847C0	0CB84980	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0068	events/shared/move.c	0CB83560	0CB83FE0	+egflags +pool32 +tail0900
+EV0068	events/shared/mover.c	0CB83FE0	0CB847A4	+r04 +egflags +asmfunc=execMoveObjTask:0cb84782
+EV0069	overlays/src/event_se.c	0CB85980	0CB85DA0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0069	events/shared/claw.c	0CB84140	0CB84560	+egflags +pool32
+EV0069	events/shared/fade.c	0CB857C0	0CB85980	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0069	events/shared/move.c	0CB84560	0CB84FE0	+egflags +pool32 +tail0900
+EV0069	events/shared/mover.c	0CB84FE0	0CB857A4	+r04 +egflags +asmfunc=execMoveObjTask:0cb85782
+EV006A	overlays/src/event_se.c	0CB83220	0CB83640	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV006A	events/shared/fade.c	0CB83060	0CB83220	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV006A	events/shared/shapes.c	0CB8366C	0CB83698	+egflags
+EV006C	overlays/src/event_se.c	0CB805C0	0CB809E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV006C	events/shared/fade.c	0CB80400	0CB805C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV006D	overlays/src/event_se.c	0CB82BC0	0CB82FE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV006D	events/shared/fade.c	0CB82A00	0CB82BC0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV006D	events/shared/move.c	0CB817A0	0CB82220	+egflags +pool32 +tail0900
+EV006D	events/shared/mover.c	0CB82220	0CB829E4	+r04 +egflags +asmfunc=execMoveObjTask:0cb829c2
+EV006D	events/shared/prop.c	0CB81480	0CB817A0	+r04 +egflags +pool32
+EV006D	events/shared/shapes.c	0CB8300C	0CB83038	+egflags
+EV006E	overlays/src/event_se.c	0CB80500	0CB80920	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV006F	overlays/src/event_se.c	0CB818E0	0CB81D00	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV006F	events/shared/move.c	0CB80680	0CB81100	+r04 +egflags +pool32 +tail0900
+EV006F	events/shared/mover.c	0CB81100	0CB818C4	+r04 +egflags +asmfunc=execMoveObjTask:0cb818a2
+EV0070	overlays/src/event_se.c	0CB81860	0CB81C80	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0070	events/shared/move.c	0CB80600	0CB81080	+r04 +egflags +pool32 +tail0900
+EV0070	events/shared/mover.c	0CB81080	0CB81844	+r04 +egflags +asmfunc=execMoveObjTask:0cb81822
+EV0071	overlays/src/event_se.c	0CB858C0	0CB85CE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0071	events/shared/fade.c	0CB82820	0CB829E0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0071	events/shared/move.c	0CB815C0	0CB82040	+egflags +pool32 +tail0900
+EV0071	events/shared/mover.c	0CB82040	0CB82804	+r04 +egflags +asmfunc=execMoveObjTask:0cb827e2
+EV0071	events/shared/sdk/_calcfpow.c	0CB86D64	0CB86F24	+rtflags +resff
+EV0071	events/shared/sdk/_calcint.c	0CB86F24	0CB86FD0	+rtflags +resff
+EV0071	overlays/src/lead_ev0071_jp_shared_sdk__fmtin.c	0CB85E58	0CB86CD8	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb86728:0cb86ba4
+EV0071	events/shared/sdk/_packf.c	0CB86FD0	0CB8703C	+rtflags +resff
+EV0071	events/shared/sdk/_stf.c	0CB86CD8	0CB86D64	+rtflags +resff
+EV0071	events/shared/sdk/sscanf.c	0CB85E00	0CB85E3C	+rtflags +resff
+EV0071	events/shared/sdk/strchr.c	0CB85E3C	0CB85E58	+rtflags +resff
+EV0071	events/shared/zero_grab.c	0CB81580	0CB815C0	+jpflags +pool32
+EV0072	overlays/src/event_se.c	0CB86420	0CB86840	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0072	events/shared/fade.c	0CB83380	0CB83540	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0072	events/shared/move.c	0CB82120	0CB82BA0	+egflags +pool32 +tail0900
+EV0072	events/shared/mover.c	0CB82BA0	0CB83364	+r04 +egflags +asmfunc=execMoveObjTask:0cb83342
+EV0072	events/shared/sdk/_calcfpow.c	0CB878C4	0CB87A84	+rtflags +resff
+EV0072	events/shared/sdk/_calcint.c	0CB87A84	0CB87B30	+rtflags +resff
+EV0072	overlays/src/lead_ev0072_jp_shared_sdk__fmtin.c	0CB869B8	0CB87838	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb87288:0cb87704
+EV0072	events/shared/sdk/_packf.c	0CB87B30	0CB87B9C	+rtflags +resff
+EV0072	events/shared/sdk/_stf.c	0CB87838	0CB878C4	+rtflags +resff
+EV0072	events/shared/sdk/sscanf.c	0CB86960	0CB8699C	+rtflags +resff
+EV0072	events/shared/sdk/strchr.c	0CB8699C	0CB869B8	+rtflags +resff
+EV0072	events/shared/zero_grab.c	0CB820E0	0CB82120	+jpflags +pool32
+EV0075	events/shared/fade.c	0CB81B60	0CB81D20	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0075	events/shared/move.c	0CB80900	0CB81380	+egflags +pool32 +tail0900
+EV0075	events/shared/mover.c	0CB81380	0CB81B44	+r04 +egflags +asmfunc=execMoveObjTask:0cb81b22
+EV0080	overlays/src/event_se.c	0CB85200	0CB85620	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0080	events/shared/fade.c	0CB85040	0CB85200	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0080	events/shared/move.c	0CB83CA0	0CB84720	+egflags +pool32 +tail0900
+EV0080	events/shared/mover.c	0CB84720	0CB84EE4	+r04 +egflags +asmfunc=execMoveObjTask:0cb84ec2
+EV0080	events/shared/prop.c	0CB83980	0CB83CA0	+r04 +egflags +pool32
+EV0080	overlays/src/objsmoke.c	0CB84F00	0CB85030	-speed +pool32
+EV0080	overlays/src/tikallight.c	0CB85800	0CB85950	+pool32
+EV0083	overlays/src/event_se.c	0CB80780	0CB80BA0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0083	events/shared/fade.c	0CB80460	0CB80620	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0083	overlays/src/tikallight.c	0CB80620	0CB80770	+pool32
+EV0084	overlays/src/event_se.c	0CB806A0	0CB80AC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0084	events/shared/fade.c	0CB804E0	0CB806A0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0085	overlays/src/event_se.c	0CB80A20	0CB80E40	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0085	events/shared/fade.c	0CB80860	0CB80A20	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0086	overlays/src/event_se.c	0CB806A0	0CB80AC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0086	overlays/src/lead_ev0086_jp_shared_fade.c	0CB804E0	0CB806A0	+egflags +pool32 +poolafter=FUN_0cb80622
+EV0087	events/shared/fade.c	0CB838E0	0CB83AA0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0087	events/shared/move.c	0CB82680	0CB83100	+r04 +egflags +pool32 +tail0900
+EV0087	events/shared/mover.c	0CB83100	0CB838C4	+r04 +egflags +asmfunc=execMoveObjTask:0cb838a2
+EV0087	events/shared/rays.c	0CB82520	0CB82680	+egflags +pool32
+EV0088	overlays/src/event_se.c	0CB810E0	0CB81500	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0088	events/shared/fade.c	0CB80F20	0CB810E0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV008A	events/shared/move.c	0CB81160	0CB81BE0	+egflags +pool32 +tail0900
+EV008A	events/shared/mover.c	0CB81BE0	0CB823A4	+r04 +egflags +asmfunc=execMoveObjTask:0cb82382
+EV008A	overlays/src/jp_shared_shapes.c	0CB823C0	0CB82418	+egflags
+EV008B	events/shared/beam.c	0CB82600	0CB82980	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV008B	events/shared/fade.c	0CB87780	0CB87940	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV008B	events/shared/move.c	0CB863E0	0CB86E60	+egflags +pool32 +tail0900
+EV008B	events/shared/mover.c	0CB86E60	0CB87624	+r04 +egflags +asmfunc=execMoveObjTask:0cb87602
+EV008B	events/shared/rays.c	0CB83E80	0CB83FE0	+jpflags +pool32
+EV008B	overlays/src/jp_shared_shapes.c	0CB87940	0CB87998	+egflags
+EV008B	overlays/src/objsmoke.c	0CB87640	0CB87770	-speed +pool32
+EV008C	events/shared/beam.c	0CB80EC0	0CB81240	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV008C	events/shared/move.c	0CB83960	0CB843E0	+egflags +pool32 +tail0900
+EV008C	events/shared/mover.c	0CB843E0	0CB84BA4	+r04 +egflags +asmfunc=execMoveObjTask:0cb84b82
+EV008C	events/shared/prop.c	0CB83640	0CB83960	+egflags +pool32
+EV008D	overlays/src/event_se.c	0CB80500	0CB80920	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV008D	events/shared/fade.c	0CB80340	0CB80500	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV008D	overlays/src/tikallight.c	0CB80920	0CB80A70	+pool32
+EV008E	overlays/src/event_se.c	0CB805A0	0CB809C0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV008E	events/shared/white.c	0CB802E0	0CB805A0	+r04 +egflags +pool32
+EV008F	overlays/src/event_se.c	0CB81400	0CB81820	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV008F	events/shared/white.c	0CB80E60	0CB81120	+r04 +egflags +pool32
+EV0091	overlays/src/event_se.c	0CB83CC0	0CB840E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0091	events/shared/fade.c	0CB83B00	0CB83CC0	+egflags +pool32
+EV0091	events/shared/move.c	0CB828A0	0CB83320	+egflags +pool32 +tail0900
+EV0091	events/shared/mover.c	0CB83320	0CB83AE4	+r04 +egflags +asmfunc=execMoveObjTask:0cb83ac2
+EV0091	events/shared/prop.c	0CB82580	0CB828A0	+egflags +pool32
+EV0091	events/shared/rays.c	0CB819E0	0CB81B40	+egflags +pool32
+EV0095	overlays/src/event_se.c	0CB806A0	0CB80AC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0095	overlays/src/lead_ev0095_jp_shared_fade.c	0CB804E0	0CB806A0	+egflags +pool32 +poolafter=FUN_0cb80622
+EV0095	overlays/src/tikallight.c	0CB80AC0	0CB80C10	+pool32
+EV0096	overlays/src/event_se.c	0CB80660	0CB80A80	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0096	events/shared/fade.c	0CB804A0	0CB80660	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0097	overlays/src/event_se.c	0CB82180	0CB825A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0097	events/shared/fade.c	0CB81FC0	0CB82180	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0097	events/shared/move.c	0CB80D60	0CB817E0	+egflags +pool32 +tail0900
+EV0097	events/shared/mover.c	0CB817E0	0CB81FA4	+r04 +egflags +asmfunc=execMoveObjTask:0cb81f82
+EV0097	events/shared/prop.c	0CB80A40	0CB80D60	+r04 +egflags +pool32
+EV0098	overlays/src/event_se.c	0CB807E0	0CB80C00	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0098	events/shared/fade.c	0CB80620	0CB807E0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0098	events/shared/white.c	0CB80360	0CB80620	+r04 +egflags +pool32
+EV009A	overlays/src/event_se.c	0CB80E00	0CB81220	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV009A	events/shared/rays.c	0CB809E0	0CB80B40	+egflags +pool32
+EV009A	events/shared/white.c	0CB80B40	0CB80E00	+r04 +egflags +pool32
+EV009B	events/shared/fade.c	0CB80840	0CB80A00	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV009D	overlays/src/event_se.c	0CB81B00	0CB81F20	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV009D	events/shared/fade.c	0CB81940	0CB81B00	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV009D	events/shared/rays.c	0CB80DA0	0CB80F00	+egflags +pool32
+EV009F	overlays/src/lead_ev009f_jp_shared_sprite.c	0CB806A0	0CB81060	+r04 +egflags +pool32 +poolafter=event_sparkle_create_shrinking,event_sprite_destroy,event_sprite_kill,event_sprite_create_loop,FUN_0cb80dbc +asmfunc=event_sparkle_create_shrinking:0cb80786
+EV00A0	overlays/src/event_se.c	0CB80740	0CB80B60	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00B0	overlays/src/event_se.c	0CB81840	0CB81C60	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00B0	events/shared/scanlines.c	0CB81640	0CB81840	+r04 +egflags +pool32
+EV00B1	overlays/src/event_se.c	0CB80900	0CB80D20	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00B1	events/shared/fade.c	0CB80740	0CB80900	+r04 +egflags +pool32
+EV00B3	overlays/src/event_se.c	0CB809C0	0CB80DE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00B3	events/shared/fade.c	0CB80800	0CB809C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00B4	overlays/src/event_se.c	0CB824A0	0CB828C0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00B4	events/shared/e101.c	0CB80D40	0CB81100	+r04 +egflags +pool32
+EV00B4	events/shared/move.c	0CB81100	0CB81B80	+egflags +pool32 +tail0900
+EV00B4	events/shared/mover.c	0CB81B80	0CB82344	+r04 +egflags +asmfunc=execMoveObjTask:0cb82322
+EV00B4	overlays/src/objsmoke.c	0CB82360	0CB82490	-speed +pool32
+EV00B5	overlays/src/event_se.c	0CB82260	0CB82680	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00B5	events/shared/e101.c	0CB80A80	0CB80E40	+r04 +egflags +pool32
+EV00B5	events/shared/fade.c	0CB820A0	0CB82260	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00B5	events/shared/move.c	0CB80E40	0CB818C0	+r04 +egflags +pool32 +tail0900
+EV00B5	events/shared/mover.c	0CB818C0	0CB82084	+r04 +egflags +asmfunc=execMoveObjTask:0cb82062
+EV00B7	overlays/src/event_se.c	0CB82E00	0CB83220	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00B7	events/ev00b7/dim.c	0CB80F20	0CB81180	+r04 +egflags +pool32 +poolafter=ev00b7_dim_create +asmfunc=ev00b7_dim_destroy:0cb80fb0,ev00b7_dim_init:0cb810c4
+EV00B7	events/ev00b7/spotlight.c	0CB83360	0CB83620	+r04 +egflags +pool32
+EV00B7	events/shared/e103.c	0CB81180	0CB813E0	+egflags +pool32
+EV00B7	events/shared/e105.c	0CB81640	0CB81880	+egflags +pool32
+EV00B7	events/shared/fade.c	0CB82C40	0CB82E00	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00B7	events/shared/move.c	0CB819E0	0CB82460	+egflags +pool32 +tail0900
+EV00B7	events/shared/mover.c	0CB82460	0CB82C24	+r04 +egflags +asmfunc=execMoveObjTask:0cb82c02
+EV00B7	overlays/src/skywalk.c	0CB83220	0CB83360	-speed +pool32 +synth16
+EV00B8	overlays/src/event_se.c	0CB80560	0CB80980	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00B8	events/shared/fade.c	0CB803A0	0CB80560	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00B8	overlays/src/tikallight.c	0CB80980	0CB80AD0	+pool32
+EV00B9	overlays/src/event_se.c	0CB809E0	0CB80E00	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00B9	events/shared/fade.c	0CB80820	0CB809E0	+egflags +pool32
+EV00BA	overlays/src/event_se.c	0CB838C0	0CB83CE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00BA	events/shared/fade.c	0CB83700	0CB838C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00BA	events/shared/move.c	0CB824A0	0CB82F20	+egflags +pool32 +tail0900
+EV00BA	events/shared/mover.c	0CB82F20	0CB836E4	+r04 +egflags +asmfunc=execMoveObjTask:0cb836c2
+EV00BB	overlays/src/event_se.c	0CB83A80	0CB83EA0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00BB	events/shared/beam.c	0CB81BE0	0CB81F60	+r04 +egflags +pool32 +poolafter=capturebeam_exec
+EV00BB	events/shared/e103.c	0CB81F60	0CB821C0	+egflags +pool32
+EV00BB	events/shared/e105.c	0CB82420	0CB82660	+egflags +pool32
+EV00BB	events/shared/fade.c	0CB838C0	0CB83A80	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00BB	events/shared/move.c	0CB82660	0CB830E0	+egflags +pool32 +tail0900
+EV00BB	events/shared/mover.c	0CB830E0	0CB838A4	+r04 +egflags +asmfunc=execMoveObjTask:0cb83882
+EV00BC	overlays/src/event_se.c	0CB80440	0CB80860	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00BD	overlays/src/event_se.c	0CB814C0	0CB818E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00BD	events/ev00bd/factory.c	0CB80C60	0CB80E20	+jpflags +pool32
+EV00BD	events/ev00bd/factory_task.c	0CB80E20	0CB80EE0	+egflags +pool32
+EV00BD	events/shared/claw.c	0CB80EE0	0CB81300	+r04 +egflags +pool32
+EV00BD	events/shared/fade.c	0CB81300	0CB814C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00BD	overlays/src/skywalk.c	0CB818E0	0CB81A20	-speed +pool32 +synth16
+EV00BF	events/shared/fade_in.c	0CB83380	0CB83520	+egflags +pool32
+EV00BF	events/shared/move.c	0CB82120	0CB82BA0	+egflags +pool32 +tail0900
+EV00BF	events/shared/mover.c	0CB82BA0	0CB83364	+r04 +egflags +asmfunc=execMoveObjTask:0cb83342
+EV00C1	events/shared/fade.c	0CB82EE0	0CB830A0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00C2	overlays/src/event_se.c	0CB86840	0CB86C60	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00C2	events/shared/fade.c	0CB86680	0CB86840	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00C2	events/shared/move.c	0CB852E0	0CB85D60	+egflags +pool32 +tail0900
+EV00C2	events/shared/mover.c	0CB85D60	0CB86524	+r04 +egflags +asmfunc=execMoveObjTask:0cb86502
+EV00C2	overlays/src/objsmoke.c	0CB86540	0CB86670	-speed +pool32
+EV00C3	overlays/src/event_se.c	0CB86180	0CB865A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00C3	events/shared/fade.c	0CB80E40	0CB81000	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00C3	events/shared/move.c	0CB83EE0	0CB84960	+egflags +pool32 +tail0900
+EV00C3	events/shared/mover.c	0CB84960	0CB85124	+r04 +egflags +asmfunc=execMoveObjTask:0cb85102
+EV00C3	events/shared/sdk/_calcfpow.c	0CB87704	0CB878C4	+rtflags +resff
+EV00C3	events/shared/sdk/_calcint.c	0CB878C4	0CB87970	+rtflags +resff
+EV00C3	overlays/src/lead_ev00c3_jp_shared_sdk__fmtin.c	0CB867F8	0CB87678	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb870c8:0cb87544
+EV00C3	events/shared/sdk/_packf.c	0CB87970	0CB879DC	+rtflags +resff
+EV00C3	events/shared/sdk/_stf.c	0CB87678	0CB87704	+rtflags +resff
+EV00C3	events/shared/sdk/sscanf.c	0CB867A0	0CB867DC	+rtflags +resff
+EV00C3	events/shared/sdk/strchr.c	0CB867DC	0CB867F8	+rtflags +resff
+EV00C4	overlays/src/lead_ev00c4_jp_shared_scanlines.c	0CB80720	0CB80920	+r04 +egflags +pool32
+EV00C5	overlays/src/event_se.c	0CB807C0	0CB80BE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00C7	overlays/src/event_se.c	0CB84F40	0CB85360	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00C7	events/shared/fade.c	0CB84B80	0CB84D40	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00C7	events/shared/move.c	0CB837E0	0CB84260	+egflags +pool32 +tail0900
+EV00C7	events/shared/mover.c	0CB84260	0CB84A24	+r04 +egflags +asmfunc=execMoveObjTask:0cb84a02
+EV00C7	events/shared/rays.c	0CB826A0	0CB82800	+egflags +pool32
+EV00C7	events/shared/scanlines.c	0CB84D40	0CB84F40	+r04 +egflags +pool32
+EV00C7	overlays/src/objsmoke.c	0CB84A40	0CB84B70	-speed +pool32
+EV00D0	overlays/src/event_se.c	0CB85160	0CB85580	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00D0	events/shared/fade.c	0CB84FA0	0CB85160	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00D0	events/shared/move.c	0CB83D40	0CB847C0	+egflags +pool32 +tail0900
+EV00D0	events/shared/mover.c	0CB847C0	0CB84F84	+r04 +egflags +asmfunc=execMoveObjTask:0cb84f62
+EV00D0	events/shared/sparkle.c	0CB83160	0CB83460	+egflags +pool32
+EV00D0	overlays/src/skywalk.c	0CB85AA0	0CB85BE0	-speed +pool32 +synth16
+EV00D2	overlays/src/event_se.c	0CB818C0	0CB81CE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00D2	events/shared/move.c	0CB80660	0CB810E0	+egflags +pool32 +tail0900
+EV00D2	events/shared/mover.c	0CB810E0	0CB818A4	+r04 +egflags +asmfunc=execMoveObjTask:0cb81882
+EV00D3	overlays/src/event_se.c	0CB82080	0CB824A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00D3	events/ev00e3/frog.c	0CB80D80	0CB80E20	+jpflags +pool32
+EV00D3	events/shared/move.c	0CB80E20	0CB818A0	+egflags +pool32 +tail0900
+EV00D3	events/shared/mover.c	0CB818A0	0CB82064	+r04 +egflags +asmfunc=execMoveObjTask:0cb82042
+EV00D9	overlays/src/event_se.c	0CB81860	0CB81C80	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00D9	events/ev00e3/frog.c	0CB80560	0CB80600	+jpflags +pool32
+EV00D9	events/shared/mover.c	0CB81080	0CB81844	+r04 +egflags +asmfunc=execMoveObjTask:0cb81822
+EV00DA	overlays/src/event_se.c	0CB80BA0	0CB80FC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00DA	overlays/src/lead_ev00da_jp_shared_white.c	0CB808E0	0CB80BA0	+r04 +egflags +asmfunc=FUN_0cb809fe:0cb80ade
+EV00DA	overlays/src/tikallight.c	0CB80780	0CB808D0	+pool32
+EV00DB	overlays/src/event_se.c	0CB80580	0CB809A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00DB	events/shared/white.c	0CB802C0	0CB80580	+r04 +egflags +pool32
+EV00DC	overlays/src/event_se.c	0CB810E0	0CB81500	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00DC	events/shared/white.c	0CB80E20	0CB810E0	+r04 +egflags +pool32
+EV00DD	overlays/src/event_se.c	0CB80A40	0CB80E60	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00DD	events/shared/fade.c	0CB80880	0CB80A40	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00DE	overlays/src/event_se.c	0CB87540	0CB87960	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00DE	events/shared/fade.c	0CB86920	0CB86AE0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00DE	events/shared/move.c	0CB856C0	0CB86140	+r04 +egflags +pool32 +tail0900
+EV00DE	events/shared/mover.c	0CB86140	0CB86904	+r04 +egflags +asmfunc=execMoveObjTask:0cb868e2
+EV00DE	events/shared/rays.c	0CB873E0	0CB87540	+egflags +pool32
+EV00E0	events/shared/fade.c	0CB81760	0CB81920	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00E0	events/shared/move.c	0CB80500	0CB80F80	+egflags +pool32 +tail0900
+EV00E0	events/shared/mover.c	0CB80F80	0CB81744	+r04 +egflags +asmfunc=execMoveObjTask:0cb81722
+EV00E2	events/shared/fade.c	0CB824A0	0CB82660	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00E2	events/shared/move.c	0CB81240	0CB81CC0	+egflags +pool32 +tail0900
+EV00E2	events/shared/mover.c	0CB81CC0	0CB82484	+r04 +egflags +asmfunc=execMoveObjTask:0cb82462
+EV00E2	events/shared/prop.c	0CB80F20	0CB81240	+r04 +egflags +pool32
+EV00E2	events/shared/sdk/_calcfpow.c	0CB869C4	0CB86B84	+rtflags +resff
+EV00E2	events/shared/sdk/_calcint.c	0CB86B84	0CB86C30	+rtflags +resff
+EV00E2	overlays/src/lead_ev00e2_jp_shared_sdk__fmtin.c	0CB85AB8	0CB86938	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb86388:0cb86804
+EV00E2	events/shared/sdk/_packf.c	0CB86C30	0CB86C9C	+rtflags +resff
+EV00E2	events/shared/sdk/_stf.c	0CB86938	0CB869C4	+rtflags +resff
+EV00E2	events/shared/sdk/sscanf.c	0CB85A60	0CB85A9C	+rtflags +resff
+EV00E2	events/shared/sdk/strchr.c	0CB85A9C	0CB85AB8	+rtflags +resff
+EV00E3	overlays/src/event_se.c	0CB819C0	0CB81DE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00E3	events/ev00e3/frog.c	0CB80500	0CB805A0	+jpflags +pool32
+EV00E3	events/shared/fade.c	0CB805A0	0CB80760	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00E3	events/shared/move.c	0CB80760	0CB811E0	+egflags +pool32 +tail0900
+EV00E3	events/shared/mover.c	0CB811E0	0CB819A4	+r04 +egflags +asmfunc=execMoveObjTask:0cb81982
+EV00F0	overlays/src/event_se.c	0CB80760	0CB80B80	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00F0	events/shared/fade.c	0CB805A0	0CB80760	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00F0	events/shared/prop.c	0CB80280	0CB805A0	+r04 +egflags +pool32
+EV00F2	overlays/src/event_se.c	0CB82EE0	0CB83300	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00F2	events/shared/fade.c	0CB82D20	0CB82EE0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00F3	overlays/src/event_se.c	0CB839C0	0CB83DE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00F3	events/shared/fade.c	0CB83800	0CB839C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00F3	events/shared/prop.c	0CB834E0	0CB83800	+r04 +egflags +pool32
+EV00F4	overlays/src/skywalk.c	0CB80A20	0CB80B60	-speed +pool32 +synth16
+EV00F5	overlays/src/event_se.c	0CB86A80	0CB86EA0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00F5	events/shared/fade.c	0CB868C0	0CB86A80	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00F5	events/shared/sdk/_calcfpow.c	0CB87E04	0CB87FC4	+rtflags +resff
+EV00F5	events/shared/sdk/_calcint.c	0CB87FC4	0CB88070	+rtflags +resff
+EV00F5	overlays/src/lead_ev00f5_jp_shared_sdk__fmtin.c	0CB86EF8	0CB87D78	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb877c8:0cb87c44
+EV00F5	events/shared/sdk/_packf.c	0CB88070	0CB880DC	+rtflags +resff
+EV00F5	events/shared/sdk/_stf.c	0CB87D78	0CB87E04	+rtflags +resff
+EV00F5	events/shared/sdk/sscanf.c	0CB86EA0	0CB86EDC	+rtflags +resff
+EV00F5	events/shared/sdk/strchr.c	0CB86EDC	0CB86EF8	+rtflags +resff
+EV00F5	overlays/src/tikallight.c	0CB83880	0CB839D0	+pool32
+EV00F6	overlays/src/event_se.c	0CB805C0	0CB809E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00F6	events/shared/fade.c	0CB80400	0CB805C0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00F7	overlays/src/event_se.c	0CB85300	0CB85720	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00F7	events/shared/fade.c	0CB847A0	0CB84960	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00F7	events/shared/move.c	0CB83540	0CB83FC0	+egflags +pool32 +tail0900
+EV00F7	events/shared/mover.c	0CB83FC0	0CB84784	+r04 +egflags +asmfunc=execMoveObjTask:0cb84762
+EV00F7	events/shared/prop.c	0CB83220	0CB83540	+r04 +egflags +pool32
+EV00F8	overlays/src/event_se.c	0CB81380	0CB817A0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00F8	events/shared/fade.c	0CB811C0	0CB81380	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00F8	events/shared/prop.c	0CB80EA0	0CB811C0	+r04 +egflags +pool32
+EV00F9	overlays/src/event_se.c	0CB80A40	0CB80E60	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00F9	events/shared/fade.c	0CB80880	0CB80A40	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00FA	overlays/src/event_se.c	0CB818A0	0CB81CC0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00FA	events/shared/fade.c	0CB816E0	0CB818A0	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00FA	events/shared/prop.c	0CB80AA0	0CB80DC0	+r04 +egflags +pool32
+EV00FB	overlays/src/event_se.c	0CB80DC0	0CB811E0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00FB	events/shared/prop.c	0CB80AA0	0CB80DC0	+r04 +egflags +pool32
+EV00FD	overlays/src/event_se.c	0CB87700	0CB87B20	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00FD	overlays/src/jp_shared_dome.c	0CB85300	0CB85530	+egflags +pool32
+EV00FD	events/shared/fade.c	0CB86BA0	0CB86D60	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00FD	events/shared/move.c	0CB85940	0CB863C0	+egflags +pool32 +tail0900
+EV00FD	events/shared/mover.c	0CB863C0	0CB86B84	+r04 +egflags +asmfunc=execMoveObjTask:0cb86b62
+EV00FD	events/shared/prop.c	0CB85620	0CB85940	+egflags +pool32
+EV00FD	overlays/src/skywalk.c	0CB87B20	0CB87C60	-speed +pool32 +synth16
+EV00FD	overlays/src/tikallight.c	0CB88040	0CB88190	+pool32
+EV00FE	overlays/src/event_se.c	0CB87D00	0CB88120	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00FE	events/shared/chao.c	0CB84BE0	0CB84F18	+r04 +egflags +pool32 +asmfunc=event_chao_show_eyes:0cb84f18
+EV00FE	events/shared/fade.c	0CB87B40	0CB87D00	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00FE	events/shared/move.c	0CB868E0	0CB87360	+egflags +pool32 +tail0900
+EV00FE	events/shared/mover.c	0CB87360	0CB87B24	+r04 +egflags +asmfunc=execMoveObjTask:0cb87b02
+EV00FE	events/shared/white.c	0CB83E60	0CB84120	+r04 +egflags +pool32
+EV00FE	overlays/src/skywalk.c	0CB88120	0CB88260	-speed +pool32 +synth16
+EV00FF	overlays/src/event_se.c	0CB83920	0CB83D40	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV00FF	events/shared/fade.c	0CB83760	0CB83920	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV00FF	events/shared/highway.c	0CB82420	0CB82500	+r04 +egflags +asmfunc=event_highway_create:0cb8248c,event_highway_spawn:0cb82474
+EV00FF	events/shared/move.c	0CB82500	0CB82F80	+egflags +pool32 +tail0900
+EV00FF	events/shared/mover.c	0CB82F80	0CB83744	+r04 +egflags +asmfunc=execMoveObjTask:0cb83722
+EV00FF	events/shared/rays.c	0CB82000	0CB82160	+egflags +pool32
+EV00FF	events/shared/white.c	0CB82160	0CB82420	+r04 +egflags +pool32
+EV00FF	overlays/src/skywalk.c	0CB83D40	0CB83E80	-speed +pool32 +synth16
+EV0142	overlays/src/event_se.c	0CB80BE0	0CB81000	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0160	overlays/src/event_se.c	0CB857C0	0CB85BE0	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0160	events/shared/fade.c	0CB84C60	0CB84E20	+egflags +pool32 +poolafter=COverlaySetSpeed
+EV0160	events/shared/move.c	0CB83A00	0CB84480	+egflags +pool32 +tail0900
+EV0160	events/shared/mover.c	0CB84480	0CB84C44	+r04 +egflags +asmfunc=execMoveObjTask:0cb84c22
+EV0160	events/shared/rays.c	0CB82CE0	0CB82E40	+jpflags +pool32
+EV0165	overlays/src/event_se.c	0CB80560	0CB80980	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0165	overlays/src/tikallight.c	0CB80400	0CB80550	+pool32
+EV0166	overlays/src/event_se.c	0CB80740	0CB80B60	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0166	overlays/src/tikallight.c	0CB805E0	0CB80730	+pool32
+EV0167	overlays/src/event_se.c	0CB810E0	0CB81500	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0167	overlays/src/tikallight.c	0CB80F80	0CB810D0	+pool32
+EV0168	overlays/src/event_se.c	0CB80560	0CB80980	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0168	overlays/src/tikallight.c	0CB80400	0CB80550	+pool32
+EV0169	overlays/src/event_se.c	0CB80540	0CB80960	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0169	overlays/src/tikallight.c	0CB803E0	0CB80530	+pool32
+EV016A	overlays/src/event_se.c	0CB83360	0CB83780	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV016A	events/shared/sdk/_calcfpow.c	0CB84844	0CB84A04	+rtflags +resff
+EV016A	events/shared/sdk/_calcint.c	0CB84A04	0CB84AB0	+rtflags +resff
+EV016A	overlays/src/lead_ev016a_jp_shared_sdk__fmtin.c	0CB83938	0CB847B8	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb84208:0cb84684
+EV016A	events/shared/sdk/_packf.c	0CB84AB0	0CB84B1C	+rtflags +resff
+EV016A	events/shared/sdk/_stf.c	0CB847B8	0CB84844	+rtflags +resff
+EV016A	events/shared/sdk/sscanf.c	0CB838E0	0CB8391C	+rtflags +resff
+EV016A	events/shared/sdk/strchr.c	0CB8391C	0CB83938	+rtflags +resff
+EV016A	overlays/src/tikallight.c	0CB83780	0CB838D0	+pool32
+EV016B	overlays/src/event_se.c	0CB83340	0CB83760	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV016B	events/shared/sdk/_calcfpow.c	0CB84824	0CB849E4	+rtflags +resff
+EV016B	events/shared/sdk/_calcint.c	0CB849E4	0CB84A90	+rtflags +resff
+EV016B	overlays/src/lead_ev016b_jp_shared_sdk__fmtin.c	0CB83918	0CB84798	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb841e8:0cb84664
+EV016B	events/shared/sdk/_packf.c	0CB84A90	0CB84AFC	+rtflags +resff
+EV016B	events/shared/sdk/_stf.c	0CB84798	0CB84824	+rtflags +resff
+EV016B	events/shared/sdk/sscanf.c	0CB838C0	0CB838FC	+rtflags +resff
+EV016B	events/shared/sdk/strchr.c	0CB838FC	0CB83918	+rtflags +resff
+EV016B	overlays/src/tikallight.c	0CB83760	0CB838B0	+pool32
+EV016C	overlays/src/event_se.c	0CB83340	0CB83760	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV016C	events/shared/sdk/_calcfpow.c	0CB84824	0CB849E4	+rtflags +resff
+EV016C	events/shared/sdk/_calcint.c	0CB849E4	0CB84A90	+rtflags +resff
+EV016C	overlays/src/lead_ev016c_jp_shared_sdk__fmtin.c	0CB83918	0CB84798	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb841e8:0cb84664
+EV016C	events/shared/sdk/_packf.c	0CB84A90	0CB84AFC	+rtflags +resff
+EV016C	events/shared/sdk/_stf.c	0CB84798	0CB84824	+rtflags +resff
+EV016C	events/shared/sdk/sscanf.c	0CB838C0	0CB838FC	+rtflags +resff
+EV016C	events/shared/sdk/strchr.c	0CB838FC	0CB83918	+rtflags +resff
+EV016C	overlays/src/tikallight.c	0CB83760	0CB838B0	+pool32
+EV016D	overlays/src/event_se.c	0CB832E0	0CB83700	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV016D	events/shared/sdk/_calcfpow.c	0CB847C4	0CB84984	+rtflags +resff
+EV016D	events/shared/sdk/_calcint.c	0CB84984	0CB84A30	+rtflags +resff
+EV016D	overlays/src/lead_ev016d_jp_shared_sdk__fmtin.c	0CB838B8	0CB84738	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb84188:0cb84604
+EV016D	events/shared/sdk/_packf.c	0CB84A30	0CB84A9C	+rtflags +resff
+EV016D	events/shared/sdk/_stf.c	0CB84738	0CB847C4	+rtflags +resff
+EV016D	overlays/src/lead_ev016d_jp_shared_sdk_sscanf.c	0CB83860	0CB8389C	+rtflags +resff
+EV016D	events/shared/sdk/strchr.c	0CB8389C	0CB838B8	+rtflags +resff
+EV016D	overlays/src/tikallight.c	0CB83700	0CB83850	+pool32
+EV016E	overlays/src/event_se.c	0CB83320	0CB83740	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV016E	events/shared/sdk/_calcfpow.c	0CB84804	0CB849C4	+rtflags +resff
+EV016E	events/shared/sdk/_calcint.c	0CB849C4	0CB84A70	+rtflags +resff
+EV016E	overlays/src/lead_ev016e_jp_shared_sdk__fmtin.c	0CB838F8	0CB84778	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb841c8:0cb84644
+EV016E	events/shared/sdk/_packf.c	0CB84A70	0CB84ADC	+rtflags +resff
+EV016E	events/shared/sdk/_stf.c	0CB84778	0CB84804	+rtflags +resff
+EV016E	events/shared/sdk/sscanf.c	0CB838A0	0CB838DC	+rtflags +resff
+EV016E	events/shared/sdk/strchr.c	0CB838DC	0CB838F8	+rtflags +resff
+EV016E	overlays/src/tikallight.c	0CB83740	0CB83890	+pool32
+EV016F	overlays/src/event_se.c	0CB83320	0CB83740	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV016F	events/shared/sdk/_calcfpow.c	0CB84804	0CB849C4	+rtflags +resff
+EV016F	events/shared/sdk/_calcint.c	0CB849C4	0CB84A70	+rtflags +resff
+EV016F	overlays/src/lead_ev016f_jp_shared_sdk__fmtin.c	0CB838F8	0CB84778	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb841c8:0cb84644
+EV016F	events/shared/sdk/_packf.c	0CB84A70	0CB84ADC	+rtflags +resff
+EV016F	events/shared/sdk/_stf.c	0CB84778	0CB84804	+rtflags +resff
+EV016F	events/shared/sdk/sscanf.c	0CB838A0	0CB838DC	+rtflags +resff
+EV016F	events/shared/sdk/strchr.c	0CB838DC	0CB838F8	+rtflags +resff
+EV016F	overlays/src/tikallight.c	0CB83740	0CB83890	+pool32
+EV0170	overlays/src/event_se.c	0CB832E0	0CB83700	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0170	events/shared/sdk/_calcfpow.c	0CB847C4	0CB84984	+rtflags +resff
+EV0170	events/shared/sdk/_calcint.c	0CB84984	0CB84A30	+rtflags +resff
+EV0170	overlays/src/lead_ev0170_jp_shared_sdk__fmtin.c	0CB838B8	0CB84738	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb84188:0cb84604
+EV0170	events/shared/sdk/_packf.c	0CB84A30	0CB84A9C	+rtflags +resff
+EV0170	events/shared/sdk/_stf.c	0CB84738	0CB847C4	+rtflags +resff
+EV0170	overlays/src/lead_ev0170_jp_shared_sdk_sscanf.c	0CB83860	0CB8389C	+rtflags +resff
+EV0170	events/shared/sdk/strchr.c	0CB8389C	0CB838B8	+rtflags +resff
+EV0170	overlays/src/tikallight.c	0CB83700	0CB83850	+pool32
+EV0171	overlays/src/event_se.c	0CB832E0	0CB83700	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0171	events/shared/sdk/_calcfpow.c	0CB847C4	0CB84984	+rtflags +resff
+EV0171	events/shared/sdk/_calcint.c	0CB84984	0CB84A30	+rtflags +resff
+EV0171	overlays/src/lead_ev0171_jp_shared_sdk__fmtin.c	0CB838B8	0CB84738	+rtflags +resff -macsave=1 +asmfunc=FUN_0cb84188:0cb84604
+EV0171	events/shared/sdk/_packf.c	0CB84A30	0CB84A9C	+rtflags +resff
+EV0171	events/shared/sdk/_stf.c	0CB84738	0CB847C4	+rtflags +resff
+EV0171	overlays/src/lead_ev0171_jp_shared_sdk_sscanf.c	0CB83860	0CB8389C	+rtflags +resff
+EV0171	events/shared/sdk/strchr.c	0CB8389C	0CB838B8	+rtflags +resff
+EV0171	overlays/src/tikallight.c	0CB83700	0CB83850	+pool32
+EV0180	overlays/src/event_se.c	0CB81840	0CB81C60	-speed +pool32 +poolafter=CEventSe_SetPitch,EventSe_Volume
+EV0180	events/shared/move.c	0CB805E0	0CB81060	+egflags +pool32 +tail0900
+EV0180	events/shared/mover.c	0CB81060	0CB81824	+r04 +egflags +asmfunc=execMoveObjTask:0cb81802
+EV0180	events/shared/prop.c	0CB802C0	0CB805E0	+egflags +pool32
+MINICART	overlays/src/lead_minicart_jp_minicart_cart.c	0C90C860	0C90CA00	@data 0C917498-0C9174B0 +r04 +egflags +poolafter=mc_bgmcontrol +asmfunc=initRound
+MINICART	modules/minicart/cart_time.c	0C90B720	0C90B800	+egflags +pool32
+MINICART	modules/minicart/intro.c	0C90A560	0C90A620	+egflags +pool32
+MINICART	modules/minicart/times.c	0C90A620	0C90A800	+r04 +egflags +pool32 +poolafter=InitStartDushCheck
+MINICART	modules/minicart/zone.c	0C90C720	0C90C860	+r04 +egflags +pool32
+MINICART	overlays/src/sx_unit_0c916360.c	0C916360	0C9163A0	+pool32
+MOVIE	modules/movie/sdk/cmptime.c	8CED65F0	8CED662C	+rtflags +resff
+MOVIE	modules/movie/sdk/memcpyb.c	8CED662C	8CED6708	+jpflags +pool32
+MOVIE	modules/movie/sdk/memcpyd.c	8CED6708	8CED6778	+jpflags +pool32
+MOVIE	modules/movie/sdk/memcpyw.c	8CED6778	8CED67F8	+jpflags
+MOVIE	modules/movie/sdk/memsetd.c	8CED67F8	8CED6840	+jpflags +pool32
+MOVIE	modules/movie/sdk/mpv_mc.c	8CEDC458	8CEDC470	+r04 +egflags +onepool
+SBOARD	modules/sboard/act.c	0C905480	0C905600	@data 0C90A5B8-0C90A5D0 +r04 +egflags +pool32
+SBOARD	modules/sboard/big_cactus.c	0C903300	0C903500	@data 0C905E20-0C905E38 +r04 +egflags +pool32
+SBOARD	modules/sboard/gate_combo.c	0C905660	0C905880	@data 0C90A5DC-0C90A5F4 +r04 +egflags +pool32 +poolafter=gate_combo_destroy
+SBOARD	modules/sboard/rumble.c	0C905600	0C905660	+jpflags +pool32
+SBOARD	modules/sboard/sand.c	0C905140	0C905200	+r04 +egflags +pool32
+SBOARD	modules/sboard/sand_jump.c	0C904400	0C904440	+jpflags +pool32
+SHOOTING	overlays/src/jp_shooting_arm.c	0C906640	0C906840	+egflags +pool32
+SHOOTING	modules/shooting/camera.c	0C900000	0C9006C0	@data 0C909400-0C909424 +r04 +egflags +pool32
+SHOOTING	modules/shooting/fire.c	0C903760	0C903C80	+r04 +egflags +pool32
+SHOOTING	overlays/src/jp_shooting_renzako.c	0C9063C0	0C906640	+egflags +pool32
+SHOOTING	modules/shooting/rocket.c	0C906840	0C9069A0	+r04 +egflags +pool32
+SHOOTING	overlays/src/sx_unit_0c9014e0.c	0C9014E0	0C9014E4	+pool32
+SHOOTING	overlays/src/sx_unit_0c902eaa.c	0C902EAA	0C902EAE	+pool32
+SHOOTING	overlays/src/sx_unit_0c903e68.c	0C903E68	0C903E6C	+pool32
+STG00	modules/stg00/practice.c	0C900D00	0C900E00	+r04 +egflags +pool32
+STG01	modules/stg01/arch_rock.c	0C90AC60	0C90B1A0	+r04 +egflags +pool32 +asmfunc=arch_rock_step
+STG01	modules/stg01/beach.c	0C900000	0C900840	@data 0C90F3E0-0C90F404 +r04 +egflags +pool32
+STG01	modules/stg01/bed.c	0C90B1A0	0C90B2E0	+r04 +egflags +pool32
+STG01	modules/stg01/big_rock.c	0C903AC0	0C904220	@data 0C910B20-0C910B30 +r04 +egflags +pool32
+STG01	overlays/src/jp_stg01_bobbing_rock.c	0C902240	0C902720	+r04 +egflags +pool32
+STG01	modules/stg01/bridge.c	0C9087E0	0C9091C0	+r04 +egflags +pool32
+STG01	modules/stg01/coral.c	0C901240	0C901280	+r04 +egflags +pool32
+STG01	modules/stg01/crash.c	0C90D5E0	0C90D9C0	@data 0C911810-0C911834 +r04 +egflags +pool32
+STG01	modules/stg01/cycle.c	0C904980	0C904E80	+r04 +egflags +pool32
+STG01	modules/stg01/dolphin.c	0C901800	0C902240	@data 0C910A70-0C910AD8 +r04 +egflags +pool32
+STG01	modules/stg01/fences.c	0C901120	0C901240	+r04 +egflags +pool32
+STG01	modules/stg01/fish.c	0C90D9C0	0C90F3E0	+r04 +egflags +pool32
+STG01	modules/stg01/footprints.c	0C905CA0	0C906820	@data 0C910BBC-0C910BC8 +r04 +egflags +pool32
+STG01	modules/stg01/frog.c	0C90D200	0C90D5E0	@data 0C911804-0C911810 +r04 +egflags +pool32
+STG01	modules/stg01/grass.c	0C901280	0C9012E0	+r04 +egflags +pool32
+STG01	modules/stg01/guillotine.c	0C9009A0	0C901120	@data 0C910690-0C9106A8 +r04 +egflags +pool32
+STG01	modules/stg01/jump.c	0C9012E0	0C901800	@data 0C910A38-0C910A70 +r04 +egflags +pool32
+STG01	modules/stg01/orca.c	0C9091C0	0C909B40	@data 0C910C24-0C910C3C +r04 +egflags +pool32 +asmfunc=orca_step
+STG01	modules/stg01/orca_away_trigger.c	0C90A9A0	0C90AAE0	+r04 +egflags +pool32
+STG01	modules/stg01/orca_control.c	0C908620	0C9087E0	+r04 +egflags +pool32
+STG01	modules/stg01/orca_trigger.c	0C90A820	0C90A9A0	+r04 +egflags +pool32
+STG01	modules/stg01/palms.c	0C907E00	0C908620	+r04 +egflags +pool32
+STG01	overlays/src/jp_stg01_parasol.c	0C902CA0	0C903240	@data 0C910AFC-0C910B10 +r04 +egflags +pool32
+STG01	modules/stg01/path_camera.c	0C90B7A0	0C90CDA0	+r04 +egflags +pool32 +asmfunc=CameraExec
+STG01	modules/stg01/path_orca.c	0C909B40	0C909F20	@data 0C910C3C-0C910C54 +r04 +egflags +pool32
+STG01	modules/stg01/path_orca_trigger.c	0C90AAE0	0C90AC60	+r04 +egflags +pool32
+STG01	modules/stg01/pier.c	0C903240	0C903AC0	@data 0C910B10-0C910B20 +r04 +egflags +pool32
+STG01	modules/stg01/plants.c	0C906820	0C9070C0	@data 0C910BC8-0C910BE0 +r04 +egflags +pool32 +asmfunc=beach_butterfly_step
+STG01	modules/stg01/scenery.c	0C900840	0C9009A0	@data 0C910128-0C910134 +r04 +egflags +pool32
+STG01	modules/stg01/school.c	0C907300	0C907E00	@data 0C910BEC-0C910C24 +r04 +egflags +pool32 +asmfunc=Object_beach_osakana_Exec:+0c907c40
+STG01	modules/stg01/sea.c	0C909F20	0C90A820	+r04 +egflags +pool32 +asmfunc=beach_sea_get_height
+STG01	modules/stg01/sea_surface.c	0C90B3E0	0C90B7A0	+egflags +pool32
+STG01	modules/stg01/seagull.c	0C904220	0C904980	@data 0C910B30-0C910B48 +r04 +egflags +pool32
+STG01	modules/stg01/spray.c	0C902AA0	0C902CA0	@data 0C910AE4-0C910AFC @ddata 0CAAFB84-0CAAFBE8 +r04 +egflags +pool32
+STG01	modules/stg01/springboard.c	0C904F50	0C905CA0	+r04 +egflags +pool32 +poolafter=read_settings,Object_beach_gomubane_End +asmfunc=CalcBaneTopPoint:+0c9050ca,springboard_init:+0c905224,Object_beach_gomubane_Exec:+0c905af4,Object_beach_gomubane_Draw:+0c905ca0
+STG01	modules/stg01/umbrella.c	0C90B2E0	0C90B3E0	+r04 +egflags +pool32
+STG01	modules/stg01/water_column.c	0C902720	0C902AA0	@data 0C910AD8-0C910AE4 +r04 +egflags +pool32
+STG01	modules/stg01/waterfall.c	0C9070C0	0C907300	@data 0C910BE0-0C910BEC +r04 +egflags +pool32
+STG01	modules/stg01/wind.c	0C90CDA0	0C90D200	@data 0C9117B4-0C911804 +r04 +egflags +pool32
+STG02	modules/stg02/ball.c	0C90B880	0C90BBA0	@data 0CA14F58-0CA14F74 +r04 +egflags +pool32
+STG02	modules/stg02/cubes.c	0C908940	0C908AE0	+egflags +pool32
+STG02	modules/stg02/gate.c	0C90B240	0C90B4A0	@data 0CA14F20-0CA14F48 +jpflags +pool32
+STG02	modules/stg02/grass.c	0C90B4A0	0C90B5A0	+jpflags +pool32
+STG02	overlays/src/jp_stg02_missile.c	0C903640	0C903E00	+egflags +pool32
+STG02	modules/stg02/weathervane.c	0C90B5A0	0C90B880	@data 0CA14F48-0CA14F58 +jpflags +pool32
+STG02	modules/stg05/camera_sweep.c	0C902FE0	0C903180	+egflags +pool32
+STG03	modules/stg03/cycle.c	0C908480	0C9085B8	+r04 +egflags +asmfunc=twinkle_cycle_advance:0c908590
+STG03	modules/stg03/monitor.c	0C905A40	0C905DC0	@data 0C9F78CC-0C9F7918 +egflags +pool32
+STG03	modules/stg03/tp_ring.c	0C906900	0C906D60	+egflags +pool32
+STG03	overlays/src/sx_unit_0c903320.c	0C903320	0C903324	+pool32
+STG03	overlays/src/sx_unit_0c914640.c	0C914640	0C914680	+pool32
+STG04	modules/stg04/antenna.c	0C9002C0	0C900560	+egflags +pool32
+STG04	modules/stg04/barrier.c	0C9085A0	0C908860	+r04 +egflags +pool32
+STG04	modules/stg04/bell.c	0C903DC0	0C9041E0	+egflags +pool32
+STG04	modules/stg04/bench.c	0C900560	0C9005C0	+jpflags +pool32
+STG04	modules/stg04/clock.c	0C90B0E0	0C90B2C0	+egflags
+STG04	modules/stg04/corner_light.c	0C905CE0	0C906060	@data 0C912690-0C91269C +egflags +pool32
+STG04	modules/stg04/fence.c	0C901F60	0C901FC0	+jpflags +pool32
+STG04	modules/stg04/gate.c	0C908460	0C908500	+egflags +pool32
+STG04	modules/stg04/lamp.c	0C907060	0C907340	+egflags +pool32
+STG04	modules/stg04/pinpin.c	0C908BA0	0C908C00	+jpflags +pool32
+STG04	modules/stg04/ring_2.c	0C90B2C0	0C90B420	+egflags +pool32
+STG04	modules/stg04/searchlight.c	0C907780	0C907980	+egflags +pool32
+STG04	modules/stg04/street_plant_1.c	0C909620	0C909720	+egflags +pool32
+STG04	modules/stg04/street_plant_2.c	0C909720	0C9097E0	+egflags +pool32
+STG04	modules/stg04/wall_poster.c	0C908C00	0C908D20	+jpflags +pool32
+STG05	modules/stg05/bones.c	0C905F40	0C906460	@data 0CADB900-0CADB92C +r04 +egflags +pool32 +asmfunc=bone_stick_pick:0c906460
+STG05	modules/stg05/camera_sweep.c	0C902760	0C902900	+egflags +pool32
+STG05	modules/stg05/cobweb.c	0C9047E0	0C904940	+egflags +pool32
+STG05	modules/stg05/dust_line.c	0C900000	0C900120	+jpflags +pool32
+STG05	modules/stg05/fences.c	0C905DA0	0C905F40	+r04 +egflags +pool32
+STG05	modules/stg05/gear.c	0C904580	0C9047E0	@data 0CADB8E8-0CADB8F4 +egflags +pool32
+STG05	modules/stg05/light.c	0C907780	0C907A60	+r04 +egflags +pool32
+STG05	modules/stg05/machine.c	0C906460	0C906640	+egflags +pool32
+STG05	overlays/src/jp_stg05_missile.c	0C902DC0	0C9035A0	+egflags +pool32
+STG05	modules/stg05/pipes.c	0C908780	0C90886C	+r04 +egflags
+STG05	modules/stg05/prisoner.c	0C90ECA0	0C90EF9C	+r04 +egflags +asmfunc=prisoner_play:0c90ee66
+STG05	modules/stg05/puff.c	0C900120	0C9004A0	+r04 +egflags +pool32
+STG05	modules/stg05/relay.c	0C90B480	0C90B600	+egflags +pool32
+STG05	modules/stg05/rocker.c	0C90F840	0C90FB40	@data 0CADBBC8-0CADBBCC +egflags +pool32
+STG05	modules/stg05/scaffold.c	0C90F500	0C90F840	+egflags +pool32
+STG05	modules/stg05/signboard.c	0C90B600	0C90B740	+egflags +pool32
+STG05	modules/stg05/vent.c	0C908880	0C908A40	@data 0CADBA10-0CADBA1C +egflags +pool32
+STG06	modules/stg06/container.c	0C909BA0	0C90A000	+egflags +pool32
+STG06	modules/stg06/knock_back.c	0C9140A0	0C9141E0	+egflags +pool32
+STG06	modules/stg06/missile_spot.c	0C908800	0C908980	+r04 +egflags +pool32
+STG06	overlays/src/lead_stg06_jp_stg06_shards.c	0C9141E0	0C9145C0	+egflags +pool32
+STG07	modules/stg07/boulder.c	0C901E20	0C9024E0	+r04 +egflags +pool32 +asmfunc=boulder_roll:0c902402
+STG07	modules/stg07/box.c	0C901A20	0C901E20	+r04 +egflags +pool32
+STG07	modules/stg07/dou.c	0C9017C0	0C901860	+egflags +pool32
+STG07	modules/stg07/gate.c	0C901860	0C901A20	+egflags +pool32
+STG07	modules/stg07/roll_path.c	0C909E80	0C90A0E0	+egflags +pool32
+STG07	modules/stg07/snake_gate.c	0C9026E0	0C9028E0	+r04 +egflags +pool32
+STG07	modules/stg07/spikes.c	0C9060E0	0C906140	+jpflags +pool32
+STG08	modules/stg08/act_joins.c	0C90D6E0	0C90DA00	+egflags +pool32
+STG08	modules/stg08/big_bone.c	0C90CBE0	0C90CD40	+egflags +pool32
+STG08	modules/stg08/gates.c	0C90DA00	0C90DD40	+r04 +egflags +pool32
+STG08	modules/stg08/hasi_hasi.c	0C90D560	0C90D6E0	+r04 +egflags +pool32 +asmfunc=hasi_hasi_init:0c90d5be
+STG08	modules/stg08/hot_air_balloon.c	0C907380	0C9074B0	+r04 +egflags +asmfunc=hot_air_balloon_rise:0c9074b0
+STG08	modules/stg08/ice_jump.c	0C905840	0C905880	+jpflags +pool32
+STG08	modules/stg08/icicle.c	0C905600	0C905840	+egflags +pool32
+STG08	modules/stg08/moku.c	0C905880	0C905960	+r04 +egflags
+STG08	modules/stg08/snow_door.c	0C908060	0C908600	@data 0CAC18D8-0CAC18E4 +r04 +egflags +pool32 +poolafter=DoaDraw,DoaExec +asmfunc=DoaDraw:0c9083a0
+STG08	modules/stg08/splash.c	0C900000	0C900360	+egflags +pool32
+STG08	modules/stg08/streaks.c	0C90F840	0C90FF40	+egflags +pool32
+STG08	modules/stg08/water_weeds.c	0C9054A0	0C905600	+r04 +egflags +pool32
+STG08	modules/stg08/windmill.c	0C908B40	0C908D00	+egflags +pool32
+STG08	modules/stg08/yura_yura.c	0C90F680	0C90F840	+jpflags +pool32
+STG09	modules/stg09/big_star.c	0C908800	0C908940	+r04 +egflags +pool32
+STG09	modules/stg09/black_wall.c	0C906360	0C906460	+r04 +egflags +pool32
+STG09	modules/stg09/card_sign.c	0C917320	0C9175E0	@data 0CB2349C-0CB234C8 +egflags +pool32
+STG09	modules/stg09/damage_sphere.c	0C90E0E0	0C90E1E0	@data 0CB233CC-0CB233DC +jpflags +pool32
+STG09	modules/stg09/decor_arrow.c	0C908CA0	0C908DA0	+r04 +egflags +pool32
+STG09	modules/stg09/dice.c	0C908640	0C908800	+egflags +pool32
+STG09	modules/stg09/emergency.c	0C909C20	0C909E20	@data 0CB21034-0CB21050 +r04 +egflags +pool32
+STG09	modules/stg09/idea.c	0C906D80	0C906F00	+r04 +egflags +pool32 +asmfunc=idea_draw:0c906e3e
+STG09	overlays/src/jp_stg09_ideacap.c	0C906C80	0C906D80	+egflags +pool32
+STG09	modules/stg09/kaz.c	0C9114E0	0C911DE0	@data 0CB233F8-0CB23424 +egflags +pool32
+STG09	modules/stg09/lamp.c	0C9224A0	0C9226A0	@data 0CB237EC-0CB237F8 +r04 +egflags +pool32
+STG09	modules/stg09/mirror_ball.c	0C916940	0C916B20	@data 0CB23470-0CB2347C +egflags +pool32
+STG09	modules/stg09/mud.c	0C91DB80	0C91DE80	@data 0CB236C0-0CB236D4 +egflags +pool32
+STG09	modules/stg09/neon.c	0C923700	0C923980	+egflags +pool32
+STG09	modules/stg09/neon_sign.c	0C921F00	0C9220A0	@data 0CB237C4-0CB237D0 +egflags +pool32
+STG09	modules/stg09/obstacle.c	0C906460	0C906820	+egflags +pool32
+STG09	modules/stg09/quake.c	0C9147E0	0C914940	+r04 +egflags +asmfunc=quake_start:0c914940
+STG09	modules/stg09/roll_up.c	0C905180	0C9055C0	+r04 +egflags +pool32
+STG09	modules/stg09/route_egg.c	0C909460	0C9095E0	+r04 +egflags +pool32
+STG09	modules/stg09/sign_c.c	0C921AA0	0C921D20	@data 0CB2379C-0CB237B8 +egflags +pool32
+STG09	modules/stg09/sign_s.c	0C921D20	0C921F00	@data 0CB237B8-0CB237C4 +r04 +egflags +asmfunc=sign_s_run:0c921f00
+STG09	modules/stg09/slot_sign.c	0C9175E0	0C9178E0	@data 0CB234C8-0CB234F4 +egflags +pool32
+STG09	modules/stg09/stopper.c	0C903260	0C9038C0	+egflags +pool32
+STG09	modules/stg09/tanemono.c	0C908DA0	0C908EA0	+egflags +pool32
+STG09	modules/stg09/water_smoke.c	0C915B40	0C915E00	+egflags +pool32
+STG09	modules/stg09/water_spray.c	0C91CAC0	0C91CD60	@data 0CB23600-0CB23644 +jpflags +pool32
+STG09	modules/stg09/water_spray2.c	0C91CD60	0C91D080	@data 0CB23644-0CB23688 +jpflags +pool32
+STG10	modules/stg10/amy_drum.c	0C90E8E0	0C90EA00	+egflags +pool32
+STG10	overlays/src/lead_stg10_jp_stg10_blue_light.c	0C906B40	0C906E60	+r04 +egflags +pool32 +poolafter=FUN_0c906bda,FUN_0c906c20 +asmfunc=FUN_0c906b40:0c906bda
+STG10	modules/stg10/conveyor_stop.c	0C902AA0	0C902D00	+r04 +egflags +pool32 +poolafter=conveyor_stop_reset +asmfunc=conveyor_stop_init:0c902b4a
+STG10	modules/stg10/fan.c	0C915040	0C915200	@data 0C919D44-0C919D58 +egflags +pool32
+STG10	modules/stg10/floating_island.c	0C910640	0C910A60	@data 0C9199C8-0C919A0C +egflags +pool32
+STG10	modules/stg10/hammer.c	0C906140	0C9064A0	@data 0C9196F8-0C919718 +egflags +pool32
+STG10	modules/stg10/lamp.c	0C914980	0C914D20	@data 0C919D18-0C919D3C +r04 +egflags +pool32 +asmfunc=final_lamp_find_node:0c914d20
+STG10	modules/stg10/light2.c	0C912940	0C912A00	+r04 +egflags +pool32
+STG10	overlays/src/lead_stg10_jp_stg10_light_camera.c	0C906800	0C906B40	+r04 +egflags +pool32 +poolafter=FUN_0c90689a,FUN_0c9068e0 +asmfunc=FUN_0c906800:0c90689a
+STG10	modules/stg10/pom.c	0C914580	0C914640	+r04 +egflags +pool32
+STG10	modules/stg10/puff.c	0C90F2E0	0C90F420	+egflags +pool32
+STG10	overlays/src/lead_stg10_jp_stg10_pursuit_camera.c	0C9064A0	0C906800	+r04 +egflags +pool32 +poolafter=FUN_0c90653a,FUN_0c906580 +asmfunc=FUN_0c9064a0:0c90653a
+STG10	modules/stg10/rotating_door.c	0C906E60	0C9071C0	+r04 +egflags +pool32 +poolafter=rotating_door_reset,rotating_door_swing +asmfunc=rotating_door_init:0c906efa
+STG10	modules/stg10/run_path.c	0C900780	0C9008E0	+egflags +pool32
+STG10	modules/stg10/thorn_roller.c	0C900CE0	0C900F80	+r04 +egflags +pool32 +poolafter=thorn_roller_reset +asmfunc=thorn_roller_init:0c900d8a
+STG10	modules/stg10/updraft.c	0C910B60	0C910CA0	+r04 +egflags +pool32
+STG10	modules/stg10/zero_box.c	0C90F060	0C90F2E0	+egflags +pool32
+STG12	overlays/src/lead_stg12_jp_stg10_debris.c	0C906B20	0C906CE0	+r04 +egflags +pool32 +poolafter=FUN_0c906c58
+STG12	modules/stg10/puff.c	0C906CE0	0C906E20	+egflags +pool32
+STG12	modules/stg12/banji.c	0C9054A0	0C9055C0	+r04 +egflags +pool32
+STG12	modules/stg12/blue_light.c	0C913080	0C91319C	+egflags
+STG12	overlays/src/lead_stg12_jp_stg12_camera_sweep.c	0C915A80	0C915C4C	+r04 +egflags +poolafter=FUN_0c915acc +asmfunc=FUN_0c915a80:0c915a8a
+STG12	modules/stg12/cargo_fade.c	0C913BE0	0C913D40	+r04 +egflags +asmfunc=cargo_fade_draw:0c913d40
+STG12	modules/stg12/cargo_tunnel.c	0C911CC0	0C911F20	+r04 +egflags +asmfunc=cargo_tunnel_draw:0c911f20
+STG12	modules/stg12/dam_water.c	0C90FA00	0C90FB80	+jpflags +pool32
+STG12	modules/stg12/elevator.c	0C901EE0	0C902400	+r04 +egflags +pool32 +poolafter=shelter_elevator_update,shelter_elevator_down +asmfunc=shelter_elevator_init:0c9020f8
+STG12	modules/stg12/enemy_container.c	0C912A80	0C912DE0	+egflags +pool32
+STG12	modules/stg12/gate_side.c	0C912F40	0C913080	+jpflags +pool32
+STG12	modules/stg12/gear_2.c	0C903980	0C903D40	@data 0CAA33C8-0CAA33F0 +egflags +pool32
+STG12	modules/stg12/gear_5.c	0C904480	0C904840	@data 0CAA3440-0CAA3468 +egflags +pool32
+STG12	modules/stg12/handle_meter.c	0C9018A0	0C9019C0	+r04 +egflags +pool32
+STG12	modules/stg12/lid.c	0C90F620	0C90FA00	+egflags +pool32
+STG12	modules/stg12/spark.c	0C901AC0	0C901BA0	+r04 +egflags +pool32
+STG12	overlays/src/lead_stg12_jp_stg12_toilet_door.c	0C907920	0C907B40	@data 0CAA3698-0CAA36BC +r04 +egflags +pool32 +poolafter=FUN_0c907920
+STG12	modules/stg12/turntable.c	0C907780	0C907920	+r04 +egflags +pool32
+STG12	modules/stg12/upper_pool.c	0C90F4A0	0C90F620	+egflags +pool32
+STG12	modules/stg12/water.c	0C90ECA0	0C90ED20	+jpflags +pool32
+STG12	modules/stg12/water_column.c	0C90CB60	0C90CDA0	+r04 +egflags +pool32
+STG12	overlays/src/sx_unit_0c928880.c	0C90C1A0	0C90C200	+pool32
+SUMMARY	modules/summary/pages.c	8C900860	8C900940	+jpflags +pool32

@@ -1,3 +1,17 @@
 8cb81c88 execChaos1Task
 8cb81e8c dispChaos1Task
 8cb820ce destChaos1Task
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbc0134 event_movers
+0cbc0130 event_rays
+0cb84b58 ev0087_emerald
+0cb93108 event_message_close
+0cbba150 event_chaos1_texlist
+0cbaa9ac event_chaos0_water_texlist
+0cbbfe2c event_chaos1_task
+0cbbfe24 event_chaos1_action
+0cbbff80 event_chaos1_welds
+0cbaeff4 event_chaos0_puddle_object
+0cbc017c ev0087_chaos2_task
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbc015c event_fade_corners

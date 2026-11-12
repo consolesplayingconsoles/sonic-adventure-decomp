@@ -1,3 +1,9 @@
 0cb9014c gCEventSePP
 0cb90148 gMaxId
 0cb90150 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb9013c ev00da_frog_texlist
+0cb8964c event_light_create
+0cb8e9e8 event_sound_stop_all
+# events/shared/white.c (the Japanese release's names, tools/jpport)
+0cb90144 event_white

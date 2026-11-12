@@ -1,3 +1,5 @@
 0cb88254 gCEventSePP
 0cb88250 gMaxId
 0cb88258 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb88200 ev00c5_picture

@@ -155,6 +155,9 @@ written down (what differs) for later; move on.
   `+pool00`, `+synth16`), the others to `shc`. What each is for and the evidence: `docs/matching.md`. `python3 tools/fcmp.py src/<file>.c
   [function ...] -v` compares a file function by function; `python3 tools/permute.py src/<file>.c <function>` tries rewrites that keep the meaning.
 - Code overlays (stage, boss, event, Chao code): `docs/overlays.md`.
+- Most matching C is the Japanese release's source tree ported to this release (`src/<dir>/`, `modules/`, `events/`, `sdk/`): change a
+  unit there, beside its headers, and keep the tree's layout. `+r04` units need SHC 5.1r04 (`SDK_R04_PATH`). `docs/matching.md` has the
+  options and how a name of the C that differs from the tables is resolved.
 - Library-style code padded with `nop`s to 16 or 32 bytes between functions and before branch
   targets was built with `-align16`: put it in the `@unit` header.
 - Gaps the compiler reserves (`.RES`) were filled with `0xEE` by the original link; padding before

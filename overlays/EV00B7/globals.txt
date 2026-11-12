@@ -6,3 +6,26 @@
 0cbd2f54 gCEventSePP
 0cbd2f50 gMaxId
 0cbd2f58 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbc25f4 event_e103_object
+0cb83620 event_camera_set_fov
+0cb84438 ev00b7_e105
+0cba0504 ev00b7_spotlight_0
+0cbad818 ev00b7_spotlight_aim
+0cb95a14 event_fade_create
+0cba2d28 event_camera_release
+0cbb003c event_move_stop_all
+0cbd3070 ev00b7_spotlight_texlist
+0cbd37e0 ev00b7_spotlight_object
+0cbba15c dim_task
+0cbb12e8 ev00b7_frog_texlist
+0cbb5858 ev00b7_frog_action
+0cbd2ef4 ev00b7_frog_screen_welds
+0cbd2f04 ev00b7_frog_screen
+# events/shared/e105.c (the Japanese release's names, tools/jpport)
+0cbcac70 event_e105_texlist
+0cbd2eb0 event_e105_object
+# events/shared/e103.c (the Japanese release's names, tools/jpport)
+0cbba2e0 event_e103_texlist
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbd2f30 event_fade_corners

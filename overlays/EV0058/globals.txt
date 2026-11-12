@@ -1,3 +1,7 @@
 0cb8080c gCEventSePP
 0cb80808 gMaxId
 0cb80810 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb807c0 event_pads_off
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb807e8 event_fade_corners

@@ -1,5 +1,5 @@
 /* @unit 0CB830C0-0CB83210 +pool32 */
-/* Tikal's light ball in events. Sonic Adventure DC's own tikallight.c, written from the code. */
+/* Tikal's light ball in events. Sonic Adventure DC's own tikallight.c, written from the code with sadx-decomp's event/src/tikallight.c (SADX's C, read as text) as the guide. */
        
 typedef unsigned char Uint8;
 typedef signed char Sint8;

@@ -1,1 +1,11 @@
 0cb90cc0 object_skywalk_cl
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb84d54 sound_play_at_for
+0cb80001 sound_play_at
+0cb84ea0 event_eggmobile_nozzle
+0cb84eac event_eggmobile_glare_aim
+0cb84eb8 event_eggmobile_actions
+0cb84efc event_eggmobile_welds
+0cb84f74 event_eggmobile_task
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb90cf4 event_fade_corners

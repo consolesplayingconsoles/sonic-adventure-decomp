@@ -1,0 +1,14 @@
+/* E-101's and his jet's textures, which the events load from EV_E101_BODY
+ * and EV_E101_FUN */
+#ifndef SHARED_E101_TEXTURES_H
+#define SHARED_E101_TEXTURES_H
+
+#include <ninja.h>
+
+extern NJS_TEXLIST ev00b4_e101_action_2;
+extern NJS_TEXLIST event_e101_jet_texlist;
+/* the material belongs to a node of event_e101_object, E-101's model, in the
+ * generated data of each event that links it */
+extern NJS_MATERIAL event_e101_material[1];
+
+#endif

@@ -8,3 +8,16 @@
 0cbc35ec gCEventSePP
 0cbc35e8 gMaxId
 0cbc35f0 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb83adc ev0016_beam
+0cb95ad4 event_prop_set_action
+0cb97df4 event_beam_create
+0cb83ad8 event_look_at_task
+0cb8322c sound_play_at_for
+# events/shared/prop.c (the Japanese release's names, tools/jpport)
+0cbc3578 event_props
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbc35c8 event_fade_corners
+# events/shared/beam.c (the Japanese release's names, tools/jpport)
+0cbc2ed0 event_beam_texlist
+0cbc3510 event_beam_object

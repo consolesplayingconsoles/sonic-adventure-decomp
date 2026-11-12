@@ -1,3 +1,10 @@
 0cb83ea4 gCEventSePP
 0cb83ea0 gMaxId
 0cb83ea8 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb83e44 event_follow_weld0
+0cb823a4 event_camera_follow_clear
+0cb823ac event_pads_on
+0cb83e50 event_props
+0cb83e4c event_white
+0cb83e78 event_movers

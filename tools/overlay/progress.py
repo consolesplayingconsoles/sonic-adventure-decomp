@@ -3,7 +3,7 @@
 import csv, os
 import place_units      # noqa: E402  (tools/overlay: overlays/units.tsv, the overlays' units and their ranges)
 RANGES = {}
-for o_, unit_, start_, end_ in place_units.rows():
+for o_, unit_, start_, end_, opts_ in place_units.rows():
     RANGES.setdefault(o_, []).append((int(start_, 16), int(end_, 16)))
 rows = list(csv.DictReader(open('overlays.tsv'), delimiter='\t'))
 ok = [r for r in rows if r['status'] == 'ok']

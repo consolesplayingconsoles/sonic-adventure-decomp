@@ -6,3 +6,20 @@
 0cba4498 gCEventSePP
 0cba4494 gMaxId
 0cba449c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb88414 ev0050_walker_texlist
+0cb9871c ev0050_walker_landing
+0cb882c8 ev0050_eggman_body_texlist
+0cb8b9dc ev0050_eggman_body_object
+0cb98754 ev0050_walker_dust
+0cb98724 ev0050_walker_feet
+0cb98790 ev0050_walker
+0cb9892c event_eggmobile_texlist
+0cb88148 event_eggmobile_nozzle
+0cb88154 event_eggmobile_glare_aim
+0cb88160 event_eggmobile_actions
+0cb881a4 event_eggmobile_welds
+0cb8821c event_eggmobile_task
+0cba4438 ev0050_car_collision
+0cb85580 event_sound_init
+0cb87ffc event_camera_set_pos

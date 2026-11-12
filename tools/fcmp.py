@@ -36,9 +36,18 @@ m = re.match(r'\s*/\*\s*@unit\s+\S+(?:\s+@data\s+\S+)?\s*(.*?)\s*\*/', head)
 opts = m.group(1).split() if m else []
 shutil.copy(cfile, W + '/u.c')
 env = dict(os.environ, SHC_LIB=TW, SHC_INC=TW, SHC_TMP=WB + '\\tmp')
-FLAGS = open(os.path.join(toolpath.ROOT, '1-2-baseline', 'shc_flags.txt')).read().split()      # the build's flags (build.sh reads the same file)
-FL = [f for f in FLAGS if not ('-speed' in opts and f == '-size')]      # a unit built for speed: not for size
-r = subprocess.run(['wibo', tool('shc.exe'), WB + '\\u.c', '-code=asm', '-object=' + WB + '\\u.s', *FL, *[o for o in opts if not o.startswith('+')]], env=env, capture_output=True, text=True, errors='replace')
+opts = re.sub(r'@[db]data\s+\S+', '', ' '.join(opts)).split()      # the unit's D/B pieces are build.sh's
+fset = next((o[1:-5] for o in opts if re.match(r'\+\w+flags$', o)), None)      # +egflags ...: another set of flags, as build.sh does
+FLAGS = open(os.path.join(toolpath.ROOT, '1-2-baseline', 'shc_flags%s.txt' % ('.' + fset if fset else ''))).read().split()      # the build's flags (build.sh reads the same file)
+FL = [f for f in FLAGS if not ('-speed' in opts and f == '-size') and not f.startswith('-include=')]      # a unit built for speed: not for size
+FL.append('-include=' + ','.join(['src'] + [d.replace('/', '\\') for d in ('src', 'modules', 'events', 'sdk/include', 'sdk') if os.path.isdir(d)]))
+if '+r04' in opts:                       # the older compiler (SDK_R04_PATH), as build.sh does
+    r04 = os.environ.get('SDK_R04_PATH') or next((re.match(r'\s*SDK_R04_PATH="?([^"\n]+)"?', l).group(1) for l in open('.env') if re.match(r'\s*SDK_R04_PATH=', l)), None)
+    if not r04:
+        sys.exit('[ERROR] this unit asks for SHC 5.1r04 (+r04): set SDK_R04_PATH')
+    T = r04; TW = 'Z:' + T.replace('/', '\\')
+    env['SHC_LIB'] = env['SHC_INC'] = TW
+r = subprocess.run(['wibo', next(os.path.join(T, x) for x in os.listdir(T) if x.lower() == 'shc.exe'), WB + '\\u.c', '-code=asm', '-object=' + WB + '\\u.s', *FL, *[o for o in opts if not o.startswith('+')]], env=env, capture_output=True, text=True, errors='replace')
 if not os.path.exists(W + '/u.s'):
     sys.exit(r.stdout + r.stderr)
 if '+synth16' in opts:                   # the unit asks for the game compiler's constants (tools/1-2-baseline/fill.py, synth16): compare what the build assembles

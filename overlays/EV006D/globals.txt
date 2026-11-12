@@ -5,3 +5,20 @@
 0cbbe830 gCEventSePP
 0cbbe82c gMaxId
 0cbbe834 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb85680 ev006d_carry
+0cb83160 event_take_control
+0cbb340c event_set_shadow
+0cb8fde0 tails_texlist
+0cb87690 event_place_actor
+0cb92ac4 ev006d_bird_texlist_1
+0cb95a08 event_message_close
+0cb8d7ac event_prop_set_action
+0cb9da54 event_picture_fade
+0cba2e4c ev006d_amy_action_9
+0cba64d4 event_kill_player
+0cb84544 event_kill_task
+0cb85378 event_camera_release
+0cbbe7bc event_props
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbbe80c event_fade_corners

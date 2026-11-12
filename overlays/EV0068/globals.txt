@@ -5,3 +5,18 @@
 0cbc7f80 gCEventSePP
 0cbc7f7c gMaxId
 0cbc7f84 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbc7f00 event_chao_object
+0cbc7ecc event_chao_body
+0cbc5130 event_chaos0_task
+0cbb9a3c event_chaos0_hop1_action
+0cbc7f34 event_movers
+0cbc8560 event_wave_action
+0cbc8ab8 event_wave_texlist
+0cbc8510 event_wave_object
+0cbc8554 event_wave_motion
+0cbc8aa0 event_wave_shape
+0cbc8ac0 event_wave_emitters
+0cb853b4 ev0068_chao_3
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbc7f5c event_fade_corners

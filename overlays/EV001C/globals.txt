@@ -1,3 +1,22 @@
 0cbb2300 gCEventSePP
 0cbb22fc gMaxId
 0cbb2304 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb9e580 ev001c_eggmobile_action_2
+0cba02d4 event_kill_player
+0cba14e8 event_chaos6_release
+0cbb6190 event_frog_object
+0cbb23bc event_frog_welds
+0cbb2464 event_frog_texlist
+0cbb2374 event_frog_made
+0cbb2390 event_frog_models
+0cbb2358 event_frog_shape_points
+0cbb233c event_frog_scripts
+0cbb23cc event_frog_collision
+0cbb2400 event_frog
+0cbb6d4c event_chaos6_task
+0cba6580 event_eggmobile_nozzle
+0cba658c event_eggmobile_glare_aim
+0cba6598 event_eggmobile_actions
+0cba65dc event_eggmobile_welds
+0cba6654 event_eggmobile_task

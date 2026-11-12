@@ -6,3 +6,24 @@
 0cbc751c gCEventSePP
 0cbc7518 gMaxId
 0cbc7520 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb859a4 event_sound_init
+0cb92380 event_camera_set_pos
+0cb8e068 event_chaos0_slide
+0cb9010c knuckles_stand_action
+0cb9aa08 event_clouds_stop
+0cbc73e8 event_clouds_stream_0
+0cbc7418 event_clouds_stream_1
+0cbc73d4 event_clouds_speed
+0cbc73dc event_clouds_count
+0cbc73d8 event_clouds_scale
+0cbc7484 event_clouds_sprite
+0cbc74a4 event_clouds
+0cbc73e0 event_clouds_0
+0cbc73e4 event_clouds_1
+0cbc70d0 event_chaos0_task
+0cbbb9dc event_chaos0_hop1_action
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbc74f8 event_fade_corners
+# events/shared/prop.c (the Japanese release's names, tools/jpport)
+0cbc74a8 event_props

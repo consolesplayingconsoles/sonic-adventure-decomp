@@ -3,3 +3,34 @@
 0cbb9618 gCEventSePP
 0cbb9614 gMaxId
 0cbb961c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8a4c0 ev0030_plane_texlist
+0cbb95d0 ev0030_plane_anims
+0cb8a504 ev0030_head_texlist
+0cb9407c ev0030_head_object
+0cbb9610 ev0030_plane_task
+0cb89eac path_editor_axis_names
+0cb89eb8 path_editor_origin_names
+0cb865e0 sscanf
+0cb87ec4 path_editor_order_items
+0cb89cec event_clouds_stream_0
+0cb89d1c event_clouds_stream_1
+0cb89cd8 event_clouds_speed
+0cb89ce0 event_clouds_count
+0cb89cdc event_clouds_scale
+0cb89d88 event_clouds_sprite
+0cb89da8 event_clouds
+0cb89ce4 event_clouds_0
+0cb89ce8 event_clouds_1
+0cb89c88 ev0030_smoke_2
+0cb89c80 ev0030_plane
+# events/shared/sdk/_fmtin.c (the Japanese release's names, tools/jpport)
+8c7ac048 _errno
+8c1601c4 _ctype
+8c1601c4 _stf
+# events/shared/sdk/_packf.c (the Japanese release's name: _calcfpow calls it)
+0cb877b0 _packf
+# events/ev0030/plane.c (the Japanese release's names, tools/jpport)
+8c049f56 event_set_flags
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb89e08 event_fade_corners

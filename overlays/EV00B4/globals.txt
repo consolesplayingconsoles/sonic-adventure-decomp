@@ -2,3 +2,11 @@
 0cba2608 gCEventSePP
 0cba2604 gMaxId
 0cba260c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cba25dc event_movers
+0cb9a11c ev00b4_e101_action_2
+# events/shared/e101.c (the Japanese release's names, tools/jpport)
+0cba2610 event_e101_jet_matrix
+0cba2058 event_e101_object
+0cb9a16c event_e101_jet_texlist
+0cba25a8 event_e101_jet_object

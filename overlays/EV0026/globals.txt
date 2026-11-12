@@ -1,2 +1,30 @@
 0cba6cdc p_MoveObjTask
 0cba7378 gParticleInfo
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb9ad28 event_clouds_stream_0
+0cb9ad58 event_clouds_stream_1
+0cb9ad14 event_clouds_speed
+0cb9ad1c event_clouds_count
+0cb9ad18 event_clouds_scale
+0cb9adc4 event_clouds_sprite
+0cb9ade4 event_clouds
+0cb9ad20 event_clouds_0
+0cb9ad24 event_clouds_1
+0cb9b19c event_eggmobile_texlist
+0cb9af2c event_eggmobile_nozzle
+0cb9af38 event_eggmobile_glare_aim
+0cb9af44 event_eggmobile_actions
+0cb9af88 event_eggmobile_welds
+0cb9b000 event_eggmobile_task
+0cb8e2f4 tails_step
+0cba6da8 path_editor_axis_names
+0cba6db4 path_editor_origin_names
+0cb89e28 path_editor_order_items
+# events/shared/sdk/_fmtin.c (the Japanese release's names, tools/jpport)
+8c7ac048 _errno
+8c1601c4 _ctype
+8c1601c4 _stf
+# events/shared/sdk/_packf.c (the Japanese release's name: _calcfpow calls it)
+0cb898a8 _packf
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cba6d04 event_fade_corners

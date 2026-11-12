@@ -5,3 +5,7 @@
 0cbaa324 gCEventSePP
 0cbaa320 gMaxId
 0cbaa328 gOneshotId
+# events/shared/prop.c (the Japanese release's names, tools/jpport)
+0cbaa2b0 event_props
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbaa300 event_fade_corners

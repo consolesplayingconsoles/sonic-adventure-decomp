@@ -1,5 +1,5 @@
 F 0cb80020 466 evmain
-F 0cb802c0 98 FUN_0cb802c0
+F 0cb802c0 98 event_white_start
 F 0cb80322 102 efWhiteOn2
 F 0cb80388 28 efWhiteOff
 F 0cb803a4 58 initEfWhiteTask

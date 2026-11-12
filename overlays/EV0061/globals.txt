@@ -5,3 +5,14 @@
 0cbb57ac gCEventSePP
 0cbb57a8 gMaxId
 0cbb57b0 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbb5748 event_black_colors
+0cbb5758 event_black_polygon
+0cbb5778 event_black
+0cba0abc stream_request_music
+0cbb0c5c ev0061_amy_action_10
+0cb99ef4 ev0061_ver2_wing_action_5
+0cb989b0 ev0061_ver2_wing_action_7
+0cbb577c camera_mark
+# events/shared/white.c (the Japanese release's names, tools/jpport)
+0cbb5724 event_white

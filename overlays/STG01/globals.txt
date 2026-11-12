@@ -8,3 +8,304 @@
 8c90b6cc Disp3
 8c90b708 Destructor
 8cab0884 yurehasi_tp
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cab134c fish_kind_counts
+0cab135c beach_fish_kinds
+0cab13a0 shelter_fish_kinds
+0cab17f8 fish_sizes
+0cab1438 fish_swim_actions
+0cab14f8 fish_model_offsets
+0cab13b8 fish_texlists
+0cac55ac fish_an_ke_texlist
+0cada5ec fish_an_ke_swim_action
+0cadab50 fish_an_ke_bite_action
+0cadb0b4 fish_an_ke_hooked_action
+0caaa92c path_orca_path
+0c910c3c path_orca_rise_splash_speed
+0c910c48 path_orca_fall_splash_speed
+0ca4df6c orca_swim_motion
+0ca565e0 orca_swim_shape
+0ca565fc path_orca_leap_motion
+0ca65c50 path_orca_leap_shape
+0ca4df28 orca_object
+0ca2c684 beach_bobbing_rock_model
+0ca87d10 beach_springboard_object
+0cab0a4c beach_umbrella_shapes
+0ca68b48 beach_umbrella_object
+0ca1ee40 beach_palm_0_leaves_b_object
+0ca1ed3c beach_palm_0_leaves_a_object
+0ca1ff84 beach_palm_0_trunk_model
+0cab0614 beach_palm_2_shape
+0cab09e4 beach_bed_shapes
+0ca6e078 beach_bed_object
+0ca84470 beach_water_column_texlist
+0caafb7c beach_water_column_inner
+0caafb80 beach_water_column_outer
+0cab1a04 sea_task
+0cab1a20 orca_crash_wait
+0caaffa0 beach_big_rock_shapes
+0caafd70 beach_parasol_shapes
+0caafc8c beach_parasol_parts
+0caafc78 beach_parasol_part_counts
+0ca88ec4 beach_bkusa_a_object
+0ca8c864 beach_bkusa_other_object
+0ca89400 beach_bkusa_b_object
+0ca8b3b0 beach_mkusa_model
+0ca8b118 beach_mkusa_leaf_1_object
+0ca8ae84 beach_mkusa_leaf_2_object
+0ca8abf0 beach_mkusa_leaf_3_object
+0ca8a95c beach_mkusa_leaf_4_object
+0ca8a6c8 beach_mkusa_leaf_5_object
+0ca8a434 beach_mkusa_leaf_6_object
+0ca8a1a0 beach_mkusa_leaf_7_object
+0ca89f0c beach_mkusa_leaf_8_object
+0caa881c guillotine_blade_shape
+0ca25738 guillotine_frame_object
+0ca25fd0 guillotine_blade_model
+0c910690 guillotine_frame_offset
+0caa1690 guillotine_shadow_model
+0c91069c guillotine_dust_speed
+0ca83cdc beach_jump_object
+0caafb0c beach_jump_shape
+0ca82cf8 beach_jump_wheel_object
+0ca8294c beach_jump_top_object
+0cab0888 orca_shapes
+0caafb90 beach_spray_texlist
+0caafb98 beach_spray_frame
+0cab0008 beach_act0_sand_cycles
+0cab0098 beach_act0_wave_cycles
+0cab029c beach_act1_water_cycles
+0cab0410 beach_act2_wave_cycles
+0caa14dc beach_sea_surface_texlist
+0caa15b4 beach_sea_surface_object
+0cab0884 beach_bridge_task
+0ca288d4 beach_bridge_end_0_object
+0ca2b1b0 beach_bridge_end_1_object
+0ca2be80 beach_bridge_plank_object
+0ca2bffc beach_bridge_joint_object
+0cab067c beach_bridge_end_0_shapes
+0cab1aec beach_bridge_end_heights
+0cab1a88 beach_bridge_plank_heights
+0caa7254 beach_crash_tails_action
+0cab1310 beach_crash_smoke
+0caa8780 beach_crash_wreck_object
+0cab1af4 beach_sea_grid_x
+0cab1af8 beach_sea_grid_z
+0cab1b00 beach_sea_visits
+0cab1b04 beach_sea_ripples
+0caa132c beach_sea_grid_object
+0caafb40 dolphin_switch_id
+0ca360ac dolphin_leap_a_motion
+0ca40a40 dolphin_leap_a_shape
+0ca40e1c dolphin_leap_b_motion
+0ca4b7b0 dolphin_leap_b_shape
+0ca2e428 dolphin_object
+0caafb48 dolphin_switch_shape
+0c910ab4 dolphin_ahead
+0c910ac0 dolphin_splash_speed
+0cab0530 footprint_kinds
+0cab09b0 arch_rock_shape
+0cab09a4 arch_rock_parts
+0caaff34 beach_pier_shapes
+0cab05a8 beach_waterfall_speed
+0ca8e15c beach_waterfall_object
+# modules/stg01/sea_surface.c (the Japanese release's names, tools/jpport)
+0caa1834 beach_sea_surface_plane_object
+0cab0ab4 beach_sea_surface_hide_point
+# modules/stg01/orca_control.c calls it by the Japanese name
+0c909b40 path_orca_init
+# modules/stg01/orca_control.c (the Japanese release's names, tools/jpport)
+0cab1a08 orca_head
+0cab1a00 orca_leaving
+# modules/stg01/crash.c (the Japanese release's names, tools/jpport)
+8c257b94 tails_texlist
+# modules/stg01/bobbing_rock.c (the Japanese release's names, tools/jpport)
+0ca2c6ac beach_bobbing_rock_object
+# modules/stg01/dolphin.c (the Japanese release's names, tools/jpport)
+0caafb44 dolphin_switch_count
+0ca2e60c dolphin_motion
+# modules/stg01/big_rock.c (the Japanese release's names, tools/jpport)
+0caaff98 beach_big_rock_parts
+# modules/stg01/school.c (the Japanese release's names, tools/jpport)
+0ca8d188 beach_school_fish_1_object
+0ca8d28c beach_school_fish_2_object
+0ca8d390 beach_school_fish_3_object
+# modules/stg01/pier.c (the Japanese release's names, tools/jpport)
+0ca736c4 beach_pier_deck_object
+0caafe5c beach_pier_parts
+# modules/stg01/plants.c (the Japanese release's names, tools/jpport)
+0ca89c00 beach_k2_object
+# modules/stg01/guillotine.c (the Japanese release's names, tools/jpport)
+0caa87b4 guillotine_post_shapes
+# modules/stg01/palms.c (the Japanese release's names, tools/jpport)
+0cab05ac beach_palm_0_shape
+0ca200b0 beach_palm_1_leaves_b_object
+0ca201b4 beach_palm_1_leaves_a_object
+0ca211ec beach_palm_1_trunk_model
+0ca21318 beach_palm_2_leaves_b_object
+0ca2141c beach_palm_2_leaves_a_object
+0ca223ec beach_palm_2_trunk_model
+0cab0648 beach_palm_3_shape
+0ca22c40 beach_palm_3_model
+0cab05e0 beach_palm_1_shape
+# modules/stg01/big_rock.c (the Japanese release's names, tools/jpport)
+0cab1a14 orca_speed
+0caaff90 beach_big_rock_part_counts
+# modules/stg01/bridge.c (by the Japanese layout next to beach_bridge_end_0_shapes)
+0cab074c beach_bridge_end_1_shapes
+0cab081c beach_bridge_plank_shapes
+# modules/stg01/bridge.c (the Japanese release's names, tools/jpport)
+0ca2c1dc beach_bridge_plank_world_object
+0cab1a24 beach_bridge_plank_angles
+0ca2c0ec beach_bridge_end_world_object
+# modules/stg01/wind.c: a main-program function functions.txt has inside FUN_8c07c93a (its own start at 8c07ca10, after an rts)
+8c07ca10 player_updraft
+# modules/stg01/wind.c (the Japanese release's names, tools/jpport)
+0cab12d0 beach_wind_origin
+0cab1260 beach_wind_box
+# modules/stg01/frog.c (the Japanese release's names, tools/jpport)
+0cab12e0 beach_frog_nodes
+8c568028 frog_object
+# modules/stg01/sea.c (by the Japanese layout between beach_sea_grid_z and beach_sea_visits)
+0cab1afc dat_0cab1ee0
+# modules/stg01/pier.c (the Japanese release's names, tools/jpport)
+0cab19fc orca_task
+0caafd88 beach_pier_straight_parts
+0caafdf0 beach_pier_corner_parts
+0caafe54 beach_pier_part_counts
+0caafe64 beach_pier_straight_shapes
+0caafecc beach_pier_corner_shapes
+# modules/stg01/orca.c (by the Japanese layout: beach_waterfall_object and beach_sea_grid_object agree)
+0ca8e190 orca_leap_root_keys
+0ca8e3a0 orca_leap_motion
+0ca9ad24 orca_leap_shape
+# modules/stg01/cycle.c (the Japanese release's names, tools/jpport)
+0cab01f4 beach_act1_wave_cycles
+0cab02a8 beach_act2_sand_cycles
+0cab0164 beach_act1_sand_cycles
+0cab047c beach_act2_water_cycles
+# modules/stg01/plants.c (the Japanese release's names, tools/jpport)
+0ca87e14 beach_butterfly_object
+# modules/stg01/seagull.c (the Japanese release's names, tools/jpport)
+0ca8616c beach_seagull_action
+0ca859b4 beach_seagull_l_body_model
+0ca8565c beach_seagull_l_wing_minus_x_object
+0ca85444 beach_seagull_l_wing_plus_x_object
+# modules/stg01/arch_rock.c (the Japanese release's names, tools/jpport)
+0ca6eae4 beach_big_rock_a_object
+0ca6ee60 beach_big_rock_a_piece_1_object
+0ca6ef8c beach_big_rock_a_piece_2_object
+0ca6f14c beach_big_rock_a_piece_3_object
+0ca6f408 beach_big_rock_a_piece_4_object
+0ca6f5bc beach_big_rock_a_piece_5_object
+0ca6f6e8 beach_big_rock_a_piece_6_object
+0ca6f878 beach_big_rock_a_piece_7_object
+0ca6fad0 beach_big_rock_a_piece_8_object
+0ca70190 beach_big_rock_a_piece_9_object
+0ca72044 beach_big_rock_b_object
+0ca7236c beach_big_rock_b_piece_1_object
+0ca724d8 beach_big_rock_b_piece_2_object
+0ca72610 beach_big_rock_b_piece_3_object
+0ca72898 beach_big_rock_b_piece_4_object
+0ca72a7c beach_big_rock_b_piece_5_object
+0ca72d28 beach_big_rock_b_piece_6_object
+0ca72f00 beach_big_rock_b_piece_7_object
+0ca73050 beach_big_rock_b_piece_8_object
+0ca73428 beach_big_rock_b_piece_9_object
+0ca735d4 beach_big_rock_b_piece_10_object
+0ca708ac arch_rock_object
+0ca70b18 arch_rock_piece_1_object
+0ca70f34 arch_rock_piece_2_object
+0ca71170 arch_rock_piece_3_object
+0ca71354 arch_rock_piece_4_object
+0ca714c8 arch_rock_piece_5_object
+0ca716a0 arch_rock_piece_6_object
+0ca7183c arch_rock_piece_7_object
+# modules/stg01/fences.c (the Japanese release's names, tools/jpport)
+0ca7c814 beach_fence_a_object
+0caafa3c beach_fence_a_shape
+0ca7cb00 beach_fence_b_object
+0caafa70 beach_fence_b_shape
+0ca7cf6c beach_fence_c_object
+0caafaa4 beach_fence_c_shape
+0ca7d258 beach_fence_d_object
+0caafad8 beach_fence_d_shape
+# modules/stg01/coral.c (the Japanese release's names, tools/jpport)
+0ca81d74 coral_a_object
+0ca82514 coral_b_object
+# modules/stg01/grass.c (the Japanese release's names, tools/jpport)
+0ca80e48 beach_grass_a_object
+0ca81158 beach_grass_b_object
+0ca7ea3c beach_grass_c_object
+0ca7fdfc beach_grass_d_object
+# modules/stg01/scenery.c (the Japanese release's names, tools/jpport)
+0ca24ea8 beach_float_object
+0ca247b4 bungalow_object
+0ca7e154 beach_rock_object
+0ca84430 rock_pole_object
+0ca86d2c stone_pillar_object
+0ca1dd7c stone_pillar_shape
+0ca86a94 komomo_object
+0ca9b498 beach_rock_2_object
+0ca1ddb0 beach_rock_2_shape
+8c046a08 splash_create
+# modules/stg01/spray.c (the Japanese release's names, tools/jpport)
+0cab198c beach_spray_sprite
+0caafbac beach_spray_mist
+0caafb84 beach_spray_texnames
+# modules/stg01/beach.c (the Japanese release's names, tools/jpport)
+0c90f3f8 act0_exit
+0c90f3e0 sun_point
+8c63fa88 njGenerateFogTable3
+8c60ed4a njSetDepthQueue
+0c90b420 beach_sea_surface_remove
+0c911834 beach_fog_table
+0ca1ec64 beach_sky_texlist
+0ca1eb08 beach_sky_object_0
+0ca1ec0c beach_sky_object_1
+# modules/stg01/path_camera.c (the Japanese release's names, tools/jpport)
+0cab0ac0 beach_path_cameras
+0cab0b5c beach_path_camera_sampled
+0c910c54 beach_path_camera_format
+# modules/stg01/springboard.c (the Japanese release's names, tools/jpport)
+0cab0494 springboard_shapes
+0cab0488 active_springboard
+0c910b48 reflect_bane45
+0c910b5c reflect_bane
+0c910b70 reflect_gomu
+0c910b84 stretch_himo
+0c910b98 stretch_gomu
+0c910bac chain_label
+0c910bb0 board_middle
+8c07ca80 player_push
+# modules/stg01/fish.c (the Japanese release's names, tools/jpport)
+0cab14b8 fish_bite_actions
+0cab1478 fish_hooked_actions
+0cab13f8 fish_objects
+8c7a4010 fishing_fish_count
+0cab1388 icecap_fish_kinds
+0cab15b8 fish_held_small
+0cab1678 fish_held_medium
+0cab1738 fish_held_large
+0cab18f8 fish_shapes
+0cacabc0 fish_pira_texlist
+0cacca40 fish_same_texlist
+0cac5e74 fish_hh_texlist
+0cac81e0 fish_ms_texlist
+0cacec60 fish_una_texlist
+0cad0c18 fish_utu_texlist
+0cad320c fish_ryu_texlist
+0cacc9b8 fish_pira_object
+0cacebe4 fish_same_object
+0cac811c fish_hh_object
+0cacab2c fish_ms_object
+0cad0b9c fish_una_object
+0cad3154 fish_utu_object
+0cad5b40 fish_ryu_object
+0cad6620 fish_sb_swim_action
+0cad6fd4 fish_sb_bite_action
+0cad7988 fish_sb_hooked_action
+0cad9200 fish_an_swim_action
+0cad99c4 fish_an_bite_action
+0cada188 fish_an_hooked_action
+0cab137c twinkle_fish_kinds

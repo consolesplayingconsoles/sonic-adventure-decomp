@@ -1,4 +1,4 @@
-F 0cb80020 1022 FUN_0cb80020
+F 0cb80020 1022 ev00bc_script
 F 0cb80440 16 CEventSe_Dest
 F 0cb80450 162 CEventSe_Exec
 F 0cb804f2 96 CEventSe_Create

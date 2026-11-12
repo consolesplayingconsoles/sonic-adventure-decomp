@@ -11,3 +11,25 @@
 0cbe6794 gCEventSePP
 0cbe6790 gMaxId
 0cbe6798 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb9ca44 event_look_clear
+0cb89368 event_camera_release
+0cb89358 con_regular_texlist
+0cbccaa0 event_chaos0_task
+0cbc13ac event_chaos0_hop1_action
+0cbb1ccc draw_attr_set
+0cbe6874 event_chaos7_task
+0cbcd15c event_eggmobile_texlist
+0cbcceec event_eggmobile_nozzle
+0cbccef8 event_eggmobile_glare_aim
+0cbccf04 event_eggmobile_actions
+0cbccf48 event_eggmobile_welds
+0cbccfc0 event_eggmobile_task
+# events/shared/white.c (the Japanese release's names, tools/jpport)
+0cbccda4 event_white
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbe6770 event_fade_corners
+# events/shared/chao.c (the Japanese release's names, tools/jpport)
+0cbd8cec event_chao_texlist
+0cbdb734 event_chao_object
+0cbdb700 event_chao_body

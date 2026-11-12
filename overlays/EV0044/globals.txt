@@ -1,3 +1,5 @@
 0cb83478 gCEventSePP
 0cb83474 gMaxId
 0cb8347c gOneshotId
+# events/shared/white.c (the Japanese release's names, tools/jpport)
+0cb83470 event_white

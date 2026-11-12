@@ -5,3 +5,19 @@
 8cb843e0 execMoveObjTask
 8cb84b82 dispMoveObjTask
 8cb84b86 destMoveObjTask
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb9d970 event_eggmobile_texlist
+0cb9d700 event_eggmobile_nozzle
+0cb9d70c event_eggmobile_glare_aim
+0cb9d718 event_eggmobile_actions
+0cb9d75c event_eggmobile_welds
+0cb9d7d4 event_eggmobile_task
+0cb84c04 event_set_pos
+0cb9abe0 event_prop_set_action
+0cb9cf00 event_beam_create
+0cb85880 event_camera_look_clear
+# events/shared/prop.c (the Japanese release's names, tools/jpport)
+0cba947c event_props
+# events/shared/beam.c (the Japanese release's names, tools/jpport)
+0cb9cf14 event_beam_texlist
+0cb9d554 event_beam_object

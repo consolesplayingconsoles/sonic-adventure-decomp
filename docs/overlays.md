@@ -10,9 +10,11 @@ with their `status` saying why. `overlays.tsv` is the one place for an overlay's
 
 - `overlays/<name>/`: `functions.txt`, `globals.txt` and `symbols.local.txt` of one overlay (committed). `setup.sh` adds the decompressed image
   (`<name>.bin`), `asm/` and `objects.txt` (`tools/overlay/setup_overlays.py`; never committed).
-- `overlays/src/<unit>.c`: the C units of the overlays, each stored once. `overlays/units.tsv` says which overlays have each unit and at what
-  range: the same code sits at a different address in each. The `@unit` range in the stored file is that of one of its overlays; the build
-  writes `overlays/<name>/src/<unit>.c` with the range of that overlay's row (`tools/overlay/place_units.py`, generated, `.gitignore`).
+- The C units of the overlays, each stored once: the sources of the Japanese release's tree in `modules/` and `events/`
+  ([matching.md](matching.md#the-source-tree-of-the-japanese-release)), and the others in `overlays/src/`. `overlays/units.tsv` says which
+  overlays have each unit, at what range (the same code sits at a different address in each) and with which header options; the build writes
+  `overlays/<name>/src/` from those rows (`tools/overlay/place_units.py`, generated, `.gitignore`). Where an overlay names a function of the
+  shared C otherwise, the C's name is in its `symbols.local.txt`.
 
 ## Building
 

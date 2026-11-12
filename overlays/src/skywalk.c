@@ -1,5 +1,5 @@
 /* @unit 0CB82F80-0CB830C0 -speed +pool32 +synth16 */
-/* The sky walk under Sonic in events. Sonic Adventure DC's own skywalk.c, written from the code.
+/* The sky walk under Sonic in events. Sonic Adventure DC's own skywalk.c, written from the code with sadx-decomp's event/src/skywalk.c (SADX's C, read as text) as the guide.
    +synth16: the game's compiler built the constant 0x100 with mov #1 / shll8, which no available SHC does (tools/fill.py, synth16). */
        
 typedef unsigned char Uint8;

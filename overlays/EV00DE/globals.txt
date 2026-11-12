@@ -5,3 +5,28 @@
 0cbca2d8 gCEventSePP
 0cbca2d4 gMaxId
 0cbca2dc gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbc9714 event_frog_object
+0cbc5940 event_frog_welds
+0cbc5914 event_frog_models
+0cbc58dc event_frog_shape_points
+0cbc58c0 event_frog_scripts
+0cbc5950 event_frog_collision
+0cbc5984 event_frog
+0cbc5888 event_chaos6_task
+0cb87960 event_sound_init
+0cb88940 ev00de_frog_action_2
+0cb9ee74 sonic_texlist
+0cba0818 event_message_clear
+0cbb9710 event_chaos4_task
+0cbb9818 event_chaos4_welds
+0cbaaf34 event_chaos0_puddle_object
+0cbb9ac4 event_eggmobile_nozzle
+0cbb9ad0 event_eggmobile_glare_aim
+0cbb9adc event_eggmobile_actions
+0cbb9b20 event_eggmobile_welds
+0cbb9b98 event_eggmobile_task
+# events/shared/rays.c (the Japanese release's names, tools/jpport)
+0cbca2d0 event_rays
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbc5868 event_fade_corners

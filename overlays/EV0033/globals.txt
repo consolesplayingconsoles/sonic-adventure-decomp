@@ -6,3 +6,28 @@
 0cbec478 gCEventSePP
 0cbec474 gMaxId
 0cbec47c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbc762c event_chaos0_hop1_action
+0cbb7f4c draw_attr_set
+0cbd316c event_eggmobile_nozzle
+0cbd3178 event_eggmobile_glare_aim
+0cbd3184 event_eggmobile_actions
+0cbd31c8 event_eggmobile_welds
+0cbd3240 event_eggmobile_task
+0cbe97b4 event_sound_start
+0cb97af8 event_talk_start
+0cbeb124 jet_objects
+0cbddb14 event_hornet_task
+0cbeb14c event_jet_texlist
+0cbe9a74 jet_ring_object
+0cbe9d00 jet_cone_object
+0cbea43c jet_core_object
+0cbe9f58 jet_plus_x_object
+0cbea1b0 jet_minus_x_object
+# events/shared/rays.c (the Japanese release's names, tools/jpport)
+0cbd3024 event_rays
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbec454 event_fade_corners
+# events/shared/claw.c (the Japanese release's names, tools/jpport)
+0cbeb1b0 event_claw_texlist
+0cbec418 event_claw_nodes

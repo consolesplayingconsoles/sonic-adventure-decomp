@@ -5,3 +5,10 @@
 0cbc3938 gCEventSePP
 0cbc3934 gMaxId
 0cbc393c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb839d8 ev0064_shadows
+0cb9205c event_camera_set_ang
+0cb8cb24 event_voice_play
+0cb8f358 event_zero_set_speed
+# events/shared/zero_grab.c (the Japanese release's names, tools/jpport)
+8c106e6e zero_event_grab

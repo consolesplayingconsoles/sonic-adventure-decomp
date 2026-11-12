@@ -1,1 +1,6 @@
 0cb90e90 object_skywalk_cl
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb86e20 ev00f4_sonic_action_2
+0cb81368 ev00f4_floor
+0cb90dc4 event_talk_stop
+0cb8e530 event_pads_on

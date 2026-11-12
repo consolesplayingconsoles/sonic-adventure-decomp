@@ -5,3 +5,9 @@
 0cb95628 gCEventSePP
 0cb95624 gMaxId
 0cb9562c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb86ff8 ev000d_tornado_action
+0cb955d4 event_camera_set_pos
+0cb86dc8 stream_request_music
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb95604 event_fade_corners

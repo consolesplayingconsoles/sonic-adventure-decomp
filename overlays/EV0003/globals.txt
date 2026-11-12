@@ -1,3 +1,12 @@
 0cb955a0 gCEventSePP
 0cb9559c gMaxId
 0cb955a4 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb91af0 ev0003_plane_texlist
+0cb95594 ev0003_plane_action
+0cb918fc ev0003_tails_action
+0cb81d44 ev0003_flight
+0cb81ef4 ev0003_smoke
+0cb81f30 ev0003_plane
+0cb81850 event_sound_init
+0cb84d54 sonic_texlist

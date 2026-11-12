@@ -35,9 +35,9 @@ def entries(d):
     return [l.split() for l in open(os.path.join(d, 'functions.txt')) if l.startswith(('F ', 'D '))]
 
 
-unit = os.path.basename(unit)[:-2] if unit.endswith('.c') else unit
+unit = unit if unit.endswith('.c') else 'overlays/src/%s.c' % unit      # the stored copy: a source of the original tree or overlays/src/<unit>.c
 rd, rex, rbase = image(ref)
-text = open(os.path.join('overlays', 'src', unit + '.c'), encoding='latin1').read()
+text = open(unit, encoding='latin1').read()
 TSV = os.path.join('overlays', 'units.tsv')
 row = next(q for q in place_units.rows() if q[0] == ref and q[1] == unit)
 start, end = int(row[2], 16), int(row[3], 16)
@@ -98,14 +98,14 @@ for o in targets:
             if (' %s\n' % n) not in have:
                 f.write('%08x %s\n' % (struct.unpack_from('<I', ex, s - base + off)[0], n))
     oldt = open(TSV).read()
-    open(TSV, 'a').write('%s\t%s\t%08X\t%08X\n' % (o, unit, s, s + size))
+    open(TSV, 'a').write('%s\t%s\t%08X\t%08X\t%s\n' % (o, unit, s, s + size, row[4] or ''))
     subprocess.run(['rm', '-rf', os.path.join(d, 'asm')])
     subprocess.run([sys.executable, os.path.join(R, 'tools/1-2-baseline/split_asm.py'), o + '.bin', '%08x' % base, 'functions.txt', '.'], cwd=d, capture_output=True)
     for x in os.listdir(os.path.join(d, 'build', 'obj')) if os.path.isdir(os.path.join(d, 'build', 'obj')) else []:
         if x.startswith('c_'):
             os.remove(os.path.join(d, 'build', 'obj', x))
     r = subprocess.run(['bash', 'build.sh', '--overlay', o], capture_output=True, text=True)
-    linked = os.path.exists(os.path.join(d, 'build', 'link.sub')) and ('c_' + unit) in open(os.path.join(d, 'build', 'link.sub')).read()
+    linked = os.path.exists(os.path.join(d, 'build', 'link.sub')) and ('c_' + place_units.gen_name(unit)[:-2]) in open(os.path.join(d, 'build', 'link.sub')).read()
     if 'MATCH:' in r.stdout and linked:
         print(o, 'MATCH')
         continue

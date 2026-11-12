@@ -1,3 +1,6 @@
 0cb8ae70 gMaxId
 0cb8ae74 gCEventSePP
 0cb8ae78 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb86360 event_light_create
+0cb88e84 event_pads_on

@@ -2,3 +2,20 @@
 0cbcdb70 gCEventSePP
 0cbcdb6c gMaxId
 0cbcdb74 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb87b9c event_sound_init
+0cb87ba8 event_look_at
+0cbc4880 event_clear_paths
+0cbcd6e4 path_editor_axis_names
+0cbcd6f0 path_editor_origin_names
+0cb884f8 path_editor_order_items
+# events/shared/zero_grab.c (the Japanese release's names, tools/jpport)
+8c106e6e zero_event_grab
+# events/shared/sdk/_fmtin.c (the Japanese release's names, tools/jpport)
+8c7ac048 _errno
+8c1601c4 _ctype
+8c1601c4 _stf
+# events/shared/sdk/_packf.c (the Japanese release's name: _calcfpow calls it)
+0cb87b30 _packf
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbcd640 event_fade_corners
