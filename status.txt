@@ -1,0 +1,6 @@
+# The decomp's status, read by tools/progress.py for the badge. Tick each one reached: [x]; [?] = not tested yet, [ ] = tested and not reached. Each needs the ones above it.
+MODE: matching
+[ ] BUILDS FROM C
+[ ] BOOTS TO MENU
+[ ] PLAYABLE
+[ ] STABLE

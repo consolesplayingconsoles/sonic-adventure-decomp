@@ -9,7 +9,11 @@ exist). Prints one instruction per line; pc-relative loads show the pool value (
 is one, else as a number and, for a 32-bit value, as a float), branches and calls their target.
 FPU moves are decoded as single precision (the games are built with -fpu=single).
 """
+import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
+_tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '.')))
+import toolpath  # noqa: E402,F401
 import os
+import re
 import struct
 import sys
 
@@ -167,7 +171,66 @@ def decode(w, pc):
                 return 'fipr fv%d,fv%d' % ((n & 3) * 4, (n >> 2) * 4), None, 0, None
             if m == 0xf and n & 3 == 1:
                 return 'ftrv xmtrx,fv%d' % ((n >> 2) * 4), None, 0, None
+            if m == 0xf and n & 1 == 0:
+                return 'fsca fpul,dr%d' % n, None, 0, None
+            if m == 7:
+                return 'fsrra fr%d' % n, None, 0, None
     return '.word 0x%04x' % w, None, 0, None
+
+
+def reachable(exe, base, start, end):
+    """The addresses control flow reaches from the entry (delay slots included): which words of [start, end) are code."""
+    reach, work = set(), [start & ~1]
+    while work:
+        pc = work.pop()
+        regval = {}                    # register -> the pool constant a mov.l @(pc) just loaded into it (a long-range `jmp @rN` goes there)
+        hist = []                      # (pc, text) of this straight run: the mova and the bounds check before a braf jump table
+        while start <= pc < end and pc not in reach:
+            reach.add(pc)
+            t, ppool, psize, tgt = decode(struct.unpack_from('<H', exe, pc - base)[0], pc)
+            op = t.split()[0]
+            mload = re.match(r'mov\.l\s+@\([^)]*\),r(\d+)', t)
+            if mload and ppool is not None and base <= ppool < base + len(exe) - 3:
+                regval[int(mload.group(1))] = struct.unpack_from('<I', exe, ppool - base)[0]
+            hist.append((pc, t))
+            if op == 'braf':
+                # a jump table: `mova table,r0; mov.w @(r0,rX),r0; braf r0`, 16-bit offsets from the braf + 4, the count from the cmp/hs
+                # bounds check before it when the run holds it, else while the entry lands inside the function
+                tab = None
+                limit = None
+                for hpc, ht in reversed(hist[:-1]):
+                    mm = re.match(r'mova\s+@\((0x[0-9a-f]+),pc\),r0', ht)
+                    if mm and tab is None:
+                        tab = int(mm.group(1), 16)
+                    if ht.startswith('cmp/hs') and tab is not None and limit is None:
+                        rl = ht.split()[1].split(',')[0]
+                        for hpc2, ht2 in reversed(hist[:hist.index((hpc, ht))]):
+                            m1 = re.match(r'mov\s+#(-?\d+),%s$' % re.escape(rl), ht2)
+                            m2 = re.search(r'=(-?\d+)', ht2) if ht2.startswith('mov.w') and ht2.split()[1].split(',')[-1].split()[0].endswith(rl) else None
+                            if m1: limit = int(m1.group(1)); break
+                            if m2: limit = int(m2.group(1)); break
+                        break
+                if tab is not None and base <= tab < base + len(exe) - 1:
+                    k = 0
+                    while k < (256 if limit is None else limit):
+                        a = tab + 2 * k
+                        if not (base <= a < base + len(exe) - 1): break
+                        tgt2 = pc + 4 + struct.unpack_from('<h', exe, a - base)[0]
+                        if not (start <= tgt2 < end) or tgt2 % 2: break
+                        work.append(tgt2)
+                        k += 1
+            mj = re.match(r'jmp\s+@r(\d+)', t)
+            if mj and regval.get(int(mj.group(1))) is not None and start <= regval[int(mj.group(1))] < end:
+                work.append(regval[int(mj.group(1))] & ~1)
+            delay = op in ('bra', 'bsr', 'bt/s', 'bf/s', 'jsr', 'jmp', 'rts', 'rte', 'braf', 'bsrf')
+            if delay and pc + 2 < end:
+                reach.add(pc + 2)
+            if op in ('bt', 'bf', 'bt/s', 'bf/s', 'bra', 'bsr') and tgt is not None and start <= tgt < end:
+                work.append(tgt)
+            if op in ('rts', 'rte', 'jmp', 'braf', 'bra'):
+                break
+            pc += 4 if delay else 2
+    return reach
 
 
 def main():
@@ -194,10 +257,13 @@ def main():
 
     # Pool words the range loads are shown as data. Data decoded as instructions can look like
     # loads too, so a load that itself sits inside a pool word does not count; repeat until stable.
+    # Control flow from the entry tells which words are code: a "load" found in data (a jump table, constants after a branch)
+    # can point into real code, and must not turn that code into a pool word.
+    reach = reachable(exe, base, start, end)
     loads = {}
     for pc in range(start & ~1, end, 2):
         _, pool, size, _ = decode(struct.unpack_from('<H', exe, pc - base)[0], pc)
-        if pool is not None:
+        if pool is not None and not any(pool + k in reach for k in range(0, size, 2)):
             loads[pc] = (pool, size)
     pools = {}
     while True:

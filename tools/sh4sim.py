@@ -23,14 +23,19 @@ The case (JSON): {"exe": path, "base": hex, "dump": path, "entry": hex, "end": h
 "fr0": float, "poke_arg": {"r7": hexbytes}}, ...], "steps": max}. Paths are relative to the case file.
 A call's "poke_arg" writes those bytes at the address the named register holds when the call is made.
 """
+import os as _tp_os, sys as _tp_sys  # noqa: E401  every tools folder on the import path (tools/toolpath.py)
+_tp_sys.path.insert(0, _tp_os.path.normpath(_tp_os.path.join(_tp_os.path.dirname(_tp_os.path.abspath(__file__)), '.')))
+import toolpath  # noqa: E402,F401
 import json
 import math
 import os
+import re
 import struct
 import sys
 
 M32 = 0xFFFFFFFF
 SENTINEL = 0x0EADBEE0          # return address the run ends on (outside RAM, never executed)
+ROM_HI = 0x00220000           # 0x00000000-0x0021FFFF: boot ROM and flash, read-only
 STACK_TOP = 0x0E000000         # a fresh stack page, so its writes are not effects
 RAM_LO, RAM_HI = 0x0C000000, 0x0D000000
 
@@ -74,11 +79,20 @@ class Stop(Exception):
 
 class Memory:
     def __init__(self):
+        self.stack_written = set()
+        self.body_written = set()   # the stack words the function's body stored since the last call (pushes left out): what a frame buffer passed to a call holds
         self.pages = {}
         self.writes = []          # (addr, size, value), stack excluded
         self.devices = []         # ('r'/'w', addr, size, value)
+        self.reads = []           # the address of every data read, in order (capped)
         self.stack = (STACK_TOP - 0x10000, STACK_TOP)
         self.device_reads = {}    # addr -> list of values to hand back, in order
+        self.device_latched = {}  # addr -> the last value written to a device register: what a read gives back when the case scripts
+                                  # nothing (sys_init writes 8201 to the DMAC's DMAOR and retries until it reads it back)
+        self.hw_model = False     # True: the display and the timer move on their own (hw_default), so a boot that waits for them goes on
+        self.hw_reads = 0
+        self.seq_reads = {}       # RAM addr -> what each read returns, in order (the last value stays): a word an interrupt changes
+        self.seq_used = {}        # RAM addr -> how many reads took one of those values
 
     @staticmethod
     def phys(a):
@@ -99,18 +113,44 @@ class Memory:
 
     def read(self, addr, size, fetch=False):
         a = self.phys(addr)
+        if not fetch and len(self.reads) < 4000:
+            self.reads.append(a)
+        sq = self.seq_reads.get(a) if not fetch else None
+        if sq:                                   # a word that changes between reads (an interrupt, a counter): the case lists what each read returns
+            self.seq_used['%08X' % a] = self.seq_used.get('%08X' % a, 0) + 1
+            return (sq.pop(0) if len(sq) > 1 else sq[0]) & ((1 << (8 * size)) - 1)
         if a & (size - 1):
             raise Stop('unaligned %d-byte read at %08X' % (size, addr))
         page = self.pages.get(a >> 12)
         if page is None:
+            if a < ROM_HI and not fetch and a not in self.device_reads:
+                return 0                         # the boot ROM and flash: a read has no side effect, so its order is not an effect (a null pointer's fields)
             if not (RAM_LO <= a < RAM_HI) and not fetch and not (self.stack[0] <= a < self.stack[1]):
                 vals = self.device_reads.get(a)
-                v = vals.pop(0) if vals else 0
+                v = vals.pop(0) if vals else self.device_latched.get(a, self.hw_default(a))
                 self.devices.append(('r', a, size, v))
                 return v
             page = self.pages.setdefault(a >> 12, bytearray(4096))
         o = a & 4095
         return int.from_bytes(page[o:o + size], 'little')
+
+    def hw_default(self, a):
+        """What a hardware register reads before anything was written to it. With hw_model: SPG_STATUS (0x005F810C) the beam, 480 lines
+        a frame with the vertical blank (bit 13) for the last 40, 16 reads a line; TMU0's counter (0x1FD8000C) counting down. Else 0."""
+        if not self.hw_model:
+            return 0
+        if a == 0x005F810C:
+            self.hw_reads += 1
+            line = (self.hw_reads // 16) % 525
+            return line | (0x2000 if line >= 480 else 0) | (0x1000 if line & 1 else 0)
+        if a == 0x1FD8000C:
+            self.hw_reads += 1
+            return (0xFFFFFFFF - self.hw_reads * 0x400) & 0xFFFFFFFF
+        if a == 0x005F8000:                  # PVR2 core ID: the SDK start-up (kmyInitializeHardware) tells the core type by it, and spins in a trap on any other
+            return 0x17FD11DB
+        if a == 0x005F8004:                  # PVR2 revision of a retail console (a value of 17 or more is core type 6 in the SDK)
+            return 0x00000011
+        return 0
 
     def write(self, addr, size, value):
         a = self.phys(addr)
@@ -121,6 +161,7 @@ class Memory:
         in_stack = self.stack[0] <= a < self.stack[1]
         if page is None and not (RAM_LO <= a < RAM_HI) and not in_stack:
             self.devices.append(('w', a, size, value))
+            self.device_latched[a] = value
             return
         if page is None:
             page = self.pages.setdefault(a >> 12, bytearray(4096))
@@ -128,24 +169,84 @@ class Memory:
         page[o:o + size] = value.to_bytes(size, 'little')
         if not in_stack:
             self.writes.append((a, size, value))
+        else:
+            self.stack_written.add(a & ~3)      # the words of the stack written since the last call: what a call passes there
+            self.body_written.add(a & ~3)
+
+    def pushed(self, addr, size):
+        """A push (@-r15): the prologue's saved registers and a call's pushed arguments, not the contents of a frame buffer."""
+        for k in range(0, size, 4):
+            self.body_written.discard(self.phys(addr + k) & ~3)
+
+
+def shared_epilogue(read16, a):
+    """Is the code at `a` an epilogue only: register pops, a frame add to r15, constants and pool loads into r0-r7, then rts or a jmp
+    with its slot? The compiler lets a function end by branching into another function's epilogue (a shared tail: Zombie Revenge
+    FUN_0c0b8bcc -> 0C0B965A, the pops of FUN_0c0b954e and a jmp to nlPopMatrix). Such a branch is the function's own ending, not a
+    tail call. The address of the instruction after the slot, or None."""
+    pops = 0
+    for k in range(48):
+        op = read16(a + 2 * k)
+        n = (op >> 8) & 15
+        last = op == 0x000B or (op & 0xF0FF) == 0x402B       # rts / jmp @rn
+        if not last and k and _epi_op(op) is None:
+            return None
+        if last:
+            return a + 2 * k + 4 if pops and _epi_op(read16(a + 2 * k + 2)) is not None else None
+        if _epi_op(op) is None:
+            return None
+        pops += _epi_op(op)
+    return None
+
+
+def _epi_op(op):
+    """1 for a pop of a saved register, 0 for another instruction an epilogue holds, None for anything else."""
+    n = (op >> 8) & 15
+    if op == 0x4F26 or ((op & 0xF0FF) == 0x60F6 and n >= 8) or ((op & 0xF0FF) == 0xF0F9 and n >= 12):
+        return 1                                           # lds.l @r15+,pr / mov.l @r15+,r8-r14 / fmov.s @r15+,fr12-fr15
+    if op == 0x0009 or (op & 0xFF00) == 0x7F00 or (op & 0xF000) in (0xE000, 0xD000, 0x9000) and n < 8:
+        return 0                                           # nop / add #imm,r15 / mov #imm, mov.l and mov.w pool loads into r0-r7
+    return None
+
+
+class _Regs(list):
+    """The integer registers, remembering which were assigned since `written` was last cleared (a bit per register). A mocked call's
+    argument register is set for the call when the function wrote it since the last call, whatever value it holds: a pointer reloaded
+    with the same value for every call counts (ballMove -> nlAddVector). A change of value did not tell, and skipped the fill."""
+    __slots__ = ('written', 'ever')       # ever: the registers assigned at any time since the run began, never cleared (a result register nothing assigned is the caller's leftover)
+
+    def __init__(s, *a):
+        list.__init__(s, *a)
+        s.written = 0
+        s.ever = 0
+
+    def __setitem__(s, i, v):
+        list.__setitem__(s, i, v)
+        s.written = s.written | (1 << i) if isinstance(i, int) else 0xFFFF
+        s.ever = s.ever | (1 << i) if isinstance(i, int) else 0xFFFF
 
 
 class CPU:
     def __init__(self, mem):
         self.m = mem
-        self.r = [0] * 16
+        self.r = _Regs([0] * 16)
         self.t = self.s = self.q = self.mq = 0
         self.srx = 0x40000000         # SR's other bits (MD = 1, interrupt mask 0): read by stc sr, written by ldc sr
         self.gbr = self.mach = self.macl = self.pr = self.pc = 0
+        self.spc = self.ssr = 0       # rte returns to SPC and loads SR from SSR (run() sets them to the return address and the entry SR)
+        self.vbr = 0
         self.fpul = 0
         self.fr = [0] * 16        # float32 bits, current bank
         self.xf = [0] * 16        # the other bank
         self.sz = self.prec = self.frbit = 0
         self.fpscr_rest = 0x00040001   # DN = 1, RM = nearest
         self.steps = 0
+        self.covered = set()                  # the address of every instruction that ran
+        self.trace = None                     # with case['trace']: (pc, opcode, r0-r15, fr0-fr15) of every instruction, before it runs
         self.on_call = None       # callback(cpu, target, kind) -> True when the call was handled
         self.lo = self.hi = 0     # the function's own bytes: branches inside stay inside
         self.inside = []          # return addresses of the callees running now (deep calls)
+        self.tails = set()        # instructions of another function's epilogue this one branched into (shared_epilogue)
 
     # FPSCR as a word
     def get_fpscr(self):
@@ -170,16 +271,25 @@ class CPU:
         return self.srx | (self.mq << 9) | (self.q << 8) | (self.s << 1) | self.t
 
     def set_sr(self, x):
-        if (x ^ self.srx) & 0x30000000:
-            raise Stop('ldc sr changes the register bank or the block bit (not modelled)')
+        if (x ^ self.srx) & 0x20000000:                 # RB: a second bank of r0-r7 the simulator does not have
+            raise Stop('ldc sr changes the register bank (not modelled)')
+        # BL (bit 28, block exceptions) is kept as a bit: there are no exceptions or interrupts here to block, and stc sr reads it back
+        # (Virtua Tennis FUN_8c0f8100 sets it around the interrupt setup)
         self.t, self.s, self.q, self.mq = x & 1, (x >> 1) & 1, (x >> 8) & 1, (x >> 9) & 1
         self.srx = x & 0xFFFFFCFC
 
     # one instruction; returns a pending branch target (delayed) or None
     def step(self, in_slot=False):
         pc = self.pc
+        if not in_slot and not self.inside and getattr(self, 'hi', None) and pc == self.hi and self.on_call:
+            # execution ran on past the function's last instruction (no return: it falls into the next function): a jump out, like a tail call
+            if self.on_call(self, pc, 'jump', pc):
+                return
         op = self.m.read(pc, 2, fetch=True)
         self.steps += 1
+        self.covered.add(pc)
+        if self.trace is not None:
+            self.trace.append((pc, op, tuple(self.r), tuple(self.fr)))
         self.pc = (pc + 2) & M32
         n, m_, lo4, lo8 = (op >> 8) & 15, (op >> 4) & 15, op & 15, op & 255
         r = self.r
@@ -199,6 +309,13 @@ class CPU:
                 return
             if op == 0x000b:                                              # rts
                 return branch_slot(self.pr, 'rts')
+            if op == 0x002b:                                              # rte: the delay slot runs, SR = SSR, the return goes to SPC
+                if in_slot:                                               # (an exception handler: SPC and SSR start as the run's return
+                    raise Stop('branch in a delay slot at %08X' % pc)     # address and SR, so rte ends the run like rts and gives SR back)
+                self.step(in_slot=True)
+                self.set_sr(self.ssr)
+                self.go(self.spc, 'rts', pc)
+                return True
             if op == 0x0008: self.t = 0; return
             if op == 0x0018: self.t = 1; return
             if op == 0x0028: self.mach = self.macl = 0; return
@@ -207,6 +324,7 @@ class CPU:
             if op == 0x0019: self.mq = self.q = self.t = 0; return
             if lo8 == 0x02: r[n] = self.sr(); return
             if lo8 == 0x12: r[n] = self.gbr; return
+            if lo8 == 0x22: r[n] = self.vbr; return                          # stc vbr,rn
             if lo8 == 0x0a: r[n] = self.mach; return
             if lo8 == 0x1a: r[n] = self.macl; return
             if lo8 == 0x2a: r[n] = self.pr; return
@@ -243,7 +361,9 @@ class CPU:
                 size = (1, 2, 4)[lo4 - 4]
                 v = r[m_]
                 r[n] = (r[n] - size) & M32
-                wr(r[n], size, v); return
+                wr(r[n], size, v)
+                if n == 15: self.m.pushed(r[n], size)
+                return
             if lo4 == 7:
                 self.q, self.mq = r[n] >> 31, r[m_] >> 31; self.t = self.q ^ self.mq; return
             if lo4 == 8: self.t = int((r[n] & r[m_]) == 0); return
@@ -329,18 +449,24 @@ class CPU:
             if lo8 == 0x5a: self.fpul = x; return
             if lo8 == 0x6a: self.set_fpscr(x); return
             if lo8 == 0x1e: self.gbr = x; return
+            if lo8 == 0x2e: self.vbr = x; return                             # ldc rm,vbr
             if lo8 == 0x0e: self.set_sr(x); return                         # ldc rm,sr
-            if lo8 in (0x02, 0x12, 0x22, 0x52, 0x62, 0x13):               # sts.l / stc.l gbr
+            if lo8 in (0x02, 0x12, 0x22, 0x52, 0x62, 0x13, 0x23):         # sts.l / stc.l gbr, vbr
                 v = {0x02: self.mach, 0x12: self.macl, 0x22: self.pr, 0x52: self.fpul,
-                     0x62: self.get_fpscr(), 0x13: self.gbr}[lo8]
-                r[n] = (x - 4) & M32; wr(r[n], 4, v); return
-            if lo8 in (0x06, 0x16, 0x26, 0x56, 0x66, 0x17):               # lds.l / ldc.l gbr
+                     0x62: self.get_fpscr(), 0x13: self.gbr, 0x23: self.vbr}[lo8]
+                r[n] = (x - 4) & M32; wr(r[n], 4, v)
+                if n == 15: self.m.pushed(r[n], 4)
+                if lo8 == 0x22 and n == 15:                                 # the prologue's save of the return address: never a call's
+                    self.m.stack_written.discard(Memory.phys(r[n]) & ~3)    # argument, though it sits where a fifth one would (cpuDblThink)
+                return
+            if lo8 in (0x06, 0x16, 0x26, 0x56, 0x66, 0x17, 0x27):         # lds.l / ldc.l gbr, vbr
                 v = rd(x, 4); r[n] = (x + 4) & M32
                 if lo8 == 0x06: self.mach = v
                 elif lo8 == 0x16: self.macl = v
                 elif lo8 == 0x26: self.pr = v
                 elif lo8 == 0x56: self.fpul = v
                 elif lo8 == 0x66: self.set_fpscr(v)
+                elif lo8 == 0x27: self.vbr = v
                 else: self.gbr = v
                 return
         elif hi == 5:
@@ -432,12 +558,20 @@ class CPU:
         if call == 'rts' or target == SENTINEL:
             if self.inside and target == self.inside[-1]:
                 self.inside.pop()                 # a deep callee returned
+                self.r.written = 0                # and left r4-r7 undefined: what the caller set before it no longer counts
             self.pc = target
             return
         if self.inside and call != 'call':        # inside a deep callee: its branches are its own
             self.pc = target
             return
-        if call in ('call', 'jump') or not (self.lo <= target < self.hi):
+        if call != 'call' and not (self.lo <= target < self.hi) and target not in self.tails:
+            e = shared_epilogue(lambda x: self.m.read(x, 2, fetch=True), target)
+            if e:
+                self.tails.update(range(target, e, 2))            # another function's epilogue, shared: this function's own ending, run in place
+        if call != 'call' and target in self.tails:
+            self.pc = target
+            return
+        if call == 'call' or not (self.lo <= target < self.hi):      # a braf / jmp to an address inside the function is a branch (a jump table, a long goto)
             if self.on_call and self.on_call(self, target, call or 'jump', at):
                 return
         self.pc = target
@@ -490,6 +624,12 @@ class CPU:
                 self.setf(n, math.sqrt(x) if x >= 0 else float('nan')); return
             if k == 8: self.fr[n] = 0; return                            # fldi0
             if k == 9: self.fr[n] = 0x3F800000; return                   # fldi1
+            if k == 7:                                                    # fsrra frn
+                x = self.f(n)
+                self.setf(n, 1.0 / math.sqrt(x) if x > 0 else float('inf')); return
+            if k == 0xf and (n & 1) == 0:                                 # fsca fpul,drn: sine and cosine of an angle in 1/65536 turns
+                a = 2.0 * math.pi * (self.fpul & 0xFFFF) / 65536.0
+                self.setf(n, math.sin(a)); self.setf(n + 1, math.cos(a)); return
             if k == 0xe:                                                  # fipr fvm,fvn
                 vn, vm = (n >> 2) * 4, (n & 3) * 4
                 s = sum(self.f(vm + i) * self.f(vn + i) for i in range(4))
@@ -531,7 +671,9 @@ class CPU:
             if lo4 == 0xa: wr(r[n], 4, self.fr[m_]); return
             if lo4 == 7: wr(r[n] + r[0], 4, self.fr[m_]); return
             if lo4 == 0xb:
-                r[n] = (r[n] - 4) & M32; wr(r[n], 4, self.fr[m_]); return
+                r[n] = (r[n] - 4) & M32; wr(r[n], 4, self.fr[m_])
+                if n == 15: self.m.pushed(r[n], 4)
+                return
 
         def get(k):                      # pair k: (high word, low word)
             bank = self.xf if k & 1 else self.fr
@@ -554,14 +696,19 @@ class CPU:
         if lo4 == 0xa: store(r[n], *get(m_)); return
         if lo4 == 7: store(r[n] + r[0], *get(m_)); return
         if lo4 == 0xb:
-            r[n] = (r[n] - 8) & M32; store(r[n], *get(m_)); return
+            r[n] = (r[n] - 8) & M32; store(r[n], *get(m_))
+            if n == 15: self.m.pushed(r[n], 8)
+            return
 
 
-def run(case, case_dir='.', code=None, deep=False, entry=None, end=None):
+def run(case, case_dir='.', code=None, deep=False, entry=None, end=None, argc=None, stackfill=None):
     """Run one case. code = (address, bytes) puts other code (a compiled C unit) at its address;
     entry/end then name the function inside it (default: all of it). deep: True runs every call;
-    a function of the target address runs the calls it accepts (the rest return the case's values)."""
+    a function of the target address runs the calls it accepts (the rest return the case's values).
+    argc: the callee's integer argument count or register set, for its fills through r4-r7; stackfill: whether a callee can write
+    through the word at SP (a structure it returns, a stack argument), for the case's poke_stack."""
     mem = Memory()
+    mem.hw_model = bool(case.get('hw_model'))             # the display and the timer move (Memory.hw_default)
     path = lambda p: p if os.path.isabs(p) else os.path.join(case_dir, p)
     if case.get('dump'):
         mem.load(RAM_LO, open(path(case['dump']), 'rb').read())
@@ -574,6 +721,8 @@ def run(case, case_dir='.', code=None, deep=False, entry=None, end=None):
     end = end_ if end_ is not None else (code[0] + len(code[1]) if code else int(case['end'], 16))
     for a, hexbytes in case.get('poke', {}).items():
         mem.load(int(a, 16), bytes.fromhex(hexbytes))
+    for a, vals in case.get('seq_reads', {}).items():
+        mem.seq_reads[Memory.phys(int(a, 16))] = [int(v, 16) for v in vals]
     for a, vals in case.get('device_reads', {}).items():
         mem.device_reads[Memory.phys(int(a, 16))] = [int(v, 16) for v in vals]
     mem.writes.clear()
@@ -587,32 +736,103 @@ def run(case, case_dir='.', code=None, deep=False, entry=None, end=None):
             cpu.fr[int(k[2:])] = f_bits(float(v)) if not isinstance(v, str) else int(v, 16)
         elif k == 'gbr':
             cpu.gbr = int(v, 16)
+        elif k == 'vbr':
+            cpu.vbr = int(v, 16)
+        elif k.startswith('xf'):                          # the back bank (XMTRX) the function starts with
+            cpu.xf[int(k[2:])] = f_bits(float(v)) if not isinstance(v, str) else int(v, 16)
         else:
             cpu.r[int(k[1:])] = int(v, 16) & M32
     cpu.pr = SENTINEL
+    cpu.spc, cpu.ssr = SENTINEL, cpu.sr()
+    if case.get('gbr'):                          # the global base register the function's @(disp,gbr) accesses use
+        cpu.gbr = int(case['gbr'], 16) & M32
     cpu.pc = entry
+    if case.get('trace'):
+        cpu.trace = []
     calls = []
     returns = list(case.get('calls', []))
     entry_r15 = cpu.r[15]
+    xf_entry = list(cpu.xf)
+    given_args = {int(k[1:]) for k in case.get('regs', {}) if re.match(r'r[4-7]$', k)}   # the arguments the case passes in are the function's own
+    entry_fargs = [cpu.fr[i] for i in range(4, 12)]   # fr4-fr11 as the case gave them: a float argument register that still holds this was not set by the function
+    given_fargs = {int(k[2:]) for k in case.get('regs', {}) if re.match(r'fr(4|5|6|7|8|9|10|11)$', k)}
+    after_call = []
+    entry_args = [cpu.r[i] for i in range(4, 8)]      # r4-r7 as the case gave them: a call's argument register that still holds this was not set by the function
+    post_args = list(entry_args); post_fargs = list(entry_fargs)   # r4-r7 / fr4-fr11 right after the last call
+    cpu.r.written = 0                                  # registers written from here on are the function's
+    cpu.r.ever = 0
+
+    def frame_bufs(c):
+        """{argument register: [word, ...]} for each of r4-r7 that points into this function's frame: the words from it that the
+        body stored since its last call, without a gap (at most 64, below the caller's stack): what it filled for the callee."""
+        out = {}
+        for i in range(4, 8):
+            p = c.r[i] & M32
+            if not (c.r[15] & M32) <= p < (entry_r15 & M32) or p & 3:
+                continue
+            run = []
+            while len(run) < 64 and p + 4 * len(run) < (entry_r15 & M32) and Memory.phys(p + 4 * len(run)) in mem.body_written:
+                run.append(mem.read(p + 4 * len(run), 4, True))
+            out['r%d' % i] = run
+        return out
 
     def on_call(c, target, kind, at):
         if deep is True or (callable(deep) and deep(target)):   # True: every call; a test: those it accepts
-            if kind == 'call':
-                c.inside.append(c.pr)            # runs until it returns here; not a call out
+            if kind in ('call', 'jump'):
+                c.inside.append(c.pr)            # runs until it returns here (a tail jump: to our caller); not a call out
             return False
+        wrote = c.r.written                      # the registers the function wrote since the last call
         calls.append({'to': '%08X' % (target & M32), 'kind': kind,
                       'r4-r7': ['%08X' % c.r[i] for i in range(4, 8)],
-                      'fr4-fr11': ['%08X' % c.fr[i] for i in range(4, 12)]})
+                      'fr4-fr11': ['%08X' % c.fr[i] for i in range(4, 12)],
+                      'chg': [(i in given_args and not after_call) or (c.r[i] != entry_args[i - 4] and c.r[i] != post_args[i - 4]) for i in range(4, 8)],
+                      'fchg': [(i in given_fargs and not after_call) or (c.fr[i] != entry_fargs[i - 4] and c.fr[i] != post_fargs[i - 4]) for i in range(4, 12)],
+                      'stack': '%08X' % mem.read(c.r[15] & M32, 4, True),
+                      'stackw': ['%08X' % mem.read((c.r[15] + 4 * k) & M32, 4, True) for k in range(16)],
+                      # which of those words this function stored since its last call: the others are leftovers, not arguments
+                      'stackchg': [Memory.phys((c.r[15] + 4 * k) & M32) & ~3 in mem.stack_written for k in range(16)],
+                      'bufs': frame_bufs(c)})
+        mem.body_written.clear()
+        mem.stack_written.clear()   # words passed on the stack (a 5th argument on)   # the word on top of the stack: the first argument of a variadic call
+        if not returns:
+            c.r[0] = 0                           # a call the case gives no answer for returns 0 (r0 and fr0): a leftover register is not a result, on the original or on the compiled C
+            c.fr[0] = 0
         ret = returns.pop(0) if returns else {}
+        if 'r0' not in ret:
+            c.r[0] = 0                           # an answer that gives no r0 / fr0: the callee's result is 0, not a leftover register
+        if 'fr0' not in ret:
+            c.fr[0] = 0
+        n_args = argc(target & M32) if argc else None             # the callee's integer argument count, or the set of registers it reads
+        set_for = [bool(wrote >> i & 1) or (i in given_args and not after_call) for i in range(4, 8)]      # which of r4-r7 were set for this call: the others are leftovers
         for k, v in ret.get('poke_arg', {}).items():             # the callee filled an output slot
+            if not set_for[int(k[1:]) - 4]:
+                continue                                         # a leftover, not an argument: no fill (circuitDrawMatchInfo -> sprSheetPut,
+                                                                 # Virtua Tennis: the original's leftover r5 was an object pointer, the C's was not)
+            if n_args is not None and (int(k[1:]) not in n_args if isinstance(n_args, (set, frozenset)) else int(k[1:]) - 4 >= n_args):
+                continue                                         # not one of its arguments: the register only holds a leftover
+            if not 0x0C000000 <= (c.r[int(k[1:])] & 0x1FFFFFFF) < 0x0E000000:
+                continue                                         # a value, not an address in RAM or the stack (angDiff(0, ...): the fill went to
+                                                                 # address 0 on one side of a check only, Virtua Tennis playerPut)
             mem.load(c.r[int(k[1:])] & M32, bytes.fromhex(v))
+        sp_word = mem.read(c.r[15] & M32, 4, True) & M32
+        sp_set = calls[-1]['stackchg'][0] if calls else True     # the caller stored the word at SP for this call: else a leftover (endingSceneDraw,
+                                                                 # Virtua Tennis: a leftover 8C125E09 got a fill one byte into the game's own table)
+        if (ret.get('poke_stack') and (stackfill is None or stackfill(target & M32)) and sp_set and not sp_word & 3
+                and 0x0C000000 <= (sp_word & 0x1FFFFFFF) < 0x0E000000):
+            # a structure returned by value: the callee fills the buffer the stack word names (not a callee that takes no stack word and
+            # returns no structure, and not a word that is a value: the fill went to page 0 on one side only, playerPut case 4)
+            mem.load(sp_word, bytes.fromhex(ret['poke_stack']))
         for k, v in ret.items():
-            if k == 'poke_arg':
+            if k in ('poke_arg', 'poke_stack'):
                 continue
             if k.startswith('fr'):
                 c.fr[int(k[2:])] = f_bits(float(v)) if not isinstance(v, str) else int(v, 16)
             else:
                 c.r[int(k[1:])] = int(v, 16) & M32
+        c.r.written = 0                                        # the mock's own writes (the answer) are not the function's
+        post_args[:] = [c.r[i] for i in range(4, 8)]           # a real callee leaves r4-r7 and fr4-fr11 undefined: what still holds these values
+        post_fargs[:] = [c.fr[i] for i in range(4, 12)]        # at the next call was not set for it (a leftover, not an argument)
+        after_call.append(1)
         if kind == 'jump':                       # a tail jump: the callee returns for us
             c.pc = c.pr
         else:
@@ -633,7 +853,11 @@ def run(case, case_dir='.', code=None, deep=False, entry=None, end=None):
             'devices': [[k, '%08X' % a, s, '%0*X' % (s * 2, v)] for k, a, s, v in mem.devices],
             'out': {'r0': '%08X' % cpu.r[0], 'r1': '%08X' % cpu.r[1],
                     'fr0': '%08X' % cpu.fr[0], 'fr1': '%08X' % cpu.fr[1]},
-            'r15_balanced': cpu.r[15] == entry_r15}
+            'out_set': {'r0': bool(cpu.r.ever & 1)},               # False: the function never assigned r0 (a call's result counts), it returns what it was given
+            'r15_balanced': cpu.r[15] == entry_r15,
+            'xf': ['%08X' % v for v in cpu.xf], 'xf_changed': cpu.xf != xf_entry,
+            'covered': sorted(a for a in cpu.covered if entry <= a < end),
+            'reads': mem.reads, 'seq_used': dict(mem.seq_used), 'trace': cpu.trace}
 
 
 def main(argv):

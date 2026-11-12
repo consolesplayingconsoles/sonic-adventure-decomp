@@ -10,6 +10,7 @@ objects.txt
 text-map/
 text-dump/
 build/
+state/
 sdk-source/
 *.sigs
 report*.txt
@@ -21,6 +22,10 @@ __pycache__/
 # kick-off scratch (SDK archive, executable copies): never commit
 .transfer/
 
+# patch leftovers
+*.orig
+# case-file backups the retest tool leaves behind
+*.json.old
 # generated per overlay (tools/overlay/in.sh, the checker)
 overlays/*/symbols.txt
 overlays/*/state/
