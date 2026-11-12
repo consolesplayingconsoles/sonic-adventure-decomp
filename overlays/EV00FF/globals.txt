@@ -1,0 +1,21 @@
+0cbae528 p_MoveObjTask
+8cb82f80 execMoveObjTask
+8cb83722 dispMoveObjTask
+8cb83726 destMoveObjTask
+0cbae620 object_skywalk_cl
+0cbae574 gCEventSePP
+0cbae570 gMaxId
+0cbae578 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbae654 event_chaos7_task
+0cb96534 event_look_clear
+0cbae51c event_highway_texlist
+0cbae458 event_highway_object
+# events/shared/rays.c (the Japanese release's names, tools/jpport)
+0cba3540 event_rays
+# events/shared/white.c (the Japanese release's names, tools/jpport)
+0cba3544 event_white
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbae550 event_fade_corners
+# events/shared/highway.c (the Japanese release's names, tools/jpport)
+0cbae524 event_highway

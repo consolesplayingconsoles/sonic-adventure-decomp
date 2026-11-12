@@ -1,0 +1,158 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb99354 race_kind_paths
+0cbd3e08 race_paths
+0cb98a14 cycle_kinds
+0cb989e0 cycle_desc
+0cb98544 race_chao_idles
+0cb9bcc0 race_chao_shapes
+0cb9bca0 race_chao_voices_17
+0cb9bcad sound_play_near
+0cb98e40 race_origin
+0cb98131 tune_last
+0cb98130 tune_current
+0cb98134 tune_entries
+0cb9a688 door_list
+0cb9a694 door_collision
+0cbd2ecc door_started
+0cbd2e7c cracker_flag
+0cb9828c cracker_kind
+0cbd2e8c cracker_mouth
+0cbd2e80 cracker_way
+0cb9aa38 stream_kinds
+0cb9aa20 stream_desc
+0cb9a4ec cheer_chao_list
+0cb9a4f8 cheer_chao_collision
+0cb98e70 item_tells
+0cbd2d38 menu_slots
+0cb99e00 menu_icons
+0cb9a080 menu_models
+0cb9a190 course_at
+0cb9a1cc course_wide_at
+0cb9a208 course_icons
+0cb9a17c course_models
+0cb9a210 course_icons_at
+0cb9a238 garden_at
+0cb9a230 garden_icons
+0cb9a224 garden_model_at
+0cb9a220 garden_models
+0cb9a294 course_name_at
+0cb9a28c course_names
+0cb9a2a0 message_at
+0cb9a29c message_icons
+0cb9a2b0 drive_at
+0cb9a310 drive_icons_at
+0cb9a350 side_icons_at
+0cb9a368 chosen_at
+0cbd2d3c menu_panel
+0cb9a098 menu_sprites
+0cb9a3d8 wing_root
+0cb989d8 njPrintH
+0cb9a900 ball_no_turn
+0cb9a90c ball_unit
+0cb9a918 ball_collision
+0cb9a608 entry_base_desc
+0cb9a620 entry_button_list
+0cb9a62c entry_button_collision
+0cb9965c race_drives
+0cb9bfd8 deal_state
+0cb9bfda deal_open
+0cb99644 deal_desc
+0cb9bfd9 deal_count
+0cb98198 deal_items
+0cb9a9ec coconut_palm_no_turn
+0cb9a9f8 coconut_palm_unit
+0cb9aa04 coconut_palm_collision
+0cb9aa08 coconut_palm_coconut_motion
+0cb98520 coconut_palm_coconut_pos
+0cb9852c coconut_palm_coconut_ang
+0cb98f88 scenery_desc
+0cb9bd28 scenery_task
+0cb98fb8 scenery_flare
+0cb9a514 coconut_collision
+0cb9a528 coconut_still
+0cb9a534 coconut_bounce
+0cb9a398 bow_chao_list
+0cb9a3a4 bow_chao_collision
+0cbd300c palm_coconut_kind
+0cb9a934 palm_coconut_desc
+0cb9a958 palm_coconut_collision
+0cb9a94c palm_coconut_unit
+0cb9a95c palm_coconut_bounce
+0cb984c0 palm_coconut_rests
+0cb983d0 streamer_points
+0cbd2f7c streamer_palettes
+0cbd2f6c streamer_strip
+0cbd2e78 confetti_task
+0cb9a540 piece_objects
+0cb9a554 piece_drifts
+0cb9bcf4 race_fade_task
+0cb98184 race_fade_colors
+0cb9bd18 race_fade_polygon
+0cb9a404 gate_kinds
+0cb9a444 gate_desc
+0cb98288 gates_passed
+0cb9a45c gate_spots
+0cb9c668 sky_texlist
+0cb9c628 sky_object
+0cb98e88 splash_texanims
+0cb9aa90 zone_list
+0cb9aa9c zone_collision
+0cbd30c0 zone_shapes
+0cb9bd2c race_game_current
+0cb98f4c race_voice_groups
+0cb98e2c race_course
+0cb98877 racer_type_labels
+0cb9be20 digit_set_1
+0cb9bd44 digit_set_0
+0cb99384 child_rival_names
+0cb9befc lane_frames
+0cb9963c records_mark
+# modules/al_race/stream.c (the Japanese release's names, tools/jpport)
+0cb9aa14 stream_falloff
+# modules/al_race/cards.c (the Japanese release's names, tools/jpport)
+0ca835d8 card_menu_drives
+0c90216c card_read_chao
+0c9022c6 card_write_chao
+# modules/al_race/bow_chao.c (the Japanese release's names, tools/jpport)
+0cb9a378 bow_chao_desc
+0cb9a390 bow_chao_kind
+# modules/al_race/cheer_chao.c (the Japanese release's names, tools/jpport)
+0cb9a4cc cheer_chao_desc
+0cb9a4e4 cheer_chao_kind
+# modules/al_race/flag.c (the Japanese release's names, tools/jpport)
+0cb9a630 flag_desc
+0cb9a648 flag_action
+# modules/al_race/flower.c (the Japanese release's names, tools/jpport)
+0cb9a64c flower_desc
+0cb9a668 purple_flower_object
+# modules/al_race/lamps.c (the Japanese release's names, tools/jpport)
+0cb9a6c4 lamps_desc
+0cb9a7b0 hall_lamps
+0cb9a7e8 course_lamps
+# modules/al_race/palm.c (the Japanese release's names, tools/jpport)
+0cb9a7fc race_palm_desc
+0cb9a814 race_palm_object
+# modules/al_race/course_model.c (the Japanese release's names, tools/jpport)
+0cb9a848 course_model_desc
+0cb9a860 course_model_object
+# modules/al_race/props.c (the Japanese release's names, tools/jpport)
+0cb9a864 prop_desc
+0cb9a884 islet_object
+# modules/al_race/streamer.c (the Japanese release's names, tools/jpport)
+0cb98290 streamer_red
+0cb98380 streamer_yellow
+0cb982e0 streamer_green
+0cb98330 streamer_blue
+# modules/al_race/zone.c (the Japanese release's names, tools/jpport)
+0cb9aa78 zone_desc
+0cb9a664 white_flower_object
+0cb9a87c start_mark_object
+0cb9a880 small_screen_object
+# modules/al_race/butterfly.c (the Japanese release's names, tools/jpport)
+0cbc6670 dat_0cbc724c
+0cbbfcc0 dat_0cbc089c
+# modules/al_race/sign.c (the Japanese release's names, tools/jpport)
+0cb9a698 sign_desc
+0cb9a6b8 sign_kind
+# modules/al_race/body.c (the Japanese release's names, tools/jpport)
+0c90c254 chao_name_draw_at

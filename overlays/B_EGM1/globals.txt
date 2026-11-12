@@ -1,0 +1,48 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0c915bac eggmobile1_sky_texlist
+0c915b54 eggmobile1_sky_object
+0c90564c shape_rows
+0c91e088 egg_hornet_shapes
+0c90580c hint_showing
+0c905810 hint_spent
+0c91dfbc egg_hornet_actions
+0c904b94 recoil
+0c908e9c eggmobile_object
+0c91e1fc dive_speed
+0c9057cc clod_radii
+0c91e280 clod_speed
+0c9057c0 clod_rises
+0c9057b4 clod_scales
+0c91e284 clod_objects
+0c91e28c clod_texlists
+0c91e084 camera_turn_speed
+0c91e20c flame_objects
+0c91e220 long_objects
+0c905738 texture_starts
+0c905710 texture_timer_starts
+0c905764 glow_frame_starts
+0c905758 glow_interval_starts
+0c90574c glow_timer_starts
+0c9056d4 glow_anims
+0c91e23c egm1jetb_texlist
+0c91e234 egm1jet_texlist
+0c916488 jet_ring_object
+0c916714 jet_cone_object
+0c916e50 jet_core_object
+0c91696c jet_plus_x_object
+0c916bc4 jet_minus_x_object
+0c91e248 egg_hornet_missile_volume
+0c910c44 egm1mis_texlist
+0c910be0 egg_hornet_missile_object
+0c91e24c egg_hornet_missile_shape
+0c91e244 egg_hornet_missile_speed
+0c90576c egg_hornet_volley_angles
+# modules/b_egm1/debris.c (the Japanese release's names, tools/jpport)
+0c91e1f4 egg_hornet_debris_rise
+# modules/b_egm1/ground.c (the Japanese release's names, tools/jpport)
+0c966e60 dust_ring_task
+0c966e64 clods_task
+# modules/b_egm1/camera.c (the Japanese release's names, tools/jpport)
+0c966de0 camera_offset
+0c966dec camera_speed
+8c0208e0 camera_set_boss_offsets

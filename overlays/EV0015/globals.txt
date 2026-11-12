@@ -1,0 +1,2 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8bf94 event_movers

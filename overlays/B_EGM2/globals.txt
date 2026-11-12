@@ -1,0 +1,46 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0c941de4 blast_beam_params
+0c941e64 egm2_baku_texlist
+0c942720 blast_ball_object
+0c9391ec egm2_car_shapes
+0c909de8 egm2_car_texlist
+0c9391b8 egm2_car_object
+0c908158 egm2_car_spots
+0c908188 egm2_car_pieces
+0c93e160 leg_glow_texanims
+0c93e158 egm2_effect_texlist
+0c93e19c stomp_shape
+0c909dfc egm2_hamon_texlist
+0c99070c ornament_object
+0c992128 scroll_0
+0c992150 scroll_1
+0c992168 task_step_children
+0c9890f0 ornament_texlist
+0c992114 ornament_parts
+0c98d564 lamps_object
+0c941ccc egm2_missile_shape
+0c941c98 egm2_missile_object
+0c908128 jump_ends
+0c908200 fold_angles
+0c9082c0 leg_parts
+0c9081e8 eggman_seat
+0c9414e0 egm2_eggman_object
+0c909118 eggmobile2_boss_name
+0c908394 eggman_voices
+0c941da4 hint_delay
+0c941da8 hint_legs_shown
+0c941da0 falls
+0c941dac hint_cockpit_shown
+0c909338 part_shapes
+0c909748 node_center
+0c909754 node_up
+0c907c74 foot_heights
+0c935de0 bomb_object
+0c909b48 egm2_sky_texlist
+0c936ff4 egm2_sky_object
+# modules/b_egm2/eggman.c (the Japanese release's names, tools/jpport)
+0c909b28 egm2_common_texlist
+# modules/b_egm2/bombs.c (the Japanese release's names, tools/jpport)
+0c9923a0 bombs_heading
+8c6b67c8 boss_last_mode
+0c935e14 bomb_shape

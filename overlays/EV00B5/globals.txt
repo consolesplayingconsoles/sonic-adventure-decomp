@@ -1,0 +1,19 @@
+0cb9c318 p_MoveObjTask
+8cb818c0 execMoveObjTask
+8cb82062 dispMoveObjTask
+8cb82066 destMoveObjTask
+0cb9c364 gCEventSePP
+0cb9c360 gMaxId
+0cb9c368 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8ed10 eggman_texlist
+0cb8be2c e102_run_action
+0cb87538 eggman_walk_action
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb9c340 event_fade_corners
+# events/shared/e101.c (the Japanese release's names, tools/jpport)
+0cb9c370 event_e101_jet_matrix
+0cb93e58 event_e101_texlist
+0cb9bd94 event_e101_object
+0cb93ea8 event_e101_jet_texlist
+0cb9c2e4 event_e101_jet_object

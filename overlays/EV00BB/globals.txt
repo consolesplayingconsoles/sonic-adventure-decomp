@@ -1,0 +1,31 @@
+0cbe1070 p_MoveObjTask
+8cb81be0 capturebeam_dest
+8cb81be4 capturebeam_disp
+8cb81c6c capturebeam_exec
+8cb830e0 execMoveObjTask
+8cb83882 dispMoveObjTask
+8cb83886 destMoveObjTask
+0cbe10bc gCEventSePP
+0cbe10b8 gMaxId
+0cbe10c0 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb85010 ev00bb_stretches
+0cb84ff8 ev00bb_frog_3
+0cb85000 event_play_action
+0cbc285c event_camera_set_ang
+0cbb9448 event_clear_motions
+0cbbdfa0 e102_run_action
+0cb9fc60 event_move
+0cbb94b0 event_move_stop_all
+0cba7d0c eggman_stand_action
+# events/shared/e105.c (the Japanese release's names, tools/jpport)
+0cbd8dfc event_e105_texlist
+0cbe103c event_e105_object
+# events/shared/e103.c (the Japanese release's names, tools/jpport)
+0cbc846c event_e103_texlist
+0cbd0780 event_e103_object
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbe1098 event_fade_corners
+# events/shared/beam.c (the Japanese release's names, tools/jpport)
+0cbc7c44 event_beam_texlist
+0cbc8284 event_beam_object

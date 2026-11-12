@@ -1,0 +1,33 @@
+0cbc1d78 p_MoveObjTask
+0cbc24a0 gParticleInfo
+0cbc22d0 gCEventSePP
+0cbc22cc gMaxId
+0cbc22d4 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbc1e44 path_editor_axis_names
+0cbc1e50 path_editor_origin_names
+0cb8c21c path_editor_order_items
+0cbb4e78 event_eggmobile_nozzle
+0cbb4e84 event_eggmobile_glare_aim
+0cbb4e90 event_eggmobile_actions
+0cbb4ed4 event_eggmobile_welds
+0cbb4f4c event_eggmobile_task
+0cb8cb34 ev004d_carry
+0cbaeb70 ev004d_missile_create
+0cbc0c48 ev004d_missile_texlist
+0cbc1c7c ev004d_missile_object
+0cbc1cb0 ev004d_missile_lamp_texlist
+0cbc1cb8 ev004d_missile_lamp_anim
+0cbc1ccc ev004d_missile_lamps
+0cbc1cfc ev004d_missile_exhaust_from
+0cbc1d08 ev004d_missile_exhaust_to
+# events/shared/sdk/_fmtin.c (the Japanese release's names, tools/jpport)
+8c7ac048 _errno
+8c1601c4 _ctype
+8c1601c4 _stf
+# events/shared/sdk/_packf.c (the Japanese release's name: _calcfpow calls it)
+0cb8b4d0 _packf
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbc1da0 event_fade_corners
+# events/shared/prop.c (the Japanese release's names, tools/jpport)
+0cbc1d50 event_props

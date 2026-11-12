@@ -1,0 +1,12 @@
+0cb8e6b0 gCEventSePP
+0cb8e6ac gMaxId
+0cb8e6b4 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8e62c event_orbs_glow_model
+0cb8e688 event_orbs_task
+0cb81f20 event_sound_init
+0cb845f0 event_orbs_kill
+# events/shared/rays.c (the Japanese release's names, tools/jpport)
+0cb8e5a8 event_rays
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb8e68c event_fade_corners

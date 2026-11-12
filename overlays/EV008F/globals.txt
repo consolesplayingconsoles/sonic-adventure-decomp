@@ -1,0 +1,15 @@
+0cba92a0 gCEventSePP
+0cba929c gMaxId
+0cba92a4 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb81b80 event_sound_init
+0cb86260 tikal_texlist
+0cba51dc event_set_flags
+0cba9880 event_wave_action
+0cba9dd8 event_wave_texlist
+0cba9830 event_wave_object
+0cba9874 event_wave_motion
+0cba9dc0 event_wave_shape
+0cba9de0 event_wave_emitters
+# events/shared/white.c (the Japanese release's names, tools/jpport)
+0cba9298 event_white

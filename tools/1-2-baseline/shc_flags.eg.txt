@@ -1,0 +1,1 @@
+-cpu=sh4 -endian=little -fpu=single -speed -extra=a=1800 -macsave=0 -pic=0 -section=p=P,c=C,d=D,b=B -include=src

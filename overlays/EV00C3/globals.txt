@@ -1,0 +1,31 @@
+0cb89980 p_MoveObjTask
+0cb89ab8 gCEventSePP
+0cb89ab4 gMaxId
+0cb89abc gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb899c0 event_clouds_stream_0
+0cb899f0 event_clouds_stream_1
+0cb899ac event_clouds_speed
+0cb899b4 event_clouds_count
+0cb899b0 event_clouds_scale
+0cb89a5c event_clouds_sprite
+0cb89a7c event_clouds
+0cb899b8 event_clouds_0
+0cb899bc event_clouds_1
+0cb899a8 event_noise_task
+0cb89ac4 event_scanlines_row
+0cb88728 event_scanlines_height
+0cb88724 event_scanlines_width
+0cb894f8 path_editor_axis_names
+0cb89504 path_editor_origin_names
+0cb8855c path_editor_order_items
+0cb880dc event_set_pos
+0cb880d4 event_camera_follow
+# events/shared/sdk/_fmtin.c (the Japanese release's names, tools/jpport)
+8c7ac048 _errno
+8c1601c4 _ctype
+8c1601c4 _stf
+# events/shared/sdk/_packf.c (the Japanese release's name: _calcfpow calls it)
+0cb87970 _packf
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb89454 event_fade_corners

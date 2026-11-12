@@ -1,0 +1,31 @@
+0cb86820 g_RotaryCircleR
+0cbf5bd0 p_MoveObjTask
+0cbf5c1c g_EmeraldDTheta
+8cb82660 EV_Alife_dest
+8cb8266a EV_Alife_draw
+8cb82742 EV_Alife_exec
+8cb82860 EV_Alife_cons
+8cb83fc0 execMoveObjTask
+8cb84762 dispMoveObjTask
+8cb84766 destMoveObjTask
+8cb84c58 execRotaryEmeraldTask
+8cb85286 destRotaryEmeraldTask
+0cbf5c28 gCEventSePP
+0cbf5c24 gMaxId
+0cbf5c2c gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbf5ba8 event_props
+0cbf5c18 event_orbit_task
+0cbf5a68 event_sprite_frames
+0cbf5908 event_sprite_slots
+0cbf620c event_wave_action
+0cbf6764 event_wave_texlist
+0cbf61bc event_wave_object
+0cbf6200 event_wave_motion
+0cbf674c event_wave_shape
+0cbf676c event_wave_emitters
+0cbcb470 event_play_motion
+0cb85c6c event_talk_stop
+0cb869cc event_sound_start
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbf5bf8 event_fade_corners

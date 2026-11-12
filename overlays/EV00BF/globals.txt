@@ -1,0 +1,6 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cba92f0 event_movers
+0cb8c768 event_run_to_speed
+# events/shared/fade_in.c (the Japanese release's names, tools/jpport)
+0cba9318 event_fade_in_corners
+0cba9338 event_fade_in

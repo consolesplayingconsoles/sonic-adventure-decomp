@@ -1,0 +1,15 @@
+8cb81306 eggmoble_init
+0cb97b2c gMaxId
+0cb97b30 gCEventSePP
+0cb97b34 gOneshotId
+0cb97c78 gParticleInfo
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8c000 event_eggmobile_texlist
+0cb8bd90 event_eggmobile_nozzle
+0cb8bd9c event_eggmobile_glare_aim
+0cb8bda8 event_eggmobile_actions
+0cb8bdec event_eggmobile_welds
+0cb8be64 event_eggmobile_task
+0cb83890 event_run_to_speed
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb97b0c event_fade_corners

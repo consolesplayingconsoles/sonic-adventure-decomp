@@ -1,0 +1,16 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb85770 event_sounds
+0cb8576c event_sound_count
+0cb85774 event_sound_next
+0cb81098 event_camera_take
+0cb8575c event_camera_release
+0cb85764 event_scanlines
+0cb85768 event_scanlines_row
+0cb81124 event_scanlines_height
+0cb81120 event_scanlines_width
+# events/shared/scanlines.c (the Japanese release's names, tools/jpport)
+8c09984e task_create
+8c099da0 heap_alloc
+8c099aa6 task_kill
+8c6431fc njDrawLine2D
+8c099e62 heap_free

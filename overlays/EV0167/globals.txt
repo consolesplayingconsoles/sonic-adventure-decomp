@@ -1,0 +1,8 @@
+0cb8e56c gCEventSePP
+0cb8e568 gMaxId
+0cb8e570 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb8e428 event_sprite_frames
+0cb8e2c8 event_sprite_slots
+0cb83648 task_kill
+0cb8a2dc event_sound_stop_all

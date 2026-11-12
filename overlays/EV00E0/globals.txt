@@ -1,0 +1,8 @@
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb88a00 event_movers
+0cb81c28 ev00e0_frog
+0cb84fe0 ev00e0_big_action_1
+0cb889f8 ev00e0_frog_action
+0cb85048 ev00e0_frog_texlist
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cb88a28 event_fade_corners

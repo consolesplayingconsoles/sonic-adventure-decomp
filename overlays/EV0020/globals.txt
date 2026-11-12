@@ -1,0 +1,16 @@
+0cb85c60 p_MoveObjTask
+8cb81620 execMoveObjTask
+8cb81dc2 dispMoveObjTask
+8cb81dc6 destMoveObjTask
+0cb867ec gCEventSePP
+0cb867e8 gMaxId
+0cb867f0 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cb826e0 event_sound_init
+0cb85c5c event_white
+0cb86260 event_wave_action
+0cb867b8 event_wave_texlist
+0cb86210 event_wave_object
+0cb86254 event_wave_motion
+0cb867a0 event_wave_shape
+0cb867c0 event_wave_emitters

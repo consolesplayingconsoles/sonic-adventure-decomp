@@ -1,0 +1,27 @@
+0cbddb04 p_MoveObjTask
+8cb82500 capturebeam_dest
+8cb82504 capturebeam_disp
+8cb8258c capturebeam_exec
+8cb86d60 execMoveObjTask
+8cb87502 dispMoveObjTask
+8cb87506 destMoveObjTask
+0cbdddd0 gParticleInfo
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbd19d0 event_chaos4_task
+0cbd1ad8 event_chaos4_welds
+0cbd1c40 event_rays
+0cba2400 event_camera_set_pos
+0cba8608 event_look_at_task
+0cba5d7c ev000b_knuckles_action_3
+0cb878ec ev000b_blue_emerald_action_3
+0cb878f0 ev000b_flash
+0cbae518 event_beam_texlist
+0cbaeb58 event_beam_object
+0cbc3018 event_chaos2_welds
+0cbd1d88 event_eggmobile_nozzle
+0cbd1d94 event_eggmobile_glare_aim
+0cbd1da0 event_eggmobile_actions
+0cbd1de4 event_eggmobile_welds
+0cbd1e5c event_eggmobile_task
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbddb2c event_fade_corners

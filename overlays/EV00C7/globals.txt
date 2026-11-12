@@ -1,0 +1,27 @@
+0cbda7b0 p_MoveObjTask
+8cb84260 execMoveObjTask
+8cb84a02 dispMoveObjTask
+8cb84a06 destMoveObjTask
+0cbda894 gParticleInfo
+0cbda804 gCEventSePP
+0cbda800 gMaxId
+0cbda808 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbda4a8 event_noise_task
+0cb85660 event_sound_init
+0cb8654c event_camera_set_fov
+0cb891dc event_wait_motions
+0cb95580 event_run_wait
+0cbd8a68 event_move_turn
+0cb9af88 event_scanlines_create
+0cb8651c event_camera_release
+0cbda774 event_dome_texlist
+# events/shared/rays.c (the Japanese release's names, tools/jpport)
+0cbda4ac event_rays
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbda7d8 event_fade_corners
+# events/shared/scanlines.c (the Japanese release's names, tools/jpport)
+0cbda7f8 event_scanlines
+0cbda7fc event_scanlines_row
+0cb85978 event_scanlines_height
+0cb85974 event_scanlines_width

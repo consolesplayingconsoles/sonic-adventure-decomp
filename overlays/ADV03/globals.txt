@@ -1,0 +1,43 @@
+0c927158 ___ADV03_OBJECTS
+0c9c93b4 cinfo_bush
+0ca024a4 people_model_table
+0ca02804 pastpc_data_tbl
+8cb4a000 mesdatareserve
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0c9c94a4 smoke_shape
+0c9c9490 smoke_puff_anim
+0c927a34 script_sonic_fire_point
+0c9c95e0 flame_color
+0ca02518 walk_routes
+0ca00b6c walker_shapes
+0ca00998 walker_kinds
+0ca0258c walker_move_steps
+0c9c9380 knuckles_tree_shape
+0c9c934c well_shape
+0c916ca0 well_object
+0c927054 well_shadow_object
+0ca00bd4 people_count
+0ca02cfc people_lists
+0ca00df8 people
+0c927a78 script_amy_tikal_point
+0c9c9570 glow_sprite
+0c9c9560 glow_color
+0c9c9590 glow_no_color
+0c926f50 knuckles_lamp_object
+0c9c94f4 master_emerald_shape
+0c921220 master_emerald_object
+0c9c9528 chaos_emeralds
+# modules/adv03/smoke.c (the Japanese release's names, tools/jpport)
+8c19b9a4 flame_pool
+# modules/adv03/script_sonic_fire.c (the Japanese release's names, tools/jpport)
+8c0904b2 story_set_time
+# modules/adv03/pyramid_snake.c (the Japanese release's names, tools/jpport)
+0c90bec0 pyramid_snake_object
+# modules/adv03/fall_tree.c (the Japanese release's names, tools/jpport)
+0c90e0d8 fall_tree_object
+0c90d914 fall_tree_action
+# modules/adv03/plants.c (the Japanese release's names, tools/jpport)
+0c91a56c shida_action
+0c91cb64 sotetsu_action
+# modules/adv03/people.c (the Japanese release's names, tools/jpport)
+0c9dd874 dat_0c9ddb2c

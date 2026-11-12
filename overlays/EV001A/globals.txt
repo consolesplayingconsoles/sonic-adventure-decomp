@@ -1,0 +1,24 @@
+0cbc2544 p_MoveObjTask
+8cb85200 execMoveObjTask
+8cb859a2 dispMoveObjTask
+8cb859a6 destMoveObjTask
+0cbc263c object_skywalk_cl
+0cbc2590 gCEventSePP
+0cbc258c gMaxId
+0cbc2594 gOneshotId
+# Names of data from the Japanese release's C, for the same code (tools/jpport)
+0cbc2670 event_stopwatch
+0cb866e8 event_place_actor
+0cb8653c event_message_show
+0cbb4320 event_move
+0cbb53ac event_kill_player
+0cbb54f8 event_eggmobile_nozzle
+0cbb5504 event_eggmobile_glare_aim
+0cbb5510 event_eggmobile_actions
+0cbb5554 event_eggmobile_welds
+0cbb55cc event_eggmobile_task
+# events/shared/claw.c (the Japanese release's names, tools/jpport)
+0cbc12c8 event_claw_texlist
+0cbc2530 event_claw_nodes
+# events/shared/fade.c (the Japanese release's names, tools/jpport)
+0cbc256c event_fade_corners
