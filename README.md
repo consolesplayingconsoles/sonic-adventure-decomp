@@ -21,11 +21,15 @@ everything game-derived on your machine, and `.gitignore` keeps it out of git.
 
 <!-- progress -->
 ```
-FUNCTIONS                             
-FUNCTIONS LEFT  (0.0% complete) 5179  of the 5179 functions
-BYTES LEFT   (0.0% complete) 1074210  of 1074210 bytes of code
-  unnamed                       3343  functions still called FUN_... (3343 of 5179)
-  documented                    0.0%  0 named functions in docs/*.md
+FUNCTIONS                              
+FUNCTIONS LEFT  (44.4% complete) 3351  of the 6022 functions
+BYTES LEFT    (8.9% complete) 5773988  of 6336294 bytes of code
+  unnamed                        1605  functions still called FUN_... (1605 of 6022)
+  documented                     0.0%  3 named functions in docs/*.md
+OVERLAYS                          200 of 232 disc files with code, 21074 functions, 4166844 bytes of code (separate total)
+  matching C                20.3%  6663 functions, 845062 bytes, 1045 units: rebuilt byte for byte (build_overlays.sh)
+  named                     59.2%  12483 functions
+  not in scope                     32 files (overlays.tsv says why)
 ```
 <!-- /progress -->
 
