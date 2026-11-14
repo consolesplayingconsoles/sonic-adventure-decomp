@@ -8,7 +8,7 @@ A matching decompilation of the Dreamcast **Sonic Adventure**, in progress. It r
 A function is **done** when its C rebuilds byte for byte (Matching): the build compiles it with the SDK's own compiler,
 links it in place, and the result has to `MATCH` the original.
 
-This project constitutes contains equivalent C, the asset maps, the Shuriken Explorer code and asset views, the build pipeline and the author's notes in [docs/engine.md](docs/engine.md)._
+This project constitutes contains equivalent C, the asset maps, the Shuriken Explorer code and asset views, the build pipeline and the author's notes in [docs/engine.md](docs/engine.md).
 
 **This repository contains no game code or data.** You supply your own disc; `setup.sh` generates
 everything game-derived on your machine, and `.gitignore` keeps it out of git.
