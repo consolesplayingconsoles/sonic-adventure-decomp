@@ -5,7 +5,8 @@
 set -uo pipefail
 cd "$(dirname "$0")"
 if [ $# -gt 0 ]; then names=("$@")
-else mapfile -t names < <(for d in overlays/*/; do [ -f "$d/objects.txt" ] && basename "$d"; done); fi
+else names=(); for d in overlays/*/; do [ -f "$d/objects.txt" ] && names+=("$(basename "$d")"); done; fi   # no mapfile: macOS ships bash 3.2
+[ ${#names[@]} -gt 0 ] || { echo "[ERROR] no overlay is set up (overlays/<name>/objects.txt): run setup.sh"; exit 1; }
 mkdir -p build
 printf '%s\n' "${names[@]}" | xargs -P "${JOBS:-1}" -I{} sh -c 'mkdir -p "overlays/$1/build"; bash build.sh --overlay "$1" > "overlays/$1/build/build.log" 2>&1; echo "$1 $(tail -1 "overlays/$1/build/build.log")"' _ {} > build/overlays.txt
 bad=$(grep -vc ' MATCH: ' build/overlays.txt)

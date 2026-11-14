@@ -3882,7 +3882,7 @@ F 8c10baa2 6 syRtcSetServerMode
 F 8c10baa8 6 syRtcGetStat
 F 8c10baae 50 syRtcCompareDate
 F 8c10bae0 128 syRtcDateToCount
-F 8c10bb74 330 syRtcCountToDate
+F 8c10bb74 354 syRtcCountToDate
 F 8c10bcd6 118 syRtcGetAndCheckCount
 F 8c10bd4c 108 syRtcGetCountForce
 F 8c10bdb8 92 syRtcAicaGetCount
@@ -6674,3 +6674,5 @@ F 8c66c034 86 sdMidiGetPitch
 F 8c66c0a4 96 sdMidiGetSpeed
 F 8c66c120 86 sdMidiGetTotalBeatTime
 F 8c66c190 86 sdMidiGetVol
+D 8c66d2fc 0 DATA_8c66d2fc
+D 8c66d4fc 0 DATA_8c66d4fc

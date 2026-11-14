@@ -1,16 +1,13 @@
 # Sonic Adventure decomp
 
-![decomp progress](badges/progress.svg?p=44.4&b=8.9&a=0&s=0)
+![decomp progress](badges/progress.svg?p=48.5&b=9.2&a=0&s=0)
 
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
 
-A decompilation of the Dreamcast **Sonic Adventure**, in progress. It rebuilds the game's executable byte for byte.
+A matching decompilation of the Dreamcast **Sonic Adventure**, in progress. It rebuilds the game's executable byte for byte.
 A function is **done** when its C rebuilds byte for byte (Matching): the build compiles it with the SDK's own compiler,
 links it in place, and the result has to `MATCH` the original.
 
-_**This is not a traditional, human-idiomatic decompilation.** It is structured and documented for AI consumption,
-and its tooling is built for the automation and scale of that paradigm.
-If needed, a human-idiomatic rewrite can start from it, as a fork or a new project.
 This project constitutes a solid stepping stone for such a target: it contains matching C, the asset maps,
 the Shuriken Explorer code and asset views, the build pipeline and the author's notes in [docs/engine.md](docs/engine.md)._
 
@@ -27,7 +24,7 @@ BYTES LEFT    (8.9% complete) 5773988  of 6336294 bytes of code
   unnamed                        1605  functions still called FUN_... (1605 of 6022)
   documented                     0.0%  3 named functions in docs/*.md
 OVERLAYS                          200 of 232 disc files with code, 21074 functions, 4166844 bytes of code (separate total)
-  matching C                20.3%  6663 functions, 845062 bytes, 1045 units: rebuilt byte for byte (build_overlays.sh)
+  matchi  ng C                20.3%  6663 functions, 845062 bytes, 1045 units: rebuilt byte for byte (build_overlays.sh)
   named                     59.2%  12483 functions
   not in scope                     32 files (overlays.tsv says why)
 ```
