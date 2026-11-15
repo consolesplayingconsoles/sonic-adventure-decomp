@@ -5,10 +5,13 @@
 **Explore this decomp project with [Shuriken Explorer](https://consolesplayingconsoles.github.io/dc-shuriken-explorer/) and see the game's models, skeletons, animations, textures, images, sounds, text and side-by-side C and assembly code directly in your browser.**
 
 A matching decompilation of the Dreamcast **Sonic Adventure**, in progress. It rebuilds the game's executable byte for byte.
-A function is **done** when its C rebuilds byte for byte (Matching): the build compiles it with the SDK's own compiler,
-links it in place, and the result has to `MATCH` the original.
+A function is **done** only when its C compiles back to the original's exact bytes. Each C unit is compiled with the
+original compiler, linked in place, and the whole executable must still end in `MATCH` (`make`, which runs `build.sh`).
+Nothing is checked by behaviour alone: a function whose C behaves the same but differs by one instruction is not done,
+and the build keeps the original assembly for it.
 
-This project constitutes contains equivalent C, the asset maps, the Shuriken Explorer code and asset views, the build pipeline and the author's notes in [docs/engine.md](docs/engine.md).
+This project contains matching C, the asset maps, the Shuriken Explorer code and asset views, the build pipeline and the
+author's notes in [docs/engine.md](docs/engine.md).
 
 **This repository contains no game code or data.** You supply your own disc; `setup.sh` generates
 everything game-derived on your machine, and `.gitignore` keeps it out of git.
